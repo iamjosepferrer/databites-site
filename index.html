@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DataBites — Josep Ferrer | Data & AI, Clearly Explained</title>
+<meta name="description" content="Josep Ferrer — Data scientist & visual educator making complex AI and data click through diagrams. DataViz consulting, newsletter, and courses.">
+<meta property="og:title" content="DataBites — Josep Ferrer">
+<meta property="og:description" content="Data & AI, clearly explained through diagrams.">
+<meta property="og:url" content="https://databites.tech">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --forest:    #1A3829;
+  --green:     #2D9B4E;
+  --bright:    #38B86E;
+  --mint:      #A8DDC4;
+  --mint-pale: #E8F5EE;
+  --cream:     #FAF6F0;
+  --muted:     #5E7D6A;
+  --rule:      #D4E8DC;
+  --f-d: 'Lilita One', cursive;
+  --f-b: 'Space Grotesk', system-ui, sans-serif;
+  --f-m: 'Space Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--f-b); background: var(--cream); color: var(--forest); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+.db-mark { display: inline-flex; position: relative; flex-shrink: 0; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 80px;
+}
+.nav-logo { display: flex; align-items: center; text-decoration: none; }
+.nav-logo-wrap { background: transparent; height: 52px; padding: 0; display: flex; align-items: center; overflow: hidden; }
+.nav-logo-img { height: 64px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-size: 1rem; font-weight: 500; color: var(--muted); transition: color .15s; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bright); border-radius: 1px; transition: width .22s ease; }
+.nav-links a:hover { color: var(--forest); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--forest); color: var(--cream) !important; font-size: 0.8125rem !important; font-weight: 600 !important; padding: 0.5rem 1.125rem; border-radius: 6px; transition: background .15s !important; }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--green) !important; }
+
+/* ── SHARED BUTTONS ── */
+.btn-primary { background: var(--forest); color: var(--cream); font-family: var(--f-b); font-size: 0.9375rem; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 8px; transition: background .15s; display: inline-flex; align-items: center; gap: 0.375rem; }
+.btn-primary:hover { background: var(--green); }
+.btn-secondary { background: transparent; color: var(--forest); font-family: var(--f-b); font-size: 0.9375rem; font-weight: 500; padding: 0.75rem 1.5rem; border-radius: 8px; border: 1.5px solid var(--rule); transition: border-color .15s, background .15s; display: inline-flex; align-items: center; gap: 0.375rem; }
+.btn-secondary:hover { border-color: var(--mint); background: var(--mint-pale); }
+
+/* ── HERO ── */
+.hero { height: calc(100dvh - 80px); min-height: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 2rem 4rem; position: relative; overflow: hidden; }
+#hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; width: 100%; }
+.hero-who { font-family: var(--f-m); font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--forest); font-weight: 700; margin-bottom: 0.625rem; display: inline-flex; align-items: center; gap: 0.75rem; }
+.hero-who::before, .hero-who::after { content: ''; width: 28px; height: 1.5px; background: var(--forest); opacity: 0.4; }
+.hero-cycling-wrap { height: 1.625rem; overflow: hidden; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
+.hero-cycling { font-size: 1rem; color: var(--muted); font-weight: 400; transition: opacity .4s ease, transform .4s ease; }
+.hero-cycling.fade-out { opacity: 0; transform: translateY(-8px); }
+.hero-cycling.fade-in  { opacity: 1; transform: translateY(0); }
+.hero-headline { font-family: var(--f-d); font-size: clamp(2rem, 5.5vw, 5.25rem); line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+.hero-headline .w1 { color: var(--bright); display: block; }
+.hero-headline .w2 { color: var(--forest); display: block; }
+.btn-hero { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--f-d); font-size: 1rem; color: var(--forest); padding: 0.6875rem 1.875rem; border-radius: 50px; border: 2.5px solid var(--forest); outline: 3px solid var(--bright); outline-offset: 3px; background: transparent; transition: background .2s, color .2s, outline-color .2s; cursor: pointer; text-decoration: none; }
+.btn-hero:hover { background: var(--forest); color: var(--cream); outline-color: var(--mint); }
+.hero-bio { margin-top: 1.25rem; font-size: 0.8125rem; color: var(--muted); line-height: 1.7; max-width: 560px; margin-left: auto; margin-right: auto; }
+.hero-bio strong { color: var(--forest); font-weight: 600; }
+.scroll-hint { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.3rem; font-family: var(--f-m); font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); opacity: 0.55; animation: scrollBounce 2s ease-in-out infinite; }
+@keyframes scrollBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(5px); } }
+
+/* ── TRUSTED BY ── */
+#trusted { background: var(--cream); padding: 1.25rem 0 1.25rem; overflow: hidden; min-height: auto; }
+.trusted-head { max-width: 1100px; margin: 0 auto 0.875rem; padding: 0 2.5rem; }
+.trusted-title { font-family: var(--f-d); font-size: 1.375rem; line-height: 1.1; margin-bottom: 0.2rem; }
+.trusted-title .t1 { color: var(--bright); }
+.trusted-title .t2 { color: var(--forest); }
+.trusted-title-rule { width: 36px; height: 3px; background: var(--bright); border-radius: 2px; margin-top: 0.375rem; }
+.trusted-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.3rem; max-width: 560px; }
+.marquee-wrap { position: relative; width: 100%; overflow: hidden; }
+.marquee-wrap::before, .marquee-wrap::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; pointer-events: none; }
+.marquee-wrap::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
+.marquee-wrap::after  { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+.marquee-track { display: flex; align-items: center; width: max-content; animation: marqueeScroll 32s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.marquee-set { display: flex; align-items: center; flex-shrink: 0; }
+.marquee-item { display: flex; align-items: center; justify-content: center; padding: 0 2rem; height: 48px; flex-shrink: 0; filter: grayscale(1); opacity: 0.4; transition: opacity .25s, filter .25s; text-decoration: none; cursor: pointer; }
+.marquee-item:hover { opacity: 0.9; filter: grayscale(0); }
+.marquee-item img { height: 30px; width: 100px; object-fit: contain; object-position: center; display: block; pointer-events: none; }
+.marquee-item-text { font-family: var(--f-b); font-size: 0.9375rem; font-weight: 700; color: var(--forest); white-space: nowrap; letter-spacing: -0.01em; }
+
+/* ── SECTION SKELETON ── */
+section { padding: 5rem 2.5rem; min-height: calc(100dvh - 80px); display: flex; flex-direction: column; justify-content: center; }
+.inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+.section-label { font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.section-title { font-family: var(--f-d); font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--forest); margin-bottom: 0.75rem; }
+.section-sub { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.75; }
+
+/* ── ABOUT ── */
+#about { background: var(--mint-pale); padding-top: 3rem; padding-bottom: 3rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: center; margin-top: 1.5rem; }
+.about-body p { font-size: 0.9375rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.75rem; }
+.about-body p strong { color: var(--forest); font-weight: 600; }
+.creds { margin-top: 1.125rem; display: flex; flex-direction: column; gap: 0.375rem; }
+.cred { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.8375rem; color: var(--muted); line-height: 1.45; }
+.cred::before { content: '→'; font-family: var(--f-m); font-size: 0.7rem; color: var(--green); margin-top: 2px; flex-shrink: 0; }
+.cred a { color: var(--green); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+.cred a:hover { border-bottom-color: var(--green); }
+.about-photo-wrap { height: 100%; }
+.about-photo-wrap img { max-height: calc(100dvh - 220px); width: 100%; object-fit: cover; object-position: center top; border-radius: 14px; display: block; }
+.about-socials { margin-top: 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
+.social-pill { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.08em; color: var(--forest); border: 1px solid var(--rule); padding: 0.35rem 0.75rem; border-radius: 20px; white-space: nowrap; background: white; transition: border-color .15s, background .15s; }
+.social-pill:hover { border-color: var(--mint); background: var(--mint-pale); }
+.social-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--bright); flex-shrink: 0; }
+
+/* ── SERVICES — compact, no forced full height ── */
+#services { background: var(--cream); min-height: auto; padding: 2.5rem 2.5rem 1.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; align-items: stretch; }
+.service-card {
+  padding: 1.25rem 1.125rem 1.125rem;
+  border: 1px solid var(--rule); border-radius: 14px;
+  background: white; transition: border-color .2s, box-shadow .2s, transform .2s;
+  display: flex; flex-direction: column;
+  border-top: 3px solid var(--rule);
+}
+.service-card:hover { border-top-color: var(--bright); box-shadow: 0 6px 24px rgba(26,56,41,0.08); transform: translateY(-2px); }
+.service-card[style*="border-color:var(--mint)"] { border-top-color: var(--bright); }
+.service-header { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.75rem; }
+.service-num {
+  font-family: var(--f-m); font-size: 0.62rem; font-weight: 700;
+  color: var(--bright); letter-spacing: 0.08em; flex-shrink: 0;
+  background: var(--mint-pale); padding: 0.2rem 0.45rem; border-radius: 4px;
+}
+.service-name { font-family: var(--f-d); font-size: 1.0625rem; line-height: 1; }
+.service-name .sn-db  { color: var(--bright); }
+.service-name .sn-arm { color: var(--forest); }
+/* min-height forces divider to same row across all cards */
+.service-desc { font-size: 0.775rem; color: var(--muted); line-height: 1.6; min-height: 6.25rem; }
+.service-divider { height: 1px; background: var(--rule); margin-bottom: 0.625rem; }
+.service-items { display: flex; flex-direction: column; gap: 0.275rem; flex: 1; }
+.service-item { font-size: 0.75rem; color: var(--forest); display: flex; gap: 0.5rem; align-items: flex-start; line-height: 1.45; }
+.service-item::before { content: '–'; color: var(--bright); flex-shrink: 0; font-size: 0.75rem; margin-top: 1px; }
+.service-btn-wrap { margin-top: 1rem; }
+.btn-reach {
+  display: inline-flex; align-items: center; gap: 0.375rem;
+  background: var(--forest); color: var(--cream);
+  font-family: var(--f-b); font-size: 0.8125rem; font-weight: 600;
+  padding: 0.5625rem 1.125rem; border-radius: 8px;
+  transition: background .15s;
+}
+.btn-reach:hover { background: var(--green); }
+
+/* ── NEWSLETTER ── */
+#newsletter { background: var(--mint-pale); }
+.newsletter-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.newsletter-left .section-title { margin-top: 0.75rem; }
+.nl-desc { font-size: 1rem; color: var(--muted); line-height: 1.75; margin: 1.25rem 0 2rem; max-width: 440px; }
+.nl-desc strong { color: var(--forest); }
+.nl-issue-mock { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--rule); box-shadow: 0 4px 20px rgba(26,56,41,0.06); }
+.nl-header { background: var(--forest); padding: 1.25rem 1.5rem; }
+.nl-header-wm { font-family: var(--f-d); font-size: 1rem; color: var(--cream); }
+.nl-header-wm span { color: var(--bright); }
+.nl-header-tag { font-family: var(--f-m); font-size: 0.55rem; letter-spacing: 0.14em; color: var(--mint); opacity: 0.65; margin-top: 3px; text-transform: uppercase; }
+.nl-issue-body { padding: 1.25rem 1.5rem 1.5rem; }
+.nl-issue-meta { font-family: var(--f-m); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+.nl-issue-title { font-family: var(--f-d); font-size: 1.0625rem; color: var(--forest); margin-bottom: 1rem; line-height: 1.25; }
+.nl-diagram-preview { border-radius: 8px; overflow: hidden; border: 1px solid var(--rule); margin-bottom: 1rem; }
+.nl-issue-excerpt { font-size: 0.8125rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+.nl-read-link { font-family: var(--f-b); font-size: 0.875rem; font-weight: 600; color: var(--green); display: inline-flex; align-items: center; gap: 0.25rem; transition: color .15s; }
+.nl-read-link:hover { color: var(--forest); }
+.nl-read-everything {
+  font-family: var(--f-m); font-size: 0.65rem; letter-spacing: 0.08em;
+  color: var(--muted); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 0.375rem;
+  border-bottom: 1px solid var(--rule); padding-bottom: 2px;
+  transition: color .15s, border-color .15s;
+}
+.nl-read-everything span { color: var(--green); }
+.nl-read-everything:hover { color: var(--forest); border-color: var(--green); }
+
+/* ── PORTFOLIO ── */
+#portfolio { background: var(--cream); }
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+.portfolio-card { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: white; transition: transform .2s, box-shadow .2s, border-top-color .2s; cursor: pointer; border-top: 3px solid var(--rule); }
+.portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,56,41,0.08); border-top-color: var(--bright); }
+.pc-img { height: 160px; background: var(--mint-pale); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--rule); }
+.pc-img-label { font-family: var(--f-d); font-size: 0.9375rem; color: var(--forest); opacity: 0.6; text-align: center; padding: 1rem; }
+.pc-body { padding: 1.25rem; }
+.pc-tags { display: flex; gap: 0.375rem; flex-wrap: wrap; margin-bottom: 0.625rem; }
+.pc-tag { font-family: var(--f-m); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+.pc-tag.green { background: var(--mint-pale); color: var(--green); }
+.pc-tag.forest { background: rgba(26,56,41,0.08); color: var(--forest); }
+.pc-title { font-family: var(--f-d); font-size: 1rem; color: var(--forest); margin-bottom: 0.375rem; }
+.pc-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.6; }
+.pc-link { margin-top: 1rem; font-size: 0.8125rem; font-weight: 600; color: var(--green); display: flex; align-items: center; gap: 0.25rem; }
+.pc-link::after { content: '→'; }
+.portfolio-cta { margin-top: 2.5rem; text-align: center; }
+
+/* ── CONTACT ── */
+#contact { background: var(--forest); }
+#contact .section-label { color: var(--mint); opacity: 0.65; }
+#contact .section-label::after { background: rgba(255,255,255,0.12); }
+#contact .section-title { color: var(--cream); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+.contact-email-label { font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mint); opacity: 0.65; margin-bottom: 0.5rem; }
+.contact-email { font-family: var(--f-d); font-size: 1.5rem; color: var(--cream); transition: color .15s; display: inline-block; }
+.contact-email:hover { color: var(--bright); }
+.contact-desc { font-size: 0.9375rem; color: var(--mint); opacity: 0.8; line-height: 1.75; margin-top: 1rem; }
+.contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.contact-link { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); transition: background .15s, border-color .15s; }
+.contact-link:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+.cl-left { display: flex; align-items: center; gap: 0.875rem; }
+.cl-platform { font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mint); opacity: 0.65; }
+.cl-handle { font-size: 0.9375rem; font-weight: 500; color: var(--cream); margin-top: 1px; }
+.cl-stat { font-family: var(--f-m); font-size: 0.65rem; color: var(--bright); letter-spacing: 0.08em; }
+.cl-arrow { color: var(--mint); opacity: 0.4; font-size: 1rem; }
+
+/* ── FOOTER ── */
+footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-left { display: flex; align-items: center; gap: 0.875rem; }
+.footer-right { font-family: var(--f-m); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--muted); opacity: 0.7; }
+
+svg.mark-icon { display: block; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1200px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) {
+  .hero { padding: 0 1.5rem 3rem; min-height: 100svh; height: auto; }
+  .hero-headline { font-size: clamp(2.25rem, 11vw, 3.5rem); }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-photo-wrap { display: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr 1fr; }
+  .newsletter-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+  section { padding: 4rem 1.5rem; }
+}
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-wrap">
+      <img src="images/databitestech_logo_letters.png" alt="databites.tech" class="nav-logo-img">
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#newsletter">Newsletter</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<section style="padding:0;background:var(--cream)">
+  <div class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-who">Josep Ferrer</div>
+      <div class="hero-cycling-wrap">
+        <span class="hero-cycling" id="hero-cycling">Helping teams communicate their data visually.</span>
+      </div>
+      <h1 class="hero-headline">
+        <span class="w1">DATA & AI</span>
+        <span class="w2">Clearly Explained.</span>
+      </h1>
+      <a href="#services" class="btn-hero">Work with me →</a>
+      <p class="hero-bio">
+        Turning complex data and AI into content that actually makes things click.<br>
+        <strong>For a global audience.</strong>
+      </p>
+    </div>
+    <div class="scroll-hint">
+      <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="14" height="18" rx="7" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="6" r="2" fill="currentColor"><animate attributeName="cy" values="6;12;6" dur="1.8s" repeatCount="indefinite"/></circle></svg>
+      Scroll
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="inner">
+    <div class="section-label">About</div>
+    <h2 class="section-title">A practitioner who shows his work</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>I'm a <strong>data scientist, educator, and technical writer</strong> from Barcelona and currently based in Rotterdam. I consult on <strong>Data Analytics, DataViz</strong> and <strong>AI</strong>, create content that makes complex AI and data concepts click, and teach data science to professionals and students worldwide.</p>
+        <p>With a bachelor in Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF), I combine technical rigour with clear communication. If you need a Data Science project built, a data concept explained, a course designed, or technical articles written, I deliver work people can actually use.</p>
+        <div class="creds">
+          <div class="cred">Data Scientist — NECSTouR (European project)</div>
+          <div class="cred">Associate Professor, Big Data Masters — Universidad de Navarra</div>
+          <div class="cred">Technical Writer — DataCamp, ClicData &amp; Weights &amp; Biases (W&amp;B)</div>
+          <div class="cred">AI Course Lead — Emeritus / UNAV</div>
+          <div class="cred">Newsletter &amp; Articles — <a href="https://reads.databites.tech" target="_blank">reads.databites.tech</a></div>
+        </div>
+        <div class="about-socials">
+          <a href="https://x.com/iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>X @iamjosepferrer</a>
+          <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>LinkedIn</a>
+          <a href="https://github.com/iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>GitHub</a>
+          <a href="https://substack.com/@iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>Substack 10k</a>
+          <a href="https://medium.com/@iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>Medium 12k</a>
+        </div>
+      </div>
+      <div class="about-photo-wrap">
+        <img src="images/headshot.png" alt="Josep Ferrer" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="inner">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">How we can work together</h2>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-header">
+          <span class="service-num">01</span>
+          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Learn</span></div>
+        </div>
+        <div class="service-desc">Weekly diagrams, threads, and a newsletter reaching 10k+ data professionals. The content engine that everything else flows from.</div>
+        <div class="service-divider"></div>
+        <div class="service-items">
+          <div class="service-item">Weekly diagram (X + LinkedIn)</div>
+          <div class="service-item">Newsletter at reads.databites.tech</div>
+          <div class="service-item">Sponsorships available</div>
+        </div>
+        <div class="service-btn-wrap">
+          <a href="https://reads.databites.tech" target="_blank" class="btn-reach">Subscribe free →</a>
+        </div>
+      </div>
+
+      <div class="service-card" style="border-color:var(--mint)">
+        <div class="service-header">
+          <span class="service-num">02</span>
+          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Consult</span></div>
+        </div>
+        <div class="service-desc">Bespoke Data Analytics, DataViz or AI projects, data storytelling workshops, and training programs for teams.</div>
+        <div class="service-divider"></div>
+        <div class="service-items">
+          <div class="service-item">Bespoke Data Science projects</div>
+          <div class="service-item">Data storytelling workshops</div>
+          <div class="service-item">Dashboard & report design</div>
+        </div>
+        <div class="service-btn-wrap">
+          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Consult%20enquiry" class="btn-reach">Reach out →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <span class="service-num">03</span>
+          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Teach</span></div>
+        </div>
+        <div class="service-desc">University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.</div>
+        <div class="service-divider"></div>
+        <div class="service-items">
+          <div class="service-item">Conference & meetup talks</div>
+          <div class="service-item">University course partnerships</div>
+          <div class="service-item">Online courses (EN + ES)</div>
+        </div>
+        <div class="service-btn-wrap">
+          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Teach%20enquiry" class="btn-reach">Reach out →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-header">
+          <span class="service-num">04</span>
+          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Write</span></div>
+        </div>
+        <div class="service-desc">Freelance technical writing for data and AI companies. Articles, tutorials, and documentation that are precise, visual-first, and actually useful.</div>
+        <div class="service-divider"></div>
+        <div class="service-items">
+          <div class="service-item">Technical tutorials & how-tos</div>
+          <div class="service-item">AI/ML concept explainers</div>
+          <div class="service-item">Documentation & developer guides</div>
+        </div>
+        <div class="service-btn-wrap">
+          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Write%20enquiry" class="btn-reach">Reach out →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="trusted">
+  <div class="trusted-head">
+    <div class="trusted-title"><span class="t1">trusted</span> <span class="t2">by teams</span></div>
+    <div class="trusted-title-rule"></div>
+    <p class="trusted-desc">I've worked with research institutes, education organisations, international projects, and data companies across Europe and beyond.</p>
+  </div>
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-set">
+        <a href="https://wandb.ai" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/wandb.png" alt="Weights & Biases"></a>
+        <a href="https://www.unav.edu" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/unav.png" alt="Universidad de Navarra"></a>
+        <a href="https://emeritus.org" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/emeritus.png" alt="Emeritus"></a>
+        <a href="https://www.clicdata.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/clicdata.png" alt="ClicData"></a>
+        <a href="https://www.necstour.eu" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/necstour.png" alt="NECSTouR"></a>
+        <a href="https://www.datacamp.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/datacamp.png" alt="DataCamp"></a>
+        <a href="https://www.kdnuggets.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/kdnuggets.png" alt="KDnuggets"></a>
+        <a href="https://aigents.co" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/aigents.png" alt="Aigents"></a>
+        <a href="https://www.packtpub.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/packt.png" alt="Packt"></a>
+        <a href="https://www.stack-ai.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/stackai.png" alt="Stack AI"></a>
+      </div>
+      <div class="marquee-set" aria-hidden="true">
+        <a href="https://wandb.ai" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/wandb.png" alt="Weights & Biases"></a>
+        <a href="https://www.unav.edu" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/unav.png" alt="Universidad de Navarra"></a>
+        <a href="https://emeritus.org" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/emeritus.png" alt="Emeritus"></a>
+        <a href="https://www.clicdata.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/clicdata.png" alt="ClicData"></a>
+        <a href="https://www.necstour.eu" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/necstour.png" alt="NECSTouR"></a>
+        <a href="https://www.datacamp.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/datacamp.png" alt="DataCamp"></a>
+        <a href="https://www.kdnuggets.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/kdnuggets.png" alt="KDnuggets"></a>
+        <a href="https://aigents.co" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/aigents.png" alt="Aigents"></a>
+        <a href="https://www.packtpub.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/packt.png" alt="Packt"></a>
+        <a href="https://www.stack-ai.com" target="_blank" rel="noopener" class="marquee-item"><img src="images/logos/stackai.png" alt="Stack AI"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter">
+  <div class="newsletter-inner inner">
+    <div class="newsletter-left">
+      <div class="section-label">Newsletter</div>
+      <h2 class="section-title">Read everything from me</h2>
+      <p class="nl-desc">Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a></p>
+      <a href="https://reads.databites.tech" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:0.5rem">Subscribe free →</a>
+    </div>
+    <div class="newsletter-right">
+      <div class="nl-issue-mock" id="nl-latest">
+        <div class="nl-header" style="background:var(--cream);padding:1rem 1.5rem;border-bottom:1px solid var(--rule);">
+          <img src="images/databitestech_logo_letters.png"
+               alt="databites.tech"
+               style="height:32px;width:auto;display:block;">
+        </div>
+        <!-- Populated by RSS fetch; clean skeleton shown until loaded -->
+        <div class="nl-issue-body" id="nl-issue-body">
+          <div class="nl-issue-meta" id="nl-meta">Latest issue</div>
+          <div class="nl-issue-title" id="nl-title" style="min-height:1.5rem;background:var(--mint-pale);border-radius:4px;margin-bottom:0.75rem;"></div>
+          <p class="nl-issue-excerpt" id="nl-excerpt" style="min-height:3rem;background:var(--mint-pale);border-radius:4px;opacity:0.6;"></p>
+          <a href="https://reads.databites.tech" target="_blank" class="nl-read-link" id="nl-link" style="margin-top:1rem;display:inline-flex">Read full issue →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="inner">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Projects & work</h2>
+    <p class="section-sub">Real DataViz projects — built, shipped, and public. See the full portfolio at <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a></p>
+    <div class="portfolio-grid">
+      <a href="https://projects.databites.tech/catalonia-atlas" target="_blank" class="portfolio-card">
+        <div class="pc-img" style="padding:0;overflow:hidden;background:var(--mint-pale);">
+          <img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fprojects.databites.tech%2Fcatalonia-atlas?w=600&h=340"
+               alt="Catalonia Income Atlas preview"
+               style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;"
+               onmouseover="this.style.transform='scale(1.03)'"
+               onmouseout="this.style.transform='scale(1)'"
+               onerror="this.parentNode.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--f-d);font-size:0.9375rem;color:var(--muted);opacity:0.6;\'>Catalonia Income Atlas</div>'">
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag green">MapLibre GL</span><span class="pc-tag forest">Python</span><span class="pc-tag forest">GeoJSON</span></div>
+          <div class="pc-title">Catalonia Income Atlas</div>
+          <div class="pc-desc">Interactive choropleth map of income inequality across 5,108 census tracts, 947 municipalities, and 4 provinces in Catalonia. INE data, 2015–2023.</div>
+          <div class="pc-link">View project</div>
+        </div>
+      </a>
+
+      <div class="portfolio-card" style="opacity:.65;cursor:default">
+        <div class="pc-img" style="background:var(--mint-pale);position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span style="font-family:var(--f-m);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);">Coming soon</span>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag forest">In progress</span></div>
+          <div class="pc-title">Project #2</div>
+          <div class="pc-desc">The next DataViz project. Subscribe to the newsletter to be the first to see it.</div>
+        </div>
+      </div>
+
+      <div class="portfolio-card" style="opacity:.65;cursor:default">
+        <div class="pc-img" style="background:var(--mint-pale);position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span style="font-family:var(--f-m);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);">Coming soon</span>
+          </div>
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag forest">In progress</span></div>
+          <div class="pc-title">Project #3</div>
+          <div class="pc-desc">The third portfolio piece. Consulting prospects: contact me to see private work samples.</div>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-cta"><a href="https://projects.databites.tech" target="_blank" class="btn-secondary">See all projects →</a></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="inner">
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let's work together</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-email-label">Email</div>
+        <a href="mailto:rfeers@gmail.com" class="contact-email">rfeers@gmail.com</a>
+        <p class="contact-desc">If you have a DataViz project, a speaking opportunity, a course partnership, or a sponsorship proposal — get in touch directly. I read every email.</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://x.com/iamjosepferrer" target="_blank" class="contact-link">
+          <div class="cl-left"><div><div class="cl-platform">X / Twitter</div><div class="cl-handle">@iamjosepferrer</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">30k followers</div><div class="cl-arrow">→</div></div>
+        </a>
+        <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" class="contact-link">
+          <div class="cl-left"><div><div class="cl-platform">LinkedIn</div><div class="cl-handle">iamjosepferrer</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">8k followers</div><div class="cl-arrow">→</div></div>
+        </a>
+        <a href="https://substack.com/@iamjosepferrer" target="_blank" class="contact-link">
+          <div class="cl-left"><div><div class="cl-platform">Substack</div><div class="cl-handle">@iamjosepferrer</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">10k subscribers</div><div class="cl-arrow">→</div></div>
+        </a>
+        <a href="https://github.com/iamjosepferrer" target="_blank" class="contact-link">
+          <div class="cl-left"><div><div class="cl-platform">GitHub</div><div class="cl-handle">@iamjosepferrer</div></div></div>
+          <div class="cl-arrow">→</div>
+        </a>
+        <a href="https://medium.com/@iamjosepferrer" target="_blank" class="contact-link">
+          <div class="cl-left"><div><div class="cl-platform">Medium</div><div class="cl-handle">@iamjosepferrer</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">13k followers</div><div class="cl-arrow">→</div></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">
+    <img src="images/databites_clearly_explained.png" alt="databites.tech — Data & AI · Clearly Explained" style="height:52px;width:auto;display:block;opacity:0.9;">
+  </div>
+  <div class="footer-right">© 2026 DataBites · Josep Ferrer · Rotterdam, NL</div>
+</footer>
+
+<script>
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [];
+  const LINE_COLOR = '#2D9B4E', N = 22, DIST = 220, SPEED = 0.28;
+  function resize() { W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+  function makeNode() { return { x: Math.random()*W, y: Math.random()*H, vx: (Math.random()-.5)*SPEED, vy: (Math.random()-.5)*SPEED, r: Math.random()*46+18 }; }
+  function init() { resize(); nodes = Array.from({length:N}, makeNode); }
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    for (let i=0;i<N;i++) for (let j=i+1;j<N;j++) {
+      const dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y, d=Math.sqrt(dx*dx+dy*dy);
+      if (d<DIST) { ctx.beginPath(); ctx.moveTo(nodes[i].x,nodes[i].y); ctx.lineTo(nodes[j].x,nodes[j].y); ctx.strokeStyle=LINE_COLOR; ctx.globalAlpha=(1-d/DIST)*0.22; ctx.lineWidth=0.9; ctx.stroke(); }
+    }
+    nodes.forEach(n => {
+      const g=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+      g.addColorStop(0,'rgba(168,221,196,0.28)'); g.addColorStop(0.5,'rgba(168,221,196,0.14)'); g.addColorStop(1,'rgba(168,221,196,0)');
+      ctx.globalAlpha=1; ctx.beginPath(); ctx.arc(n.x,n.y,n.r,0,Math.PI*2); ctx.fillStyle=g; ctx.fill();
+      ctx.beginPath(); ctx.arc(n.x,n.y,3,0,Math.PI*2); ctx.fillStyle='#2D9B4E'; ctx.globalAlpha=0.45; ctx.fill();
+    });
+    ctx.globalAlpha=1;
+  }
+  function tick() { nodes.forEach(n => { n.x+=n.vx; n.y+=n.vy; if(n.x<-n.r)n.x=W+n.r; if(n.x>W+n.r)n.x=-n.r; if(n.y<-n.r)n.y=H+n.r; if(n.y>H+n.r)n.y=-n.r; }); draw(); requestAnimationFrame(tick); }
+  window.addEventListener('resize',()=>{ resize(); }); init(); tick();
+})();
+</script>
+
+<script>
+const phrases = [
+  "Helping teams communicate their data visually.",
+  "Teaching complex AI concepts to a global audience.",
+  "Making hard data ideas land through diagrams, not decks.",
+  "Training organisations to tell better stories with their data.",
+  "Building visual explainers that turn confusion into clarity.",
+  "Helping teams trust, understand, and act on their data."
+];
+let idx = 0;
+const el = document.getElementById('hero-cycling');
+setInterval(() => {
+  el.classList.add('fade-out');
+  setTimeout(() => { idx=(idx+1)%phrases.length; el.textContent=phrases[idx]; el.classList.remove('fade-out'); el.classList.add('fade-in'); setTimeout(()=>el.classList.remove('fade-in'),400); }, 420);
+}, 3200);
+</script>
+<script>
+// ── LIVE SUBSTACK LATEST ARTICLE ─────────────────────────
+(async function() {
+  // Fallback article shown while loading or if fetch fails
+  const fallback = {
+    title:   'DataBites is back — here\'s what\'s changing',
+    excerpt: 'After a year of quiet, DataBites is relaunching with a new structure, a new site, and a clearer mission. Every week: one concept, one diagram, one takeaway.',
+    link:    'https://reads.databites.tech',
+    date:    'Latest issue'
+  };
+
+  function render(d) {
+    const title   = document.getElementById('nl-title');
+    const excerpt = document.getElementById('nl-excerpt');
+    title.textContent    = d.title;
+    title.style.cssText  = '';
+    excerpt.textContent  = d.excerpt;
+    excerpt.style.cssText = '';
+    document.getElementById('nl-link').href = d.link;
+    const meta = document.getElementById('nl-meta');
+    if (meta) meta.textContent = d.date;
+  }
+
+  // Don't call render(fallback) — skeleton shown until real content loads
+
+  try {
+    const RSS_URL = 'https://reads.databites.tech/feed';
+    const API     = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL);
+    const res     = await fetch(API, { signal: AbortSignal.timeout(5000) });
+    const data    = await res.json();
+    if (data.status !== 'ok' || !data.items.length) return;
+    const post = data.items[0];
+
+    const div = document.createElement('div');
+    div.innerHTML = post.description || post.content || '';
+    const text = div.textContent.replace(/\s+/g, ' ').trim();
+
+    render({
+      title:   post.title,
+      excerpt: text.length > 180 ? text.slice(0, 177) + '…' : text,
+      link:    post.link,
+      date:    'Latest issue · ' + new Date(post.pubDate).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' })
+    });
+  } catch(e) {
+    // Fallback already rendered — do nothing
+  }
+})();
+</script>
+</body>
+</html>
