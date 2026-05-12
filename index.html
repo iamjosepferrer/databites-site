@@ -497,52 +497,7 @@ svg.mark-icon { display: block; }
     <div class="section-label" data-i18n="portfolio.label">Portfolio</div>
     <h2 class="section-title" data-i18n="portfolio.title">Projects & work</h2>
     <p class="section-sub" data-i18n="portfolio.sub">Real DataViz projects — built, shipped, and public. See the full portfolio at <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a></p>
-    <div class="portfolio-grid">
-      <a href="https://projects.databites.tech/catalonia-atlas" target="_blank" class="portfolio-card">
-        <div class="pc-img" style="padding:0;overflow:hidden;background:var(--forest);position:relative;">
-          <img src="images/catalonia-atlas.png" alt="Catalonia Income Atlas" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'" onerror="this.style.display='none'">
-          <div id="atlas-fallback" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.75rem;padding:1.5rem;">
-            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
-            <span style="font-family:var(--f-d);font-size:1rem;color:var(--cream);text-align:center;line-height:1.3;">Catalonia<br>Income Atlas</span>
-            <span style="font-family:var(--f-m);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);opacity:0.7;">projects.databites.tech</span>
-          </div>
-        </div>
-        <div class="pc-body">
-          <div class="pc-tags"><span class="pc-tag green">MapLibre GL</span><span class="pc-tag forest">Python</span><span class="pc-tag forest">GeoJSON</span></div>
-          <div class="pc-title" data-i18n="portfolio.atlas.title">Catalonia Income Atlas</div>
-          <div class="pc-desc" data-i18n="portfolio.atlas.desc">Interactive choropleth map of income inequality across 5,108 census tracts, 947 municipalities, and 4 provinces in Catalonia. INE data, 2015–2023.</div>
-          <div class="pc-link" data-i18n="portfolio.viewProject">View project</div>
-        </div>
-      </a>
-
-      <div class="portfolio-card" style="opacity:.65;cursor:default">
-        <div class="pc-img" style="background:var(--mint-pale);position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span data-i18n="portfolio.comingSoon" style="font-family:var(--f-m);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);">Coming soon</span>
-          </div>
-        </div>
-        <div class="pc-body">
-          <div class="pc-tags"><span class="pc-tag forest" data-i18n="portfolio.inProgress">In progress</span></div>
-          <div class="pc-title">Project #2</div>
-          <div class="pc-desc" data-i18n="portfolio.p2.desc">The next DataViz project. Subscribe to the newsletter to be the first to see it.</div>
-        </div>
-      </div>
-
-      <div class="portfolio-card" style="opacity:.65;cursor:default">
-        <div class="pc-img" style="background:var(--mint-pale);position:relative;overflow:hidden;">
-          <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-            <span data-i18n="portfolio.comingSoon" style="font-family:var(--f-m);font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);">Coming soon</span>
-          </div>
-        </div>
-        <div class="pc-body">
-          <div class="pc-tags"><span class="pc-tag forest" data-i18n="portfolio.inProgress">In progress</span></div>
-          <div class="pc-title">Project #3</div>
-          <div class="pc-desc" data-i18n="portfolio.p3.desc">The third portfolio piece. Consulting prospects: contact me to see private work samples.</div>
-        </div>
-      </div>
-    </div>
+    <div class="portfolio-grid" id="portfolio-grid"></div>
     <div class="portfolio-cta"><a href="https://projects.databites.tech" target="_blank" class="btn-secondary" data-i18n="portfolio.seeAll">See all projects →</a></div>
   </div>
 </section>
@@ -616,6 +571,30 @@ svg.mark-icon { display: block; }
   function tick() { nodes.forEach(n => { n.x+=n.vx; n.y+=n.vy; if(n.x<-n.r)n.x=W+n.r; if(n.x>W+n.r)n.x=-n.r; if(n.y<-n.r)n.y=H+n.r; if(n.y>H+n.r)n.y=-n.r; }); draw(); requestAnimationFrame(tick); }
   window.addEventListener('resize',()=>{ resize(); }); init(); tick();
 })();
+
+async function loadPortfolioPreview() {
+  try {
+    const res = await fetch('https://projects.databites.tech/projects.json');
+    const projects = await res.json();
+    const grid = document.getElementById('portfolio-grid');
+    grid.innerHTML = projects.filter(p => p.live).slice(0, 3).map(p => {
+      const chips = p.chips.filter(c => !c.labelKey)
+        .map(c => `<span class="pc-tag ${c.style}">${c.label}</span>`).join('');
+      return `
+        <a href="${p.url}" target="_blank" class="portfolio-card">
+          <div class="pc-img" style="padding:0;overflow:hidden;background:var(--forest);position:relative;">
+            <img src="${p.screenshot}" alt="${T(p.titleKey)}" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none'">
+          </div>
+          <div class="pc-body">
+            <div class="pc-tags">${chips}</div>
+            <div class="pc-title">${T(p.titleKey)}</div>
+            <div class="pc-desc">${T(p.descKey)}</div>
+            <div class="pc-link">${T('portfolio.viewProject')}</div>
+          </div>
+        </a>`;
+    }).join('');
+  } catch(e) { console.error('Could not load projects:', e); }
+}
 </script>
 
 <script>
@@ -760,6 +739,7 @@ const translations = {
 let currentLang = 'en';
 
 function setLang(lang) {
+  loadPortfolioPreview();
   currentLang = lang;
   const t = translations[lang];
 
@@ -801,12 +781,22 @@ window._i18nPhrases = translations.en.phrases;
   }, 3200);
 })();
 
+
+function T(key) {
+  // projects.json uses 'projects.*' prefix, this site uses 'portfolio.*'
+  const mapped = key.replace(/^projects\./, 'portfolio.');
+  const t = translations[currentLang] || translations.en;
+  return t[mapped] || translations.en[mapped] || key;
+}
+
+
 // Auto-detect browser language on load
 (function() {
   const saved = localStorage.getItem('lang');
   const browser = navigator.language?.slice(0, 2).toLowerCase();
   const lang = saved || (browser === 'es' ? 'es' : browser === 'ca' ? 'ca' : 'en');
   if (lang !== 'en') setLang(lang);
+  loadPortfolioPreview();
 })();
 </script>
 <script>
