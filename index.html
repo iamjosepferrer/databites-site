@@ -277,16 +277,16 @@ svg.mark-icon { display: block; }
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">
-    <div class="nav-logo-wrap">
-      <img src="images/databitestech_logo_letters.png" alt="databites.tech" class="nav-logo-img">
-    </div>
+  <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:0.625rem;">
+    <img src="images/databitestech_logo.png" alt="" style="height:34px;width:auto;" onerror="this.style.display='none'">
+    <span style="font-family:'Lilita One',cursive;font-size:1.25rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
   </a>
   <div class="nav-links">
     <a href="#about" data-i18n="nav.about">About</a>
     <a href="#services" data-i18n="nav.services">Services</a>
     <a href="#newsletter" data-i18n="nav.newsletter">Newsletter</a>
     <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="/write" data-i18n="nav.writing">Writing</a>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch</a>
     <div class="lang-switch">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -374,9 +374,26 @@ svg.mark-icon { display: block; }
         </div>
       </div>
 
-      <div class="service-card" style="border-color:var(--mint)">
+      <div class="service-card">
         <div class="service-header">
           <span class="service-num">02</span>
+          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Teach</span></div>
+        </div>
+        <div class="service-desc" data-i18n="services.teach.desc">University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.</div>
+        <div class="service-divider"></div>
+        <div class="service-items">
+          <div class="service-item" data-i18n="services.teach.i1">Conference & meetup talks</div>
+          <div class="service-item" data-i18n="services.teach.i2">University course partnerships</div>
+          <div class="service-item" data-i18n="services.teach.i3">Online courses (english, spanish or catalan)</div>
+        </div>
+        <div class="service-btn-wrap">
+          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Teach%20enquiry" class="btn-reach" data-i18n="services.teach.cta">Reach out →</a>
+        </div>
+      </div>
+
+      <div class="service-card" style="border-color:var(--mint)">
+        <div class="service-header">
+          <span class="service-num">03</span>
           <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Consult</span></div>
         </div>
         <div class="service-desc" data-i18n="services.consult.desc">Bespoke Data Analytics, DataViz or AI projects, data storytelling workshops, and training programs for teams.</div>
@@ -393,23 +410,6 @@ svg.mark-icon { display: block; }
 
       <div class="service-card">
         <div class="service-header">
-          <span class="service-num">03</span>
-          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Teach</span></div>
-        </div>
-        <div class="service-desc" data-i18n="services.teach.desc">University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.</div>
-        <div class="service-divider"></div>
-        <div class="service-items">
-          <div class="service-item" data-i18n="services.teach.i1">Conference & meetup talks</div>
-          <div class="service-item" data-i18n="services.teach.i2">University course partnerships</div>
-          <div class="service-item" data-i18n="services.teach.i3">Online courses (EN + ES)</div>
-        </div>
-        <div class="service-btn-wrap">
-          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Teach%20enquiry" class="btn-reach" data-i18n="services.teach.cta">Reach out →</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
           <span class="service-num">04</span>
           <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Write</span></div>
         </div>
@@ -421,7 +421,7 @@ svg.mark-icon { display: block; }
           <div class="service-item" data-i18n="services.write.i3">Documentation & developer guides</div>
         </div>
         <div class="service-btn-wrap">
-          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Write%20enquiry" class="btn-reach" data-i18n="services.write.cta">Reach out →</a>
+          <a href="/write" class="btn-reach" data-i18n="services.write.cta">See writing portfolio →</a>
         </div>
       </div>
 
@@ -482,9 +482,7 @@ svg.mark-icon { display: block; }
     <div class="newsletter-right">
       <div class="nl-issue-mock" id="nl-latest">
         <div class="nl-header" style="background:var(--cream);padding:1rem 1.5rem;border-bottom:1px solid var(--rule);">
-          <img src="images/databitestech_logo_letters.png"
-               alt="databites.tech"
-               style="height:32px;width:auto;display:block;">
+          <span style="font-family:'Lilita One',cursive;font-size:1rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
         </div>
         <!-- Populated by RSS fetch; clean skeleton shown until loaded -->
         <div class="nl-issue-body" id="nl-issue-body">
@@ -545,8 +543,10 @@ svg.mark-icon { display: block; }
 </section>
 
 <footer>
-  <div class="footer-left">
-    <img src="images/databites_clearly_explained.png" alt="databites.tech — Data & AI · Clearly Explained" style="height:52px;width:auto;display:block;opacity:0.9;">
+  <div class="footer-left" style="display:flex;align-items:center;gap:0.625rem;">
+    <img src="images/databitestech_logo.png" alt="" style="height:28px;width:auto;" onerror="this.style.display='none'">
+    <span style="font-family:'Lilita One',cursive;font-size:1rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
+    <span style="font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:#5E7D6A;margin-left:0.5rem;">DATA &amp; AI · CLEARLY EXPLAINED</span>
   </div>
   <div class="footer-right">© 2026 DataBites · Josep Ferrer · Rotterdam, NL</div>
 </footer>
@@ -608,7 +608,7 @@ async function loadPortfolioPreview() {
 const translations = {
   en: {
     'nav.about': 'About', 'nav.services': 'Services', 'nav.newsletter': 'Newsletter',
-    'nav.portfolio': 'Portfolio', 'nav.cta': 'Get in touch',
+    'nav.portfolio': 'Portfolio', 'nav.writing': 'Writing', 'nav.cta': 'Get in touch',
     'hero.h1': 'DATA & AI', 'hero.h2': 'Clearly Explained.',
     'hero.cta': 'Work with me →',
     'hero.bio1': 'Turning complex data and AI into content that actually makes things click.',
@@ -625,7 +625,7 @@ const translations = {
     'services.teach.desc': 'University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.',
     'services.teach.i1': 'Conference & meetup talks', 'services.teach.i2': 'University course partnerships', 'services.teach.i3': 'Online courses (EN + ES)', 'services.teach.cta': 'Reach out →',
     'services.write.desc': 'Freelance technical writing for data and AI companies. Articles, tutorials, and documentation that are precise, visual-first, and actually useful.',
-    'services.write.i1': 'Technical tutorials & how-tos', 'services.write.i2': 'AI/ML concept explainers', 'services.write.i3': 'Documentation & developer guides', 'services.write.cta': 'Reach out →',
+    'services.write.i1': 'Technical tutorials & how-tos', 'services.write.i2': 'AI/ML concept explainers', 'services.write.i3': 'Documentation & developer guides', 'services.write.cta': 'See writing portfolio →',
     'newsletter.label': 'Newsletter', 'newsletter.title': 'Read everything from me',
     'newsletter.desc': 'Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
     'newsletter.cta': 'Subscribe free →',
@@ -652,7 +652,7 @@ const translations = {
   },
   es: {
     'nav.about': 'Sobre mí', 'nav.services': 'Servicios', 'nav.newsletter': 'Newsletter',
-    'nav.portfolio': 'Portfolio', 'nav.cta': 'Contacta',
+    'nav.portfolio': 'Portfolio', 'nav.writing': 'Escritura', 'nav.cta': 'Contacta',
     'hero.h1': 'DATOS & IA', 'hero.h2': 'Claramente Explicado.',
     'hero.cta': 'Trabaja conmigo →',
     'hero.bio1': 'Convirtiendo datos e IA complejos en contenido que realmente hace que las cosas encajen.',
@@ -670,7 +670,7 @@ const translations = {
     'services.teach.desc': 'Asociaciones universitarias, cursos online, charlas en conferencias y acuerdos de embajador de marca. La capa de credibilidad institucional.',
     'services.teach.i1': 'Charlas en conferencias y meetups', 'services.teach.i2': 'Asociaciones con cursos universitarios', 'services.teach.i3': 'Cursos online (EN + ES)', 'services.teach.cta': 'Contáctame →',
     'services.write.desc': 'Escritura técnica freelance para empresas de datos e IA. Artículos, tutoriales y documentación precisos, visuales y realmente útiles.',
-    'services.write.i1': 'Tutoriales técnicos y guías', 'services.write.i2': 'Explainers de conceptos de IA/ML', 'services.write.i3': 'Documentación y guías para desarrolladores', 'services.write.cta': 'Contáctame →',
+    'services.write.i1': 'Tutoriales técnicos y guías', 'services.write.i2': 'Explainers de conceptos de IA/ML', 'services.write.i3': 'Documentación y guías para desarrolladores', 'services.write.cta': 'Ver portfolio de escritura →',
     'newsletter.label': 'Newsletter', 'newsletter.title': 'Lee todo lo que publico',
     'newsletter.desc': 'Conceptos de datos e IA, <strong>explicados claramente con diagramas</strong>. Construido, escrito y publicado cada semana. Lee la newsletter en <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
     'newsletter.cta': 'Suscríbete gratis →',
@@ -697,7 +697,7 @@ const translations = {
   },
   ca: {
     'nav.about': 'Sobre mi', 'nav.services': 'Serveis', 'nav.newsletter': 'Newsletter',
-    'nav.portfolio': 'Portfolio', 'nav.cta': 'Contacta',
+    'nav.portfolio': 'Portfolio', 'nav.writing': 'Escriptura', 'nav.cta': 'Contacta',
     'hero.h1': 'DADES & IA', 'hero.h2': 'Clarament Explicat.',
     'hero.cta': 'Treballa amb mi →',
     'hero.bio1': 'Convertint dades i IA complexes en contingut que realment fa que les coses encaixin.',
@@ -715,7 +715,7 @@ const translations = {
     'services.teach.desc': 'Associacions universitàries, cursos online, xerrades a conferències i acords d\'ambaixador de marca. La capa de credibilitat institucional.',
     'services.teach.i1': 'Xerrades a conferències i meetups', 'services.teach.i2': 'Associacions amb cursos universitaris', 'services.teach.i3': 'Cursos online (EN + ES)', 'services.teach.cta': 'Contacta\'m →',
     'services.write.desc': 'Escriptura tècnica freelance per a empreses de dades i IA. Articles, tutorials i documentació precisos, visuals i realment útils.',
-    'services.write.i1': 'Tutorials tècnics i guies', 'services.write.i2': 'Explicadors de conceptes d\'IA/ML', 'services.write.i3': 'Documentació i guies per a desenvolupadors', 'services.write.cta': 'Contacta\'m →',
+    'services.write.i1': 'Tutorials tècnics i guies', 'services.write.i2': 'Explicadors de conceptes d\'IA/ML', 'services.write.i3': 'Documentació i guies per a desenvolupadors', 'services.write.cta': 'Veure portfolio d\'escriptura →',
     'newsletter.label': 'Newsletter', 'newsletter.title': 'Llegeix tot el que publico',
     'newsletter.desc': 'Conceptes de dades i IA, <strong>clarament explicats amb diagrames</strong>. Construït, escrit i publicat cada setmana. Llegeix la newsletter a <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
     'newsletter.cta': 'Subscriu-te gratis →',
