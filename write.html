@@ -5,10 +5,13 @@
 <meta property="og:image" content="https://databites.tech/images/og-write.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technical Writing · Josep Ferrer · DataBites</title>
-<meta name="description" content="Technical writing for data and AI companies, by a practitioner who actually understands the product. Published in W&B, DataCamp, UX Collective.">
+<meta name="description" content="Technical writing for data and AI companies, by a practitioner who actually understands the product. Published in W&B, DataCamp, KDnuggets and UX Collective.">
 <meta property="og:title" content="Technical Writing · Josep Ferrer · DataBites">
-<meta property="og:description" content="Technical writing for data and AI companies, by a practitioner who actually understands the product. Published in W&B, DataCamp, ClicData and others.">
+<meta property="og:description" content="Technical writing for data and AI companies, by a practitioner who actually understands the product. Published in W&B, DataCamp, KDnuggets and UX Collective.">
 <meta property="og:url" content="https://databites.tech/write">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://databites.tech/images/og-write.png">
+<link rel="canonical" href="https://databites.tech/write">
 <link rel="icon" type="image/png" href="images/databitestech_logo.png">
 <link rel="apple-touch-icon" href="images/databitestech_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,6 +113,15 @@ section { padding: 5rem clamp(2rem, 5vw, 6rem); }
 .pc-link { margin-top: 1rem; font-size: 0.8125rem; font-weight: 600; color: var(--green); display: flex; align-items: center; gap: 0.25rem; transition: color .15s; }
 .pc-link:hover { color: var(--forest); }
 .pc-link::after { content: '→'; }
+.samples-note { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 0.9375rem; color: var(--muted); line-height: 1.75; max-width: 720px; }
+
+/* HOW I WORK */
+#work { background: var(--mint-pale); }
+.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; margin-top: 2.5rem; max-width: 940px; }
+.work-item { display: flex; gap: 0.75rem; align-items: flex-start; padding: 1.125rem 0; border-top: 1px solid var(--rule); }
+.work-item::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--bright); flex-shrink: 0; margin-top: 0.55rem; }
+.work-text { font-size: 0.9375rem; color: var(--forest); line-height: 1.6; }
+@media (max-width: 700px) { .work-grid { grid-template-columns: 1fr; } }
 
 /* CONTACT */
 #contact { background: var(--forest); }
@@ -139,7 +151,9 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
 @media (max-width: 900px) {
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .nav-links { display: none; }
+  .nav-links { display: flex; gap: 0.75rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .lang-switch { margin-left: 0.25rem; }
   section { padding: 4rem 1.5rem; }
   #hero { padding: 4rem 1.5rem; }
   .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
@@ -165,7 +179,7 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
     <a href="/#services" data-i18n="nav.services">Services</a>
     <a href="/#portfolio" data-i18n="nav.portfolio">Portfolio</a>
     <a href="/write" class="active" data-i18n="nav.writing">Writing</a>
-    <a href="mailto:rfeers@gmail.com?subject=Technical%20writing%20enquiry" class="nav-cta" data-i18n="nav.cta">Get in touch</a>
+    <a href="mailto:josep@databites.tech?subject=Technical%20writing%20enquiry" class="nav-cta" data-i18n="nav.cta">Get in touch</a>
     <div class="lang-switch">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
@@ -181,7 +195,7 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
       <div class="hero-eyebrow" data-i18n="hero.eyebrow">databites · Technical Writing</div>
       <h1 class="hero-h1" data-i18n="hero.h1">Technical writing for data & AI companies</h1>
       <p class="hero-sub" data-i18n="hero.sub">by someone who actually understands the product.</p>
-      <p class="hero-desc" data-i18n="hero.desc">I'm a data scientist and ML practitioner writing for W&B, DataCamp, ClicData, and UX Collective among others. I write for practitioners, the same audience reading my newsletter every week.</p>
+      <p class="hero-desc" data-i18n="hero.desc">I'm a data scientist and ML practitioner writing for W&B, DataCamp, ClicData, KDnuggets and UX Collective among others. I write for practitioners, the same audience reading my newsletter every week.</p>
       <div class="hero-proof">
         <div class="proof-stat">
           <span class="proof-num">1M+</span>
@@ -197,7 +211,7 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
         </div>
       </div>
       <div class="hero-cta">
-        <a href="mailto:rfeers@gmail.com?subject=Technical%20writing%20enquiry" class="btn-reach" data-i18n="hero.cta1">Reach out → rfeers@gmail.com</a>
+        <a href="mailto:josep@databites.tech?subject=Technical%20writing%20enquiry" class="btn-reach" data-i18n="hero.cta1">Reach out → josep@databites.tech</a>
         <a href="#samples" class="btn-ghost" data-i18n="hero.cta2">See published work ↓</a>
       </div>
     </div>
@@ -212,7 +226,7 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
   <div class="inner">
     <div class="section-label" data-i18n="samples.label">Published work</div>
     <h2 class="section-title" data-i18n="samples.title">Writing samples</h2>
-    <p class="section-sub" data-i18n="samples.sub">Six pieces across three publications. W&B for MLOps and LLM engineering. DataCamp for tutorials and DataViz. UX Collective for visualization theory and design.</p>
+    <p class="section-sub" data-i18n="samples.sub">Nine pieces across four publications. W&B for MLOps and LLM engineering. DataCamp and KDnuggets for tutorials, infrastructure, data visualization and data engineering. UX Collective for visualization theory.</p>
 
     <div class="portfolio-grid">
 
@@ -239,35 +253,49 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
         <div class="pc-body">
           <div class="pc-tags"><span class="pc-tag green">MLOps</span><span class="pc-tag green">Data Engineering</span></div>
           <div class="pc-title" data-i18n="card2.title">Data lineage for AI and machine learning systems</div>
-          <div class="pc-desc" data-i18n="card2.desc">How to track data provenance across ML pipelines - from raw sources to model outputs. Covers lineage tools, integration patterns, and reproducibility at scale.</div>
+          <div class="pc-desc" data-i18n="card2.desc">How to track data provenance across ML pipelines, from raw sources to model outputs. Covers lineage tools, integration patterns, and reproducibility at scale.</div>
           <div class="pc-link" data-i18n="card.read.wb">Read on W&amp;B</div>
         </div>
       </a>
 
-      <a href="https://www.datacamp.com/tutorial/how-transformers-work" target="_blank" rel="noopener" class="portfolio-card">
+      <a href="https://wandb.ai/ai-team-articles/llm-evaluation/reports/Tutorial-One-shot-document-parsing-for-RAG-with-Unlimited-OCR-and-W-B-Weave--VmlldzoxNzYwNTQzMQ" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="pc-img" style="background:#111c17;">
+          <span class="pc-pub" style="color:#FFBE00;">W&amp;B</span>
+          <span class="pc-pub-sep" style="background:rgba(255,255,255,0.1);"></span>
+          <span class="pc-pub-type" style="color:rgba(255,190,0,0.75);" data-i18n="card.type.tutorial">Tutorial</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag green">Document Parsing</span><span class="pc-tag green">Observability</span><span class="pc-tag forest" data-i18n="card.tag.code">Code</span></div>
+          <div class="pc-title" data-i18n="card3.title">One-shot document parsing for RAG with Unlimited-OCR and W&amp;B Weave</div>
+          <div class="pc-desc" data-i18n="card3.desc">Turning messy documents into retrieval-ready structured output in a single pass, with Weave tracing every step so the pipeline stays debuggable in production.</div>
+          <div class="pc-link" data-i18n="card.read.wb">Read on W&amp;B</div>
+        </div>
+      </a>
+
+      <a href="https://www.datacamp.com/blog/kubernetes-architecture-explained" target="_blank" rel="noopener" class="portfolio-card">
         <div class="pc-img" style="background:#05192D;">
           <span class="pc-pub" style="color:#03EF62;">DataCamp</span>
           <span class="pc-pub-sep" style="background:rgba(3,239,98,0.15);"></span>
-          <span class="pc-pub-type" style="color:rgba(3,239,98,0.75);" data-i18n="card.type.tutorial">Tutorial</span>
+          <span class="pc-pub-type" style="color:rgba(3,239,98,0.75);" data-i18n="card.type.guide">Guide</span>
         </div>
         <div class="pc-body">
-          <div class="pc-tags"><span class="pc-tag green">Deep Learning</span><span class="pc-tag green">Architecture</span></div>
-          <div class="pc-title" data-i18n="card3.title">How Transformers Work: A Detailed Exploration</div>
-          <div class="pc-desc" data-i18n="card3.desc">A complete walkthrough of the transformer architecture: self-attention, positional encoding, encoder-decoder structure, and why it replaced RNNs for sequence modelling.</div>
+          <div class="pc-tags"><span class="pc-tag green">Infrastructure</span><span class="pc-tag green">Architecture</span></div>
+          <div class="pc-title" data-i18n="card4.title">Kubernetes Architecture Explained</div>
+          <div class="pc-desc" data-i18n="card4.desc">Control plane and worker node internals: API server, scheduler, etcd, kubelet, and the add-on layer that turns a cluster into something you can run in production.</div>
           <div class="pc-link" data-i18n="card.read.dc">Read on DataCamp</div>
         </div>
       </a>
 
-      <a href="https://www.datacamp.com/tutorial/fine-tuning-large-language-models" target="_blank" rel="noopener" class="portfolio-card">
+      <a href="https://www.datacamp.com/tutorial/multimodal-rag" target="_blank" rel="noopener" class="portfolio-card">
         <div class="pc-img" style="background:#05192D;">
           <span class="pc-pub" style="color:#03EF62;">DataCamp</span>
           <span class="pc-pub-sep" style="background:rgba(3,239,98,0.15);"></span>
           <span class="pc-pub-type" style="color:rgba(3,239,98,0.75);" data-i18n="card.type.tutorial">Tutorial</span>
         </div>
         <div class="pc-body">
-          <div class="pc-tags"><span class="pc-tag green">LLMs</span><span class="pc-tag green">Fine-Tuning</span><span class="pc-tag forest" data-i18n="card.tag.code">Code</span></div>
-          <div class="pc-title" data-i18n="card4.title">Fine-Tuning LLMs: A Guide With Examples</div>
-          <div class="pc-desc" data-i18n="card4.desc">Practical guide to fine-tuning large language models. Covers dataset preparation, PEFT methods, and evaluation, with working code examples throughout.</div>
+          <div class="pc-tags"><span class="pc-tag green">RAG</span><span class="pc-tag green">Multimodal</span><span class="pc-tag forest" data-i18n="card.tag.code">Code</span></div>
+          <div class="pc-title" data-i18n="card5.title">Multimodal RAG: A Hands-On Guide to Learning from Documents</div>
+          <div class="pc-desc" data-i18n="card5.desc">A working question-answering pipeline over visual documents with GPT-4o and ChromaDB, including retrieval evaluation, latency and what it costs to run.</div>
           <div class="pc-link" data-i18n="card.read.dc">Read on DataCamp</div>
         </div>
       </a>
@@ -280,9 +308,37 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
         </div>
         <div class="pc-body">
           <div class="pc-tags"><span class="pc-tag green">DataViz</span><span class="pc-tag green">Design</span></div>
-          <div class="pc-title" data-i18n="card5.title">Effective Dashboard Design: Principles, Best Practices, and Examples</div>
-          <div class="pc-desc" data-i18n="card5.desc">A practitioner's guide to dashboards that actually communicate: layout principles, chart selection, information hierarchy, and real-world examples.</div>
+          <div class="pc-title" data-i18n="card6.title">Effective Dashboard Design: Principles, Best Practices, and Examples</div>
+          <div class="pc-desc" data-i18n="card6.desc">A practitioner's guide to dashboards that actually communicate: layout principles, chart selection, information hierarchy, and real-world examples.</div>
           <div class="pc-link" data-i18n="card.read.dc">Read on DataCamp</div>
+        </div>
+      </a>
+
+      <a href="https://www.kdnuggets.com/weights-biases-a-kdnuggets-crash-course" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="pc-img" style="background:#1A2A1D;">
+          <span class="pc-pub" style="color:#7CC576;">KDnuggets</span>
+          <span class="pc-pub-sep" style="background:rgba(124,197,118,0.15);"></span>
+          <span class="pc-pub-type" style="color:rgba(124,197,118,0.75);" data-i18n="card.type.crashcourse">Crash Course</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag green">MLOps</span><span class="pc-tag green">Experiment Tracking</span></div>
+          <div class="pc-title" data-i18n="card7.title">Weights &amp; Biases: A KDnuggets Crash Course</div>
+          <div class="pc-desc" data-i18n="card7.desc">A hands-on tour of experiment tracking, model versioning and reproducibility with W&amp;B, written for an independent audience rather than as vendor copy.</div>
+          <div class="pc-link" data-i18n="card.read.kd">Read on KDnuggets</div>
+        </div>
+      </a>
+
+      <a href="https://www.kdnuggets.com/building-end-to-end-data-pipelines-from-data-ingestion-to-analysis" target="_blank" rel="noopener" class="portfolio-card">
+        <div class="pc-img" style="background:#1A2A1D;">
+          <span class="pc-pub" style="color:#7CC576;">KDnuggets</span>
+          <span class="pc-pub-sep" style="background:rgba(124,197,118,0.15);"></span>
+          <span class="pc-pub-type" style="color:rgba(124,197,118,0.75);" data-i18n="card.type.guide">Guide</span>
+        </div>
+        <div class="pc-body">
+          <div class="pc-tags"><span class="pc-tag green">Data Engineering</span><span class="pc-tag green">Pipelines</span></div>
+          <div class="pc-title" data-i18n="card8.title">Building End-to-End Data Pipelines: From Data Ingestion to Analysis</div>
+          <div class="pc-desc" data-i18n="card8.desc">Designing pipelines that hold up: ingestion, storage, transformation, orchestration, and the analysis layer that sits on top of all of it.</div>
+          <div class="pc-link" data-i18n="card.read.kd">Read on KDnuggets</div>
         </div>
       </a>
 
@@ -294,12 +350,31 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
         </div>
         <div class="pc-body">
           <div class="pc-tags"><span class="pc-tag green">DataViz</span><span class="pc-tag forest" data-i18n="card.tag.theory">Theory</span><span class="pc-tag forest">Design</span></div>
-          <div class="pc-title" data-i18n="card6.title">The art and science of data visualization</div>
-          <div class="pc-desc" data-i18n="card6.desc">A deep dive into visualization theory: visual encodings, retinal vs spatial representations, and choosing the right chart for your data. Published in UX Collective.</div>
+          <div class="pc-title" data-i18n="card9.title">The art and science of data visualization</div>
+          <div class="pc-desc" data-i18n="card9.desc">A deep dive into visualization theory: visual encodings, retinal vs spatial representations, and choosing the right chart for your data. Published in UX Collective.</div>
           <div class="pc-link" data-i18n="card.read.ux">Read on UX Collective</div>
         </div>
       </a>
 
+    </div>
+
+    <p class="samples-note" data-i18n="samples.note">These are the pieces that carry my name. I also write unbylined for client blogs, including a retained monthly programme with ClicData. Happy to send more or walk through specific pieces on a call.</p>
+  </div>
+</section>
+
+<!-- HOW I WORK -->
+<section id="work">
+  <div class="inner">
+    <div class="section-label" data-i18n="work.label">How I work</div>
+    <h2 class="section-title" data-i18n="work.title">Fixed monthly packages</h2>
+    <p class="section-sub" data-i18n="work.sub">An agreed number of pieces for an agreed fee, so your budget and my calendar are both predictable.</p>
+    <div class="work-grid">
+      <div class="work-item"><span class="work-text" data-i18n="work.i1">3 to 5 pieces a month, 1,500 to 2,500 words each</span></div>
+      <div class="work-item"><span class="work-text" data-i18n="work.i2">Research, draft, and two revision rounds included</span></div>
+      <div class="work-item"><span class="work-text" data-i18n="work.i3">10 working days from brief to final draft</span></div>
+      <div class="work-item"><span class="work-text" data-i18n="work.i4">Three month minimum, so the voice has time to settle</span></div>
+      <div class="work-item"><span class="work-text" data-i18n="work.i5">Written in English, Spanish or Catalan</span></div>
+      <div class="work-item"><span class="work-text" data-i18n="work.i6">Invoiced in EUR or USD, 30 days net</span></div>
     </div>
   </div>
 </section>
@@ -312,19 +387,19 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
     <div class="contact-grid">
       <div>
         <div class="contact-email-label" data-i18n="contact.email.label">Email directly</div>
-        <a href="mailto:rfeers@gmail.com?subject=Technical%20writing%20enquiry" class="contact-email">rfeers@gmail.com</a>
+        <a href="mailto:josep@databites.tech?subject=Technical%20writing%20enquiry" class="contact-email">josep@databites.tech</a>
         <p class="contact-desc" data-i18n="contact.desc">If you work at a data or AI company and need technical content your practitioners are proud to share. Tell me what you're building and what you need. I reply to every email.</p>
       </div>
       <div class="contact-links">
-        <a href="https://x.com/iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">X / Twitter</div><div class="cl-handle">@iamjosepferrer</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">30k followers</div><div class="cl-arrow">→</div></div>
         </a>
-        <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">LinkedIn</div><div class="cl-handle">iamjosepferrer</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">8k followers</div><div class="cl-arrow">→</div></div>
         </a>
-        <a href="https://reads.databites.tech" target="_blank" class="contact-link">
+        <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">Newsletter</div><div class="cl-handle">reads.databites.tech</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">10k subscribers</div><div class="cl-arrow">→</div></div>
         </a>
@@ -351,30 +426,47 @@ const translations = {
     'hero.eyebrow': 'databites · Technical Writing',
     'hero.h1': 'Technical writing for data & AI companies',
     'hero.sub': 'by someone who actually understands the product.',
-    'hero.desc': "I'm a data scientist and ML practitioner writing for W&B, DataCamp, and UX Collective. I write for practitioners, the same audience reading my newsletter every week.",
+    'hero.desc': "I'm a data scientist and ML practitioner writing for W&B, DataCamp, ClicData, KDnuggets and UX Collective among others. I write for practitioners, the same audience reading my newsletter every week.",
     'hero.label1': 'impressions, single post',
     'hero.label2': 'newsletter subscribers',
     'hero.label3': 'X followers',
-    'hero.cta1': 'Reach out → rfeers@gmail.com',
+    'hero.cta1': 'Reach out → josep@databites.tech',
     'hero.cta2': 'See published work ↓',
     'samples.label': 'Published work',
     'samples.title': 'Writing samples',
-    'samples.sub': 'Six pieces across three publications. W&B for MLOps and LLM engineering. DataCamp for tutorials and DataViz. UX Collective for visualization theory and design.',
-    'card.type.report': 'Report', 'card.type.tutorial': 'Tutorial', 'card.type.essay': 'Essay · 601K readers',
+    'samples.sub': 'Nine pieces across four publications. W&B for MLOps and LLM engineering. DataCamp and KDnuggets for tutorials, infrastructure and data engineering. UX Collective for visualization theory.',
+    'samples.note': 'These are the pieces that carry my name. I also write unbylined for client blogs, including a retained monthly programme with ClicData. Happy to send more or walk through specific pieces on a call.',
+    'card.type.report': 'Report', 'card.type.tutorial': 'Tutorial', 'card.type.guide': 'Guide',
+    'card.type.crashcourse': 'Crash Course', 'card.type.essay': 'Essay · 601K readers',
     'card.tag.advanced': 'Advanced', 'card.tag.code': 'Code', 'card.tag.theory': 'Theory',
-    'card.read.wb': 'Read on W&B', 'card.read.dc': 'Read on DataCamp', 'card.read.ux': 'Read on UX Collective',
+    'card.read.wb': 'Read on W&B', 'card.read.dc': 'Read on DataCamp',
+    'card.read.kd': 'Read on KDnuggets', 'card.read.ux': 'Read on UX Collective',
     'card1.title': 'LLM evaluation benchmarking: Beyond BLEU and ROUGE',
     'card1.desc': 'Modern LLM evaluation goes far beyond traditional NLP metrics. Covers human evaluation frameworks, model-based judges, and task-specific benchmarks for production systems.',
     'card2.title': 'Data lineage for AI and machine learning systems',
-    'card2.desc': 'How to track data provenance across ML pipelines - from raw sources to model outputs. Covers lineage tools, integration patterns, and reproducibility at scale.',
-    'card3.title': 'How Transformers Work: A Detailed Exploration',
-    'card3.desc': 'A complete walkthrough of the transformer architecture: self-attention, positional encoding, encoder-decoder structure, and why it replaced RNNs for sequence modelling.',
-    'card4.title': 'Fine-Tuning LLMs: A Guide With Examples',
-    'card4.desc': 'Practical guide to fine-tuning large language models. Covers dataset preparation, PEFT methods, and evaluation, with working code examples throughout.',
-    'card5.title': 'Effective Dashboard Design: Principles, Best Practices, and Examples',
-    'card5.desc': "A practitioner's guide to dashboards that actually communicate: layout principles, chart selection, information hierarchy, and real-world examples.",
-    'card6.title': 'The art and science of data visualization',
-    'card6.desc': 'A deep dive into visualization theory: visual encodings, retinal vs spatial representations, and choosing the right chart for your data. Published in UX Collective.',
+    'card2.desc': 'How to track data provenance across ML pipelines, from raw sources to model outputs. Covers lineage tools, integration patterns, and reproducibility at scale.',
+    'card3.title': 'One-shot document parsing for RAG with Unlimited-OCR and W&B Weave',
+    'card3.desc': 'Turning messy documents into retrieval-ready structured output in a single pass, with Weave tracing every step so the pipeline stays debuggable in production.',
+    'card4.title': 'Kubernetes Architecture Explained',
+    'card4.desc': 'Control plane and worker node internals: API server, scheduler, etcd, kubelet, and the add-on layer that turns a cluster into something you can run in production.',
+    'card5.title': 'Multimodal RAG: A Hands-On Guide to Learning from Documents',
+    'card5.desc': 'A working question-answering pipeline over visual documents with GPT-4o and ChromaDB, including retrieval evaluation, latency and what it costs to run.',
+    'card6.title': 'Effective Dashboard Design: Principles, Best Practices, and Examples',
+    'card6.desc': "A practitioner's guide to dashboards that actually communicate: layout principles, chart selection, information hierarchy, and real-world examples.",
+    'card7.title': 'Weights & Biases: A KDnuggets Crash Course',
+    'card7.desc': 'A hands-on tour of experiment tracking, model versioning and reproducibility with W&B, written for an independent audience rather than as vendor copy.',
+    'card8.title': 'Building End-to-End Data Pipelines: From Data Ingestion to Analysis',
+    'card8.desc': 'Designing pipelines that hold up: ingestion, storage, transformation, orchestration, and the analysis layer that sits on top of all of it.',
+    'card9.title': 'The art and science of data visualization',
+    'card9.desc': 'A deep dive into visualization theory: visual encodings, retinal vs spatial representations, and choosing the right chart for your data. Published in UX Collective.',
+    'work.label': 'How I work', 'work.title': 'Fixed monthly packages',
+    'work.sub': 'An agreed number of pieces for an agreed fee, so your budget and my calendar are both predictable.',
+    'work.i1': '3 to 5 pieces a month, 1,500 to 2,500 words each',
+    'work.i2': 'Research, draft, and two revision rounds included',
+    'work.i3': '10 working days from brief to final draft',
+    'work.i4': 'Three month minimum, so the voice has time to settle',
+    'work.i5': 'Written in English, Spanish or Catalan',
+    'work.i6': 'Invoiced in EUR, 30 days net',
     'contact.label': 'Get in touch', 'contact.title': 'Working with a limited number of clients.',
     'contact.email.label': 'Email directly',
     'contact.desc': "If you work at a data or AI company and need technical content your practitioners are proud to share. Tell me what you're building and what you need. I reply to every email."
@@ -385,30 +477,47 @@ const translations = {
     'hero.eyebrow': 'databites · Escritura Tecnica',
     'hero.h1': 'Escritura tecnica para empresas de datos e IA',
     'hero.sub': 'por alguien que realmente entiende el producto.',
-    'hero.desc': 'Soy cientifico de datos y practicante de ML escribiendo para W&B, DataCamp y UX Collective. Escribo para profesionales, la misma audiencia que lee mi newsletter cada semana.',
+    'hero.desc': 'Soy cientifico de datos y practicante de ML escribiendo para W&B, DataCamp, ClicData, KDnuggets y UX Collective. Escribo para profesionales, la misma audiencia que lee mi newsletter cada semana.',
     'hero.label1': 'impresiones, un solo post',
     'hero.label2': 'suscriptores al newsletter',
     'hero.label3': 'seguidores en X',
-    'hero.cta1': 'Contactame → rfeers@gmail.com',
+    'hero.cta1': 'Contactame → josep@databites.tech',
     'hero.cta2': 'Ver trabajo publicado ↓',
     'samples.label': 'Trabajo publicado',
     'samples.title': 'Muestras de escritura',
-    'samples.sub': 'Seis articulos en tres publicaciones. W&B para MLOps e ingenieria LLM. DataCamp para tutoriales y DataViz. UX Collective para teoria y diseno de visualizacion.',
-    'card.type.report': 'Informe', 'card.type.tutorial': 'Tutorial', 'card.type.essay': 'Ensayo · 601K lectores',
+    'samples.sub': 'Nueve articulos en cuatro publicaciones. W&B para MLOps e ingenieria LLM. DataCamp y KDnuggets para tutoriales, infraestructura, visualización de datos e ingenieria de datos. UX Collective para teoria de visualizacion.',
+    'samples.note': 'Estos son los articulos que llevan mi nombre. Tambien escribo sin firma para blogs de clientes, incluido un programa mensual con ClicData. Encantado de enviar mas ejemplos o comentarlos en una llamada.',
+    'card.type.report': 'Informe', 'card.type.tutorial': 'Tutorial', 'card.type.guide': 'Guia',
+    'card.type.crashcourse': 'Curso Express', 'card.type.essay': 'Ensayo · 601K lectores',
     'card.tag.advanced': 'Avanzado', 'card.tag.code': 'Codigo', 'card.tag.theory': 'Teoria',
-    'card.read.wb': 'Leer en W&B', 'card.read.dc': 'Leer en DataCamp', 'card.read.ux': 'Leer en UX Collective',
+    'card.read.wb': 'Leer en W&B', 'card.read.dc': 'Leer en DataCamp',
+    'card.read.kd': 'Leer en KDnuggets', 'card.read.ux': 'Leer en UX Collective',
     'card1.title': 'Evaluacion de LLMs: mas alla de BLEU y ROUGE',
     'card1.desc': 'La evaluacion moderna de LLMs va mucho mas alla de las metricas NLP tradicionales. Cubre marcos de evaluacion humana, jueces basados en modelos y benchmarks especificos para sistemas en produccion.',
     'card2.title': 'Linaje de datos para sistemas de IA y machine learning',
     'card2.desc': 'Como rastrear la procedencia de datos en pipelines de ML, desde fuentes brutas hasta salidas del modelo. Cubre herramientas de linaje, patrones de integracion y reproducibilidad.',
-    'card3.title': 'Como funcionan los Transformers: una exploracion detallada',
-    'card3.desc': 'Un recorrido completo por la arquitectura transformer: self-attention, codificacion posicional, estructura encoder-decoder, y por que reemplazo a las RNNs.',
-    'card4.title': 'Fine-Tuning de LLMs: una guia con ejemplos',
-    'card4.desc': 'Guia practica para ajustar modelos de lenguaje grandes. Cubre preparacion de datos, metodos PEFT y evaluacion, con ejemplos de codigo funcionales.',
-    'card5.title': 'Diseno efectivo de dashboards: principios, buenas practicas y ejemplos',
-    'card5.desc': 'Una guia para profesionales sobre dashboards que realmente comunican: principios de layout, seleccion de graficos, jerarquia de informacion y ejemplos reales.',
-    'card6.title': 'El arte y la ciencia de la visualizacion de datos',
-    'card6.desc': 'Un analisis profundo de la teoria de visualizacion: codificaciones visuales, representaciones retinales vs espaciales, y como elegir el grafico correcto. Publicado en UX Collective.',
+    'card3.title': 'Parsing de documentos en un solo paso para RAG con Unlimited-OCR y W&B Weave',
+    'card3.desc': 'Convertir documentos complejos en salida estructurada lista para recuperacion en una sola pasada, con Weave trazando cada paso para mantener el pipeline depurable en produccion.',
+    'card4.title': 'La arquitectura de Kubernetes explicada',
+    'card4.desc': 'Interioridades del control plane y los nodos worker: API server, scheduler, etcd, kubelet y la capa de add-ons que convierte un cluster en algo apto para produccion.',
+    'card5.title': 'RAG multimodal: una guia practica para aprender de documentos',
+    'card5.desc': 'Un pipeline funcional de preguntas y respuestas sobre documentos visuales con GPT-4o y ChromaDB, incluyendo evaluacion de recuperacion, latencia y coste real de ejecucion.',
+    'card6.title': 'Diseno efectivo de dashboards: principios, buenas practicas y ejemplos',
+    'card6.desc': 'Una guia para profesionales sobre dashboards que realmente comunican: principios de layout, seleccion de graficos, jerarquia de informacion y ejemplos reales.',
+    'card7.title': 'Weights & Biases: un curso express de KDnuggets',
+    'card7.desc': 'Un recorrido practico por el seguimiento de experimentos, el versionado de modelos y la reproducibilidad con W&B, escrito para una audiencia independiente y no como material de marca.',
+    'card8.title': 'Construir pipelines de datos de extremo a extremo: de la ingesta al analisis',
+    'card8.desc': 'Diseno de pipelines que aguantan: ingesta, almacenamiento, transformacion, orquestacion y la capa de analisis que se apoya en todo lo anterior.',
+    'card9.title': 'El arte y la ciencia de la visualizacion de datos',
+    'card9.desc': 'Un analisis profundo de la teoria de visualizacion: codificaciones visuales, representaciones retinales vs espaciales, y como elegir el grafico correcto. Publicado en UX Collective.',
+    'work.label': 'Como trabajo', 'work.title': 'Paquetes mensuales fijos',
+    'work.sub': 'Un numero acordado de piezas por una tarifa acordada, para que tu presupuesto y mi calendario sean predecibles.',
+    'work.i1': '3 a 5 piezas al mes, de 1.500 a 2.500 palabras cada una',
+    'work.i2': 'Investigacion, redaccion y dos rondas de revision incluidas',
+    'work.i3': '10 dias laborables desde el brief hasta la version final',
+    'work.i4': 'Minimo de tres meses, para que la voz tenga tiempo de asentarse',
+    'work.i5': 'Redaccion en ingles, espanol o catalan',
+    'work.i6': 'Facturacion en EUR o USD, 30 dias',
     'contact.label': 'Contacto', 'contact.title': 'Trabajando con un numero limitado de clientes.',
     'contact.email.label': 'Email directo',
     'contact.desc': 'Si trabajas en una empresa de datos o IA y necesitas contenido tecnico del que tus profesionales se enorgullezcan. Cuentame que estas construyendo y que necesitas. Respondo todos los emails.'
@@ -419,30 +528,47 @@ const translations = {
     'hero.eyebrow': 'databites · Escriptura Tecnica',
     'hero.h1': 'Escriptura tecnica per a empreses de dades i IA',
     'hero.sub': "per algu que realment enten el producte.",
-    'hero.desc': "Soc cientific de dades i practicant de ML escrivint per a W&B, DataCamp i UX Collective. Escric per a professionals, la mateixa audiencia que llegeix el meu newsletter cada setmana.",
+    'hero.desc': "Soc cientific de dades i practicant de ML escrivint per a W&B, DataCamp, ClicData, KDnuggets i UX Collective. Escric per a professionals, la mateixa audiencia que llegeix el meu newsletter cada setmana.",
     'hero.label1': 'impressions, una sola publicacio',
     'hero.label2': 'subscriptors al newsletter',
     'hero.label3': 'seguidors a X',
-    'hero.cta1': "Contacta'm → rfeers@gmail.com",
+    'hero.cta1': "Contacta'm → josep@databites.tech",
     'hero.cta2': 'Veure treball publicat ↓',
     'samples.label': 'Treball publicat',
     'samples.title': "Mostres d'escriptura",
-    'samples.sub': 'Sis articles en tres publicacions. W&B per a MLOps i enginyeria LLM. DataCamp per a tutorials i DataViz. UX Collective per a teoria i disseny de visualitzacio.',
-    'card.type.report': 'Informe', 'card.type.tutorial': 'Tutorial', 'card.type.essay': 'Assaig · 601K lectors',
+    'samples.sub': 'Nou articles en quatre publicacions. W&B per a MLOps i enginyeria LLM. DataCamp i KDnuggets per a tutorials, infraestructura, visualització de dades i enginyeria de dades. UX Collective per a teoria de visualitzacio.',
+    'samples.note': "Aquests son els articles que porten el meu nom. Tambe escric sense signatura per a blogs de clients, inclos un programa mensual amb ClicData. Encantat d'enviar mes exemples o comentar-los en una trucada.",
+    'card.type.report': 'Informe', 'card.type.tutorial': 'Tutorial', 'card.type.guide': 'Guia',
+    'card.type.crashcourse': 'Curs Express', 'card.type.essay': 'Assaig · 601K lectors',
     'card.tag.advanced': 'Avançat', 'card.tag.code': 'Codi', 'card.tag.theory': 'Teoria',
-    'card.read.wb': 'Llegir a W&B', 'card.read.dc': 'Llegir a DataCamp', 'card.read.ux': 'Llegir a UX Collective',
+    'card.read.wb': 'Llegir a W&B', 'card.read.dc': 'Llegir a DataCamp',
+    'card.read.kd': 'Llegir a KDnuggets', 'card.read.ux': 'Llegir a UX Collective',
     'card1.title': "Avaluacio de LLMs: mes enlla de BLEU i ROUGE",
     'card1.desc': "L'avaluacio moderna de LLMs va molt mes enlla de les metriques NLP tradicionals. Cobreix marcs d'avaluacio humana, jutges basats en models i benchmarks especifics per a sistemes en produccio.",
-    'card2.title': 'Llinatge de dades per a sistemes d\'IA i machine learning',
-    'card2.desc': 'Com rastrejar la procedencia de dades en pipelines de ML, des de fonts brutes fins a sortides del model. Cobreix eines de llinatge, patrons d\'integracio i reproduibilitat.',
-    'card3.title': 'Com funcionen els Transformers: una exploracio detallada',
-    'card3.desc': 'Un recorregut complet per l\'arquitectura transformer: self-attention, codificacio posicional, estructura encoder-decoder, i per que va substituir les RNNs.',
-    'card4.title': 'Fine-Tuning de LLMs: una guia amb exemples',
-    'card4.desc': 'Guia practica per ajustar models de llenguatge grans. Cobreix preparacio de dades, metodes PEFT i avaluacio, amb exemples de codi funcionals.',
-    'card5.title': 'Disseny efectiu de dashboards: principis, bones practiques i exemples',
-    'card5.desc': 'Una guia per a professionals sobre dashboards que realment comuniquen: principis de layout, seleccio de grafics, jerarquia d\'informacio i exemples reals.',
-    'card6.title': 'L\'art i la ciencia de la visualitzacio de dades',
-    'card6.desc': 'Una analisi profunda de la teoria de visualitzacio: codificacions visuals, representacions retinals vs espacials, i com triar el grafic correcte. Publicat a UX Collective.',
+    'card2.title': "Llinatge de dades per a sistemes d'IA i machine learning",
+    'card2.desc': "Com rastrejar la procedencia de dades en pipelines de ML, des de fonts brutes fins a sortides del model. Cobreix eines de llinatge, patrons d'integracio i reproduibilitat.",
+    'card3.title': "Parsing de documents en un sol pas per a RAG amb Unlimited-OCR i W&B Weave",
+    'card3.desc': "Convertir documents complexos en sortida estructurada llesta per a recuperacio en una sola passada, amb Weave tracant cada pas per mantenir el pipeline depurable en produccio.",
+    'card4.title': "L'arquitectura de Kubernetes explicada",
+    'card4.desc': "Interioritats del control plane i els nodes worker: API server, scheduler, etcd, kubelet i la capa d'add-ons que converteix un cluster en quelcom apte per a produccio.",
+    'card5.title': 'RAG multimodal: una guia practica per aprendre de documents',
+    'card5.desc': "Un pipeline funcional de preguntes i respostes sobre documents visuals amb GPT-4o i ChromaDB, incloent avaluacio de recuperacio, latencia i cost real d'execucio.",
+    'card6.title': 'Disseny efectiu de dashboards: principis, bones practiques i exemples',
+    'card6.desc': "Una guia per a professionals sobre dashboards que realment comuniquen: principis de layout, seleccio de grafics, jerarquia d'informacio i exemples reals.",
+    'card7.title': 'Weights & Biases: un curs express de KDnuggets',
+    'card7.desc': "Un recorregut practic pel seguiment d'experiments, el versionat de models i la reproduibilitat amb W&B, escrit per a una audiencia independent i no com a material de marca.",
+    'card8.title': "Construir pipelines de dades d'extrem a extrem: de la ingesta a l'analisi",
+    'card8.desc': "Disseny de pipelines que aguanten: ingesta, emmagatzematge, transformacio, orquestracio i la capa d'analisi que s'hi recolza a sobre.",
+    'card9.title': "L'art i la ciencia de la visualitzacio de dades",
+    'card9.desc': 'Una analisi profunda de la teoria de visualitzacio: codificacions visuals, representacions retinals vs espacials, i com triar el grafic correcte. Publicat a UX Collective.',
+    'work.label': 'Com treballo', 'work.title': 'Paquets mensuals fixos',
+    'work.sub': 'Un nombre acordat de peces per una tarifa acordada, perque el teu pressupost i el meu calendari siguin predictibles.',
+    'work.i1': '3 a 5 peces al mes, de 1.500 a 2.500 paraules cadascuna',
+    'work.i2': 'Recerca, redaccio i dues rondes de revisio incloses',
+    'work.i3': '10 dies laborables des del brief fins a la versio final',
+    'work.i4': "Minim de tres mesos, perque la veu tingui temps d'assentar-se",
+    'work.i5': 'Redaccio en angles, castella o catala',
+    'work.i6': 'Facturacio en EUR o USD, 30 dies',
     'contact.label': 'Contacte', 'contact.title': 'Treballant amb un nombre limitat de clients.',
     'contact.email.label': 'Email directe',
     'contact.desc': "Si treballes en una empresa de dades o IA i necessites contingut tecnic del qual els teus professionals s'enorgulleixin. Explica'm que estàs construint i que necessites. Respoc tots els emails."
@@ -458,6 +584,7 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.toLowerCase() === lang || (lang === 'ca' && btn.textContent === 'CAT'));
   });
+  document.documentElement.lang = lang;
   localStorage.setItem('lang', lang);
 }
 
