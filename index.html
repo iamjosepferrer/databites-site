@@ -8,6 +8,10 @@
 <meta property="og:title" content="DataBites — Josep Ferrer">
 <meta property="og:description" content="Data & AI, clearly explained through diagrams.">
 <meta property="og:url" content="https://databites.tech">
+<meta property="og:image" content="https://databites.tech/images/og-write.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://databites.tech/images/og-write.png">
+<link rel="canonical" href="https://databites.tech">
 <link rel="icon" type="image/png" href="images/databitestech_logo.png">
 <link rel="apple-touch-icon" href="images/databitestech_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -262,7 +266,9 @@ svg.mark-icon { display: block; }
   .portfolio-grid { grid-template-columns: 1fr 1fr; }
   .newsletter-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .nav-links { display: none; }
+  .nav-links { display: flex; gap: 0.75rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .lang-switch { margin-left: 0.25rem; }
   section { padding: 4rem 1.5rem; }
 }
 @media (max-width: 540px) {
@@ -340,18 +346,18 @@ svg.mark-icon { display: block; }
         <p data-i18n="about.p1">I'm a <strong>data scientist, educator, and technical writer</strong> from Barcelona and currently based in Rotterdam. I consult on <strong>Data Analytics, DataViz</strong> and <strong>AI</strong>, create content that makes complex AI and data concepts click, and teach data science to professionals and students worldwide.</p>
         <p data-i18n="about.p2">With a bachelor in Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF), I combine technical rigour with clear communication. If you need a Data Science project built, a data concept explained, a course designed, or technical articles written, I deliver work people can actually use.</p>
         <div class="creds">
-          <div class="cred">Data Scientist — NECSTouR (European project)</div>
-          <div class="cred">Associate Professor, Big Data Masters — Universidad de Navarra</div>
-          <div class="cred">Technical Writer — DataCamp, ClicData and &amp; Weights &amp; Biases (W&amp;B)</div>
-          <div class="cred">AI Course Lead — Emeritus / UNAV</div>
-          <div class="cred">Newsletter &amp; Articles — <a href="https://reads.databites.tech" target="_blank">reads.databites.tech</a></div>
+          <div class="cred" data-i18n="about.cred1">Data Scientist — NECSTouR (European project)</div>
+          <div class="cred" data-i18n="about.cred2">Associate Professor, Big Data Masters — Universidad de Navarra</div>
+          <div class="cred" data-i18n="about.cred3">Technical Writer — DataCamp, ClicData and Weights &amp; Biases (W&amp;B)</div>
+          <div class="cred" data-i18n="about.cred4">AI Course Lead — Emeritus / UNAV</div>
+          <div class="cred" data-i18n="about.cred5">Newsletter &amp; Articles — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a></div>
         </div>
         <div class="about-socials">
-          <a href="https://x.com/iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>X @iamjosepferrer</a>
-          <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>LinkedIn</a>
-          <a href="https://github.com/iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>GitHub</a>
-          <a href="https://substack.com/@iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>Substack 10k</a>
-          <a href="https://medium.com/@iamjosepferrer" target="_blank" class="social-pill"><span class="dot"></span>Medium 12k</a>
+          <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>X @iamjosepferrer</a>
+          <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>LinkedIn</a>
+          <a href="https://github.com/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>GitHub</a>
+          <a href="https://substack.com/@iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>Substack 10k</a>
+          <a href="https://medium.com/@iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>Medium 12k</a>
         </div>
       </div>
       <div class="about-photo-wrap">
@@ -380,7 +386,7 @@ svg.mark-icon { display: block; }
           <div class="service-item" data-i18n="services.learn.i3">Sponsorships available</div>
         </div>
         <div class="service-btn-wrap">
-          <a href="https://reads.databites.tech" target="_blank" class="btn-reach" data-i18n="services.learn.cta">Subscribe free →</a>
+          <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="btn-reach" data-i18n="services.learn.cta">Subscribe free →</a>
         </div>
       </div>
 
@@ -394,10 +400,10 @@ svg.mark-icon { display: block; }
         <div class="service-items">
           <div class="service-item" data-i18n="services.teach.i1">Conference & meetup talks</div>
           <div class="service-item" data-i18n="services.teach.i2">University course partnerships</div>
-          <div class="service-item" data-i18n="services.teach.i3">Online courses (english, spanish or catalan)</div>
+          <div class="service-item" data-i18n="services.teach.i3">Online courses (EN, ES, CAT)</div>
         </div>
         <div class="service-btn-wrap">
-          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Teach%20enquiry" class="btn-reach" data-i18n="services.teach.cta">Reach out →</a>
+          <a href="mailto:josep@databites.tech?subject=DataBites%20Teach%20enquiry" class="btn-reach" data-i18n="services.teach.cta">Reach out →</a>
         </div>
       </div>
 
@@ -414,7 +420,7 @@ svg.mark-icon { display: block; }
           <div class="service-item" data-i18n="services.consult.i3">Dashboard & report design</div>
         </div>
         <div class="service-btn-wrap">
-          <a href="mailto:rfeers@gmail.com?subject=DataBites%20Consult%20enquiry" class="btn-reach" data-i18n="services.consult.cta">Reach out →</a>
+          <a href="mailto:josep@databites.tech?subject=DataBites%20Consult%20enquiry" class="btn-reach" data-i18n="services.consult.cta">Reach out →</a>
         </div>
       </div>
 
@@ -486,11 +492,11 @@ svg.mark-icon { display: block; }
     <div class="newsletter-left">
       <div class="section-label" data-i18n="newsletter.label">Newsletter</div>
       <h2 class="section-title" data-i18n="newsletter.title">Read everything from me</h2>
-      <p class="nl-desc" data-i18n="newsletter.desc">Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a></p>
-      <a href="https://reads.databites.tech" target="_blank" class="btn-primary" style="display:inline-flex;margin-top:0.5rem" data-i18n="newsletter.cta">Subscribe free →</a>
+      <p class="nl-desc" data-i18n="newsletter.desc">Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a></p>
+      <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;margin-top:0.5rem" data-i18n="newsletter.cta">Subscribe free →</a>
     </div>
     <div class="newsletter-right">
-      <!-- Latest 3 issues pulled live from the Substack RSS feed -->
+      <!-- Latest issues pulled live from the Substack RSS feed -->
       <div class="nl-list" id="nl-list">
         <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
         <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
@@ -508,7 +514,7 @@ svg.mark-icon { display: block; }
     <h2 class="section-title" data-i18n="portfolio.title">Projects & work</h2>
     <p class="section-sub" data-i18n="portfolio.sub">Real DataViz projects — built, shipped, and public. See the full portfolio at <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a></p>
     <div class="portfolio-grid" id="portfolio-grid"></div>
-    <div class="portfolio-cta"><a href="https://projects.databites.tech" target="_blank" class="btn-secondary" data-i18n="portfolio.seeAll">See all projects →</a></div>
+    <div class="portfolio-cta"><a href="https://projects.databites.tech" target="_blank" rel="noopener" class="btn-secondary" data-i18n="portfolio.seeAll">See all projects →</a></div>
   </div>
 </section>
 
@@ -519,27 +525,27 @@ svg.mark-icon { display: block; }
     <div class="contact-grid">
       <div>
         <div class="contact-email-label" data-i18n="contact.emailLabel">Email</div>
-        <a href="mailto:rfeers@gmail.com" class="contact-email">rfeers@gmail.com</a>
+        <a href="mailto:josep@databites.tech" class="contact-email">josep@databites.tech</a>
         <p class="contact-desc" data-i18n="contact.desc">If you have a DataViz project, a speaking opportunity, a course partnership, or a sponsorship proposal — get in touch directly. I read every email.</p>
       </div>
       <div class="contact-links">
-        <a href="https://x.com/iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">X / Twitter</div><div class="cl-handle">@iamjosepferrer</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">30k followers</div><div class="cl-arrow">→</div></div>
         </a>
-        <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">LinkedIn</div><div class="cl-handle">iamjosepferrer</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">8k followers</div><div class="cl-arrow">→</div></div>
         </a>
-        <a href="https://substack.com/@iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://substack.com/@iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">Substack</div><div class="cl-handle">@iamjosepferrer</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">10k subscribers</div><div class="cl-arrow">→</div></div>
         </a>
-        <a href="https://github.com/iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://github.com/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">GitHub</div><div class="cl-handle">@iamjosepferrer</div></div></div>
           <div class="cl-arrow">→</div>
         </a>
-        <a href="https://medium.com/@iamjosepferrer" target="_blank" class="contact-link">
+        <a href="https://medium.com/@iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">Medium</div><div class="cl-handle">@iamjosepferrer</div></div></div>
           <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">13k followers</div><div class="cl-arrow">→</div></div>
         </a>
@@ -631,18 +637,24 @@ const translations = {
     'about.label': 'About', 'about.title': 'A practitioner who shows his work',
     'about.p1': 'I\'m a <strong>data scientist, educator, and technical writer</strong> from Barcelona and currently based in Rotterdam. I consult on <strong>Data Analytics, DataViz</strong> and <strong>AI</strong>, create content that makes complex AI and data concepts click, and teach data science to professionals and students worldwide.',
     'about.p2': 'With a bachelor in Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF), I combine technical rigour with clear communication. If you need a Data Science project built, a data concept explained, a course designed, or technical articles written, I deliver work people can actually use.',
+    'about.cred1': 'Data Scientist — NECSTouR (European project)',
+    'about.cred2': 'Associate Professor, Big Data Masters — Universidad de Navarra',
+    'about.cred3': 'Technical Writer — DataCamp, ClicData and Weights &amp; Biases (W&amp;B)',
+    'about.cred4': 'AI Course Lead — Emeritus / UNAV',
+    'about.cred5': 'Newsletter &amp; Articles — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a>',
     'trusted.t1': 'trusted', 'trusted.t2': 'by teams',
     'trusted.desc': 'I\'ve worked with research institutes, education organisations, international projects, and data companies across Europe and beyond.',
+    'services.label': 'Services', 'services.title': 'How we can work together',
     'services.learn.desc': 'Weekly diagrams, threads, and a newsletter reaching 10k+ data professionals. The content engine that everything else flows from.',
     'services.learn.i1': 'Weekly diagram (X + LinkedIn)', 'services.learn.i2': 'Newsletter at reads.databites.tech', 'services.learn.i3': 'Sponsorships available', 'services.learn.cta': 'Subscribe free →',
     'services.consult.desc': 'Bespoke Data Analytics, DataViz or AI projects, data storytelling workshops, and training programs for teams.',
     'services.consult.i1': 'Bespoke Data Science projects', 'services.consult.i2': 'Data storytelling workshops', 'services.consult.i3': 'Dashboard & report design', 'services.consult.cta': 'Reach out →',
     'services.teach.desc': 'University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.',
-    'services.teach.i1': 'Conference & meetup talks', 'services.teach.i2': 'University course partnerships', 'services.teach.i3': 'Online courses (EN + ES)', 'services.teach.cta': 'Reach out →',
+    'services.teach.i1': 'Conference & meetup talks', 'services.teach.i2': 'University course partnerships', 'services.teach.i3': 'Online courses (EN, ES, CAT)', 'services.teach.cta': 'Reach out →',
     'services.write.desc': 'Freelance technical writing for data and AI companies. Articles, tutorials, and documentation that are precise, visual-first, and actually useful.',
     'services.write.i1': 'Technical tutorials & how-tos', 'services.write.i2': 'AI/ML concept explainers', 'services.write.i3': 'Documentation & developer guides', 'services.write.cta': 'See writing portfolio →',
     'newsletter.label': 'Newsletter', 'newsletter.title': 'Read everything from me',
-    'newsletter.desc': 'Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
+    'newsletter.desc': 'Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
     'newsletter.cta': 'Subscribe free →',
     'portfolio.label': 'Portfolio', 'portfolio.title': 'Projects & work',
     'portfolio.sub': 'Real DataViz projects — built, shipped, and public. See the full portfolio at <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a>',
@@ -675,6 +687,11 @@ const translations = {
     'about.label': 'Sobre mí', 'about.title': 'Un profesional que muestra su trabajo',
     'about.p1': 'Soy <strong>científico de datos, educador y escritor técnico</strong> de Barcelona, actualmente en Rotterdam. Consulto sobre <strong>Data Analytics, DataViz</strong> e <strong>IA</strong>, creo contenido que hace que conceptos complejos de datos e IA sean comprensibles, y enseño ciencia de datos a profesionales y estudiantes en todo el mundo.',
     'about.p2': 'Con un grado en Física de Ingeniería (UPC) y un máster en Sistemas Interactivos Inteligentes (UPF), combino profundidad técnica con comunicación clara. Si necesitas un proyecto de Data Science, un concepto explicado, un curso diseñado o artículos técnicos escritos, entrego trabajo que la gente puede usar.',
+    'about.cred1': 'Científico de Datos — NECSTouR (proyecto europeo)',
+    'about.cred2': 'Profesor Asociado, Máster en Big Data — Universidad de Navarra',
+    'about.cred3': 'Escritor Técnico — DataCamp, ClicData y Weights &amp; Biases (W&amp;B)',
+    'about.cred4': 'Responsable de Curso de IA — Emeritus / UNAV',
+    'about.cred5': 'Newsletter y Artículos — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a>',
     'trusted.t1': 'confianza', 'trusted.t2': 'de equipos',
     'trusted.desc': 'He trabajado con institutos de investigación, organizaciones educativas, proyectos internacionales y empresas de datos en Europa y más allá.',
     'services.label': 'Servicios', 'services.title': 'Cómo podemos trabajar juntos',
@@ -683,11 +700,11 @@ const translations = {
     'services.consult.desc': 'Proyectos de Data Analytics, DataViz o IA a medida, talleres de storytelling de datos y programas de formación para equipos.',
     'services.consult.i1': 'Proyectos de Data Science a medida', 'services.consult.i2': 'Talleres de storytelling de datos', 'services.consult.i3': 'Diseño de dashboards e informes', 'services.consult.cta': 'Contáctame →',
     'services.teach.desc': 'Asociaciones universitarias, cursos online, charlas en conferencias y acuerdos de embajador de marca. La capa de credibilidad institucional.',
-    'services.teach.i1': 'Charlas en conferencias y meetups', 'services.teach.i2': 'Asociaciones con cursos universitarios', 'services.teach.i3': 'Cursos online (EN + ES)', 'services.teach.cta': 'Contáctame →',
+    'services.teach.i1': 'Charlas en conferencias y meetups', 'services.teach.i2': 'Asociaciones con cursos universitarios', 'services.teach.i3': 'Cursos online (EN, ES, CAT)', 'services.teach.cta': 'Contáctame →',
     'services.write.desc': 'Escritura técnica freelance para empresas de datos e IA. Artículos, tutoriales y documentación precisos, visuales y realmente útiles.',
     'services.write.i1': 'Tutoriales técnicos y guías', 'services.write.i2': 'Explainers de conceptos de IA/ML', 'services.write.i3': 'Documentación y guías para desarrolladores', 'services.write.cta': 'Ver portfolio de escritura →',
     'newsletter.label': 'Newsletter', 'newsletter.title': 'Lee todo lo que publico',
-    'newsletter.desc': 'Conceptos de datos e IA, <strong>explicados claramente con diagramas</strong>. Construido, escrito y publicado cada semana. Lee la newsletter en <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
+    'newsletter.desc': 'Conceptos de datos e IA, <strong>explicados claramente con diagramas</strong>. Construido, escrito y publicado cada semana. Lee la newsletter en <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
     'newsletter.cta': 'Suscríbete gratis →',
     'portfolio.label': 'Portfolio', 'portfolio.title': 'Proyectos y trabajo',
     'portfolio.sub': 'Proyectos reales de DataViz — construidos, publicados y disponibles. Ve el portfolio completo en <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a>',
@@ -720,6 +737,11 @@ const translations = {
     'about.label': 'Sobre mi', 'about.title': 'Un professional que mostra el seu treball',
     'about.p1': 'Soc <strong>científic de dades, educador i escriptor tècnic</strong> de Barcelona, actualment a Rotterdam. Consulto sobre <strong>Data Analytics, DataViz</strong> i <strong>IA</strong>, creo contingut que fa que conceptes complexos de dades i IA siguin comprensibles, i ensenyo ciència de dades a professionals i estudiants arreu del món.',
     'about.p2': 'Amb un grau en Física de l\'Enginyeria (UPC) i un màster en Sistemes Interactius Intel·ligents (UPF), combino profunditat tècnica amb comunicació clara. Si necessites un projecte de Data Science, un concepte explicat, un curs dissenyat o articles tècnics escrits, lliuro feina que la gent pot usar.',
+    'about.cred1': 'Científic de Dades — NECSTouR (projecte europeu)',
+    'about.cred2': 'Professor Associat, Màster en Big Data — Universidad de Navarra',
+    'about.cred3': 'Escriptor Tècnic — DataCamp, ClicData i Weights &amp; Biases (W&amp;B)',
+    'about.cred4': 'Responsable de Curs d\'IA — Emeritus / UNAV',
+    'about.cred5': 'Newsletter i Articles — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a>',
     'trusted.t1': 'confiança', 'trusted.t2': 'd\'equips',
     'trusted.desc': 'He treballat amb instituts de recerca, organitzacions educatives, projectes internacionals i empreses de dades a Europa i més enllà.',
     'services.label': 'Serveis', 'services.title': 'Com podem treballar junts',
@@ -728,11 +750,11 @@ const translations = {
     'services.consult.desc': 'Projectes de Data Analytics, DataViz o IA a mida, tallers de storytelling de dades i programes de formació per a equips.',
     'services.consult.i1': 'Projectes de Data Science a mida', 'services.consult.i2': 'Tallers de storytelling de dades', 'services.consult.i3': 'Disseny de dashboards i informes', 'services.consult.cta': 'Contacta\'m →',
     'services.teach.desc': 'Associacions universitàries, cursos online, xerrades a conferències i acords d\'ambaixador de marca. La capa de credibilitat institucional.',
-    'services.teach.i1': 'Xerrades a conferències i meetups', 'services.teach.i2': 'Associacions amb cursos universitaris', 'services.teach.i3': 'Cursos online (EN + ES)', 'services.teach.cta': 'Contacta\'m →',
+    'services.teach.i1': 'Xerrades a conferències i meetups', 'services.teach.i2': 'Associacions amb cursos universitaris', 'services.teach.i3': 'Cursos online (EN, ES, CAT)', 'services.teach.cta': 'Contacta\'m →',
     'services.write.desc': 'Escriptura tècnica freelance per a empreses de dades i IA. Articles, tutorials i documentació precisos, visuals i realment útils.',
     'services.write.i1': 'Tutorials tècnics i guies', 'services.write.i2': 'Explicadors de conceptes d\'IA/ML', 'services.write.i3': 'Documentació i guies per a desenvolupadors', 'services.write.cta': 'Veure portfolio d\'escriptura →',
     'newsletter.label': 'Newsletter', 'newsletter.title': 'Llegeix tot el que publico',
-    'newsletter.desc': 'Conceptes de dades i IA, <strong>clarament explicats amb diagrames</strong>. Construït, escrit i publicat cada setmana. Llegeix la newsletter a <a href="https://reads.databites.tech" target="_blank" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
+    'newsletter.desc': 'Conceptes de dades i IA, <strong>clarament explicats amb diagrames</strong>. Construït, escrit i publicat cada setmana. Llegeix la newsletter a <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
     'newsletter.cta': 'Subscriu-te gratis →',
     'portfolio.label': 'Portfolio', 'portfolio.title': 'Projectes i treball',
     'portfolio.sub': 'Projectes reals de DataViz — construïts, publicats i disponibles. Veu el portfolio complet a <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a>',
@@ -779,6 +801,7 @@ function setLang(lang) {
   });
 
   // Store preference
+  document.documentElement.lang = lang;
   localStorage.setItem('lang', lang);
   loadPortfolioPreview();
 }
@@ -821,7 +844,7 @@ function T(key) {
 })();
 </script>
 <script>
-// ── LIVE SUBSTACK — LATEST 3 ISSUES (with covers) ─────
+// ── LIVE SUBSTACK — LATEST ISSUES (with covers) ─────
 (function () {
   const list = document.getElementById('nl-list');
   if (!list) return;
