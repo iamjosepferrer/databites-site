@@ -889,14 +889,33 @@ function T(key) {
       </a>`;
   }
 
+  // Parse the Substack RSS feed directly. /substack-feed is a same-origin
+  // rewrite to https://reads.databites.tech/feed (see vercel.json), so no
+  // third-party converter and no CORS problem.
+  function parseFeed(xmlText) {
+    const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
+    if (doc.querySelector('parsererror')) throw new Error('Invalid RSS');
+    const text = (el, sel) => { const n = el.querySelector(sel); return n ? n.textContent.trim() : ''; };
+    return Array.from(doc.querySelectorAll('item')).map(it => {
+      const enc = it.querySelector('enclosure');
+      const encoded = it.getElementsByTagNameNS('*', 'encoded')[0];
+      return {
+        title: text(it, 'title'),
+        link: text(it, 'link'),
+        pubDate: text(it, 'pubDate'),
+        thumbnail: enc && /^image\//.test(enc.getAttribute('type') || '') ? enc.getAttribute('url') : '',
+        content: encoded ? encoded.textContent : text(it, 'description')
+      };
+    });
+  }
+
   (async function () {
     try {
-      const RSS_URL = 'https://reads.databites.tech/feed';
-      const API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(RSS_URL);
-      const res = await fetch(API, { signal: AbortSignal.timeout(6000) });
-      const data = await res.json();
-      if (data.status !== 'ok' || !data.items || !data.items.length) { fallback(); return; }
-      list.innerHTML = data.items.slice(0, 5).map(card).join('');
+      const res = await fetch('/substack-feed', { signal: AbortSignal.timeout(6000) });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const items = parseFeed(await res.text());
+      if (!items.length) { fallback(); return; }
+      list.innerHTML = items.slice(0, 5).map(card).join('');
     } catch (e) {
       console.error('Substack feed load failed:', e);
       fallback();

@@ -2,7 +2,17 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/write", "destination": "/write.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/substack-feed",
+      "destination": "https://reads.databites.tech/feed"
+    },
+    {
+      "source": "/write",
+      "destination": "/write.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
