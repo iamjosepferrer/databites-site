@@ -136,6 +136,24 @@ section { padding: 5rem clamp(2rem, 5vw, 6rem); }
 @media (max-width: 700px) { .work-grid { grid-template-columns: 1fr; } }
 
 /* CONTACT */
+.how-title { font-family: var(--f-d); font-weight: 800; font-size: 1.375rem; color: var(--forest); margin-top: 3rem; }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1.5rem; counter-reset: step; }
+.step { counter-increment: step; position: relative; padding-top: 2.75rem; min-width: 0; }
+.step::before { content: counter(step); position: absolute; top: 0; left: 0; width: 2rem; height: 2rem; border-radius: 50%; background: var(--forest); color: var(--cream); font-family: var(--f-m); font-weight: 700; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+.step::after { content: ''; position: absolute; top: 1rem; left: 2.5rem; right: -1rem; height: 1px; background: var(--rule); }
+.step:last-child::after { display: none; }
+.step-title { font-family: var(--f-d); font-weight: 800; font-size: 1.125rem; color: var(--forest); margin-bottom: 0.375rem; }
+.step-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+.work-cta { margin-top: 2.5rem; }
+.btn-dark { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--forest); color: var(--cream); font-family: var(--f-b); font-size: 0.9375rem; font-weight: 700; padding: 0.75rem 1.5rem; border-radius: 8px; transition: background .15s; }
+.btn-dark:hover { background: var(--green); }
+.contact-actions { margin-top: 1.5rem; }
+.contact-form select { font: inherit; font-size: 0.9375rem; color: var(--forest); background: var(--cream); border: 1px solid transparent; border-radius: 8px; padding: 0.65rem 0.75rem; width: 100%; }
+@media (max-width: 900px) { .steps { grid-template-columns: 1fr; } .step::after { display: none; } }
+.contact-box { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 1.5rem; background: rgba(255,255,255,0.04); }
+.contact-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1.25rem; }
+.contact-box li { font-size: 0.875rem; color: var(--mint); line-height: 1.55; display: flex; gap: 0.625rem; }
+.contact-box li::before { content: '→'; font-family: var(--f-m); font-weight: 600; color: var(--bright); flex-shrink: 0; }
 #contact { background: var(--forest); }
 #contact .section-label { color: var(--mint); opacity: 0.65; }
 #contact .section-label::after { background: rgba(255,255,255,0.12); }
@@ -195,7 +213,7 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
       <a href="/write" data-nav="writing" class="active">Writing</a>
       <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="nav">Newsletter</a>
     </div>
-    <a href="/work-with-me#contact" class="nav-cta" data-umami-event="contact-click" data-umami-event-location="nav" data-nav="contact">Get in touch</a>
+    <a href="#contact" class="nav-cta" data-umami-event="contact-click" data-umami-event-location="nav" data-nav="contact">Get in touch</a>
     <div class="lang-switch">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
@@ -228,7 +246,7 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
         </div>
       </div>
       <div class="hero-cta">
-        <a href="mailto:josep@databites.tech?subject=Technical%20writing%20enquiry" class="btn-reach" data-umami-event="email-click" data-umami-event-location="write-hero" data-i18n="hero.cta1">Reach out → josep@databites.tech</a>
+        <a href="#contact" class="btn-reach" data-umami-event="hero-cta" data-umami-event-location="write" data-i18n="hero.cta1">Tell me what you need →</a>
         <a href="#samples" class="btn-ghost" data-i18n="hero.cta2">See published work ↓</a>
       </div>
     </div>
@@ -405,11 +423,18 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
     <div class="work-grid">
       <div class="work-item"><span class="work-text" data-i18n="work.i1">2 to 5 pieces a month, 1,500 to 2,500 words each</span></div>
       <div class="work-item"><span class="work-text" data-i18n="work.i2">Research, draft, and two revision rounds included</span></div>
-      <div class="work-item"><span class="work-text" data-i18n="work.i3">10 working days from brief to final draft</span></div>
+      <div class="work-item"><span class="work-text" data-i18n="work.i3">Delivery dates agreed when we set the package</span></div>
       <div class="work-item"><span class="work-text" data-i18n="work.i4">Three month minimum, so the voice has time to settle</span></div>
       <div class="work-item"><span class="work-text" data-i18n="work.i5">Written in English, Spanish or Catalan</span></div>
       <div class="work-item"><span class="work-text" data-i18n="work.i6">Invoiced in EUR or USD, 30 days net</span></div>
     </div>
+    <h3 class="how-title" data-i18n="how.title">How it works</h3>
+    <ol class="steps">
+      <li class="step"><h4 class="step-title" data-i18n="how.1.t">You tell me what you need</h4><p class="step-desc" data-i18n="how.1.d">Topics, audience and how many pieces a month.</p></li>
+      <li class="step"><h4 class="step-title" data-i18n="how.2.t">We agree the package</h4><p class="step-desc" data-i18n="how.2.d">Pieces per month, deadlines and price.</p></li>
+      <li class="step"><h4 class="step-title" data-i18n="how.3.t">I become your external technical writer</h4><p class="step-desc" data-i18n="how.3.d">I deliver every month, with two revision rounds per piece. You publish with or without my byline.</p></li>
+    </ol>
+    <div class="work-cta"><a href="#contact" class="btn-dark" data-umami-event="ask-click" data-umami-event-topic="writing" data-i18n="hero.cta1">Tell me what you need →</a></div>
   </div>
 </section>
 
@@ -417,26 +442,32 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
 <section id="contact">
   <div class="inner">
     <div class="section-label" data-i18n="contact.label">Get in touch</div>
-    <h2 class="section-title" data-i18n="contact.title">Working with a limited number of clients.</h2>
+    <h2 class="section-title" data-i18n="contact.title">Tell me what you need.</h2>
     <div class="contact-grid">
       <div>
-        <div class="contact-email-label" data-i18n="contact.email.label">Email directly</div>
-        <a href="mailto:josep@databites.tech?subject=Technical%20writing%20enquiry" class="contact-email" data-umami-event="email-click" data-umami-event-location="write-contact">josep@databites.tech</a><button type="button" class="copy-btn" data-copy="josep@databites.tech">Copy</button>
-        <p class="contact-desc" data-i18n="contact.desc">If you work at a data or AI company and need technical content your practitioners are proud to share. Tell me what you're building and what you need. I reply within 2 business days.</p>
+        <p class="contact-desc" data-i18n="contact.desc">Use the form or email me. I reply within 2 business days.</p>
+        <div style="margin-top:1.75rem;">
+          <div class="contact-email-label" data-i18n="contact.email.label">Email</div>
+          <a href="mailto:josep@databites.tech?subject=Technical%20writing" class="contact-email" data-umami-event="email-click" data-umami-event-location="write-contact">josep@databites.tech</a><button type="button" class="copy-btn" data-copy="josep@databites.tech">Copy</button>
+        </div>
+        <div class="contact-actions"><a href="#" class="btn-ghost js-book" data-book-only data-umami-event="book-call" data-umami-event-location="write-contact" data-i18n="contact.book">Or book a 20 min video call →</a></div>
       </div>
-      <div class="contact-links">
-        <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
-          <div class="cl-left"><div><div class="cl-platform">X / Twitter</div><div class="cl-handle">@iamjosepferrer</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat"><span data-audience="x">26k</span> followers</div><div class="cl-arrow">→</div></div>
-        </a>
-        <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
-          <div class="cl-left"><div><div class="cl-platform">LinkedIn</div><div class="cl-handle">iamjosepferrer</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat"><span data-audience="linkedin">10k</span> followers</div><div class="cl-arrow">→</div></div>
-        </a>
-        <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="contact-link">
-          <div class="cl-left"><div><div class="cl-platform">Newsletter</div><div class="cl-handle">reads.databites.tech</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat"><span data-audience="newsletter">10k</span> subscribers</div><div class="cl-arrow">→</div></div>
-        </a>
+      <div class="contact-box">
+        <form id="contact-form" class="contact-form"
+          data-ok="Thanks, your message is on its way. I reply within 2 business days." data-ok-es="Gracias, tu mensaje está en camino. Respondo en 2 días laborables." data-ok-ca="Gràcies, el teu missatge està en camí. Responc en 2 dies feiners."
+          data-err="That didn't send. Please email josep@databites.tech instead." data-err-es="No se ha podido enviar. Escríbeme a josep@databites.tech." data-err-ca="No s'ha pogut enviar. Escriu-me a josep@databites.tech.">
+          <label><span data-i18n="form.topic">I'm interested in</span><select id="f-topic" name="topic">
+            <option value="project" data-i18n="opt.project">A data project</option><option value="training" data-i18n="opt.training">A workshop, webinar or talk</option><option value="sponsorship" data-i18n="opt.sponsorship">Sponsorship</option><option value="writing" data-i18n="opt.writing" selected>Technical writing</option><option value="other" data-i18n="opt.other">Something else</option></select></label>
+          <div class="row">
+            <label><span data-i18n="form.name">Name</span><input id="f-name" name="name" type="text" autocomplete="name" required></label>
+            <label><span data-i18n="form.email">Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label><span data-i18n="form.org">Organisation</span><input id="f-org" name="organisation" type="text" autocomplete="organization"></label>
+          <label><span data-i18n="form.msg">What do you need?</span><textarea id="f-msg" name="message" required></textarea></label>
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+          <button type="submit" data-i18n="form.send">Send message</button>
+          <div class="form-status" role="status"></div>
+        </form>
       </div>
     </div>
   </div>
@@ -463,157 +494,259 @@ footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2
 <script>
 const translations = {
   en: {
-    'nav.home': 'Home', 'nav.about': 'About', 'nav.services': 'Services',
-    'nav.portfolio': 'Portfolio', 'nav.writing': 'Writing', 'nav.cta': 'Get in touch', 'nav.work': 'Work with me',
-    'hero.eyebrow': 'databites · Technical Writing',
-    'hero.h1': 'Technical writing for data & AI companies',
-    'hero.sub': "by someone who understands the product.",
-    'hero.desc': "I'm a data scientist and ML practitioner writing for W&B, DataCamp, KDnuggets and UX Collective among others. I write for practitioners, the same audience reading my newsletter every week.",
-    'hero.label1': 'impressions, single post',
-    'hero.label2': 'newsletter subscribers',
-    'hero.label3': 'X followers',
-    'hero.cta1': 'Reach out → josep@databites.tech',
-    'hero.cta2': 'See published work ↓',
-    'samples.label': 'Published work',
-    'samples.title': 'Writing samples',
-    'samples.sub': 'Nine pieces across four publications. W&B for MLOps and LLM engineering. DataCamp and KDnuggets for tutorials, infrastructure and data engineering. UX Collective for visualization theory.',
-    'samples.note': 'These are the pieces that carry my name. I also write unbylined for client blogs, including retained monthly work for BI, analytics and AI companies. Happy to walk through specific work on a call.',
-    'card.type.report': 'Report', 'card.type.tutorial': 'Tutorial', 'card.type.guide': 'Guide',
-    'card.type.crashcourse': 'Crash Course', 'card.type.essay': 'Essay · 601K readers',
-    'card.tag.advanced': 'Advanced', 'card.tag.code': 'Code', 'card.tag.theory': 'Theory',
-    'card.read.wb': 'Read on W&B', 'card.read.dc': 'Read on DataCamp',
-    'card.read.kd': 'Read on KDnuggets', 'card.read.ux': 'Read on UX Collective',
-    'card1.title': 'LLM evaluation benchmarking: Beyond BLEU and ROUGE',
-    'card1.desc': "How to evaluate LLMs when BLEU and ROUGE fall short: human evaluation frameworks, model-based judges and task-specific benchmarks for production systems.",
-    'card2.title': 'Data lineage for AI and machine learning systems',
-    'card2.desc': 'How to track data provenance across ML pipelines, from raw sources to model outputs. Covers lineage tools, integration patterns, and reproducibility at scale.',
-    'card3.title': 'One-shot document parsing for RAG with Unlimited-OCR and W&B Weave',
-    'card3.desc': 'Turning messy documents into retrieval-ready structured output in a single pass, with Weave tracing every step so the pipeline stays debuggable in production.',
-    'card4.title': 'Kubernetes Architecture Explained',
-    'card4.desc': 'Control plane and worker node internals: API server, scheduler, etcd, kubelet, and the add-on layer that turns a cluster into something you can run in production.',
-    'card5.title': 'Multimodal RAG: A Hands-On Guide to Learning from Documents',
-    'card5.desc': 'A working question-answering pipeline over visual documents with GPT-4o and ChromaDB, including retrieval evaluation, latency and what it costs to run.',
-    'card6.title': 'Effective Dashboard Design: Principles, Best Practices, and Examples',
-    'card6.desc': "A practitioner's guide to dashboards people can read: layout, chart selection, information hierarchy and real examples.",
-    'card7.title': 'Weights & Biases: A KDnuggets Crash Course',
-    'card7.desc': 'A hands-on tour of experiment tracking, model versioning and reproducibility with W&B, written for an independent audience rather than as vendor copy.',
-    'card8.title': 'Building End-to-End Data Pipelines: From Data Ingestion to Analysis',
-    'card8.desc': 'Designing pipelines that hold up: ingestion, storage, transformation, orchestration, and the analysis layer that sits on top of all of it.',
-    'card9.title': 'The art and science of data visualization',
-    'card9.desc': "A long read on visualization theory: visual encodings, retinal vs spatial representations, and choosing the right chart for your data. Published in UX Collective.",
-    'work.label': 'How I work', 'work.title': 'Fixed monthly packages',
-    'work.sub': 'An agreed number of pieces for an agreed fee, so your budget and my calendar are both predictable.',
-    'work.i1': '2 to 5 pieces a month, 1,500 to 2,500 words each',
-    'work.i2': 'Research, draft, and two revision rounds included',
-    'work.i3': '10 working days from brief to final draft',
-    'work.i4': 'Three month minimum, so the voice has time to settle',
-    'work.i5': 'Written in English, Spanish or Catalan',
-    'work.i6': 'Invoiced in EUR or USD, 30 days net',
-    'contact.label': 'Get in touch', 'contact.title': 'Working with a limited number of clients.',
-    'contact.email.label': 'Email directly', 'quotes.label': 'What clients say',
-    'contact.desc': "If you work at a data or AI company and need technical content your practitioners are proud to share. Tell me what you're building and what you need. I reply within 2 business days."
+    "nav.home": "Home",
+    "nav.about": "About",
+    "nav.services": "Services",
+    "nav.portfolio": "Portfolio",
+    "nav.writing": "Writing",
+    "nav.cta": "Get in touch",
+    "nav.work": "Work with me",
+    "hero.eyebrow": "databites · Technical Writing",
+    "hero.h1": "Technical writing for data & AI companies",
+    "hero.sub": "by someone who understands the product.",
+    "hero.desc": "I'm a data scientist and ML practitioner writing for W&B, DataCamp, KDnuggets and UX Collective among others. I write for practitioners, the same audience reading my newsletter every week.",
+    "hero.label1": "impressions, single post",
+    "hero.label2": "newsletter subscribers",
+    "hero.label3": "X followers",
+    "hero.cta1": "Tell me what you need →",
+    "hero.cta2": "See published work ↓",
+    "samples.label": "Published work",
+    "samples.title": "Writing samples",
+    "samples.sub": "Nine pieces across four publications. W&B for MLOps and LLM engineering. DataCamp and KDnuggets for tutorials, infrastructure and data engineering. UX Collective for visualization theory.",
+    "samples.note": "These are the pieces that carry my name. I also write unbylined for client blogs, including retained monthly work for BI, analytics and AI companies. Happy to walk through specific work on a call.",
+    "card.type.report": "Report",
+    "card.type.tutorial": "Tutorial",
+    "card.type.guide": "Guide",
+    "card.type.crashcourse": "Crash Course",
+    "card.type.essay": "Essay · 601K readers",
+    "card.tag.advanced": "Advanced",
+    "card.tag.code": "Code",
+    "card.tag.theory": "Theory",
+    "card.read.wb": "Read on W&B",
+    "card.read.dc": "Read on DataCamp",
+    "card.read.kd": "Read on KDnuggets",
+    "card.read.ux": "Read on UX Collective",
+    "card1.title": "LLM evaluation benchmarking: Beyond BLEU and ROUGE",
+    "card1.desc": "How to evaluate LLMs when BLEU and ROUGE fall short: human evaluation frameworks, model-based judges and task-specific benchmarks for production systems.",
+    "card2.title": "Data lineage for AI and machine learning systems",
+    "card2.desc": "How to track data provenance across ML pipelines, from raw sources to model outputs. Covers lineage tools, integration patterns, and reproducibility at scale.",
+    "card3.title": "One-shot document parsing for RAG with Unlimited-OCR and W&B Weave",
+    "card3.desc": "Turning messy documents into retrieval-ready structured output in a single pass, with Weave tracing every step so the pipeline stays debuggable in production.",
+    "card4.title": "Kubernetes Architecture Explained",
+    "card4.desc": "Control plane and worker node internals: API server, scheduler, etcd, kubelet, and the add-on layer that turns a cluster into something you can run in production.",
+    "card5.title": "Multimodal RAG: A Hands-On Guide to Learning from Documents",
+    "card5.desc": "A working question-answering pipeline over visual documents with GPT-4o and ChromaDB, including retrieval evaluation, latency and what it costs to run.",
+    "card6.title": "Effective Dashboard Design: Principles, Best Practices, and Examples",
+    "card6.desc": "A practitioner's guide to dashboards people can read: layout, chart selection, information hierarchy and real examples.",
+    "card7.title": "Weights & Biases: A KDnuggets Crash Course",
+    "card7.desc": "A hands-on tour of experiment tracking, model versioning and reproducibility with W&B, written for an independent audience rather than as vendor copy.",
+    "card8.title": "Building End-to-End Data Pipelines: From Data Ingestion to Analysis",
+    "card8.desc": "Designing pipelines that hold up: ingestion, storage, transformation, orchestration, and the analysis layer that sits on top of all of it.",
+    "card9.title": "The art and science of data visualization",
+    "card9.desc": "A long read on visualization theory: visual encodings, retinal vs spatial representations, and choosing the right chart for your data. Published in UX Collective.",
+    "work.label": "How I work",
+    "work.title": "Fixed monthly packages",
+    "work.sub": "An agreed number of pieces for an agreed fee, so your budget and my calendar are both predictable.",
+    "work.i1": "2 to 5 pieces a month, 1,500 to 2,500 words each",
+    "work.i2": "Research, draft, and two revision rounds included",
+    "work.i3": "Delivery dates agreed when we set the package",
+    "work.i4": "Three month minimum, so the voice has time to settle",
+    "work.i5": "Written in English, Spanish or Catalan",
+    "work.i6": "Invoiced in EUR or USD, 30 days net",
+    "contact.label": "Get in touch",
+    "contact.title": "Tell me what you need.",
+    "contact.email.label": "Email",
+    "quotes.label": "What clients say",
+    "contact.desc": "Use the form or email me. I reply within 2 business days.",
+    "form.topic": "I'm interested in",
+    "opt.project": "A data project",
+    "opt.training": "A workshop, webinar or talk",
+    "opt.sponsorship": "Sponsorship",
+    "opt.writing": "Technical writing",
+    "opt.other": "Something else",
+    "form.name": "Name",
+    "form.email": "Email",
+    "form.org": "Organisation",
+    "form.msg": "What do you need?",
+    "form.send": "Send message",
+    "how.title": "How it works",
+    "how.1.t": "You tell me what you need",
+    "how.1.d": "Topics, audience and how many pieces a month.",
+    "how.2.t": "We agree the package",
+    "how.2.d": "Pieces per month, deadlines and price.",
+    "how.3.t": "I become your external technical writer",
+    "how.3.d": "I deliver every month, with two revision rounds per piece. You publish with or without my byline.",
+    "contact.book": "Or book a 20 min video call →"
   },
   es: {
-    'nav.home': 'Inicio', 'nav.about': 'Sobre mi', 'nav.services': 'Servicios',
-    'nav.portfolio': 'Portfolio', 'nav.writing': 'Escritura', 'nav.cta': 'Contacta', 'nav.work': 'Trabaja conmigo',
-    'hero.eyebrow': 'databites · Escritura Tecnica',
-    'hero.h1': 'Escritura tecnica para empresas de datos e IA',
-    'hero.sub': "por alguien que entiende el producto.",
-    'hero.desc': 'Soy cientifico de datos y practicante de ML escribiendo para W&B, DataCamp, KDnuggets y UX Collective. Escribo para profesionales, la misma audiencia que lee mi newsletter cada semana.',
-    'hero.label1': 'impresiones, un solo post',
-    'hero.label2': 'suscriptores al newsletter',
-    'hero.label3': 'seguidores en X',
-    'hero.cta1': 'Contactame → josep@databites.tech',
-    'hero.cta2': 'Ver trabajo publicado ↓',
-    'samples.label': 'Trabajo publicado',
-    'samples.title': 'Muestras de escritura',
-    'samples.sub': 'Nueve articulos en cuatro publicaciones. W&B para MLOps e ingenieria LLM. DataCamp y KDnuggets para tutoriales, infraestructura, visualización de datos e ingenieria de datos. UX Collective para teoria de visualizacion.',
-    'samples.note': 'Estos son los articulos que llevan mi nombre. Tambien escribo sin firma para blogs de clientes, incluyendo trabajo mensual recurrente para empresas de BI, analitica e IA. Encantado de comentar trabajos concretos en una llamada.',
-    'card.type.report': 'Informe', 'card.type.tutorial': 'Tutorial', 'card.type.guide': 'Guia',
-    'card.type.crashcourse': 'Curso Express', 'card.type.essay': 'Ensayo · 601K lectores',
-    'card.tag.advanced': 'Avanzado', 'card.tag.code': 'Codigo', 'card.tag.theory': 'Teoria',
-    'card.read.wb': 'Leer en W&B', 'card.read.dc': 'Leer en DataCamp',
-    'card.read.kd': 'Leer en KDnuggets', 'card.read.ux': 'Leer en UX Collective',
-    'card1.title': 'Evaluacion de LLMs: mas alla de BLEU y ROUGE',
-    'card1.desc': 'La evaluacion moderna de LLMs va mucho mas alla de las metricas NLP tradicionales. Cubre marcos de evaluacion humana, jueces basados en modelos y benchmarks especificos para sistemas en produccion.',
-    'card2.title': 'Linaje de datos para sistemas de IA y machine learning',
-    'card2.desc': 'Como rastrear la procedencia de datos en pipelines de ML, desde fuentes brutas hasta salidas del modelo. Cubre herramientas de linaje, patrones de integracion y reproducibilidad.',
-    'card3.title': 'Parsing de documentos en un solo paso para RAG con Unlimited-OCR y W&B Weave',
-    'card3.desc': 'Convertir documentos complejos en salida estructurada lista para recuperacion en una sola pasada, con Weave trazando cada paso para mantener el pipeline depurable en produccion.',
-    'card4.title': 'La arquitectura de Kubernetes explicada',
-    'card4.desc': 'Interioridades del control plane y los nodos worker: API server, scheduler, etcd, kubelet y la capa de add-ons que convierte un cluster en algo apto para produccion.',
-    'card5.title': 'RAG multimodal: una guia practica para aprender de documentos',
-    'card5.desc': 'Un pipeline funcional de preguntas y respuestas sobre documentos visuales con GPT-4o y ChromaDB, incluyendo evaluacion de recuperacion, latencia y coste real de ejecucion.',
-    'card6.title': 'Diseno efectivo de dashboards: principios, buenas practicas y ejemplos',
-    'card6.desc': 'Una guia para profesionales sobre dashboards que realmente comunican: principios de layout, seleccion de graficos, jerarquia de informacion y ejemplos reales.',
-    'card7.title': 'Weights & Biases: un curso express de KDnuggets',
-    'card7.desc': 'Un recorrido practico por el seguimiento de experimentos, el versionado de modelos y la reproducibilidad con W&B, escrito para una audiencia independiente y no como material de marca.',
-    'card8.title': 'Construir pipelines de datos de extremo a extremo: de la ingesta al analisis',
-    'card8.desc': 'Diseno de pipelines que aguantan: ingesta, almacenamiento, transformacion, orquestacion y la capa de analisis que se apoya en todo lo anterior.',
-    'card9.title': 'El arte y la ciencia de la visualizacion de datos',
-    'card9.desc': 'Un analisis profundo de la teoria de visualizacion: codificaciones visuales, representaciones retinales vs espaciales, y como elegir el grafico correcto. Publicado en UX Collective.',
-    'work.label': 'Como trabajo', 'work.title': 'Paquetes mensuales fijos',
-    'work.sub': 'Un numero acordado de piezas por una tarifa acordada, para que tu presupuesto y mi calendario sean predecibles.',
-    'work.i1': '2 a 5 piezas al mes, de 1.500 a 2.500 palabras cada una',
-    'work.i2': 'Investigacion, redaccion y dos rondas de revision incluidas',
-    'work.i3': '10 dias laborables desde el brief hasta la version final',
-    'work.i4': 'Minimo de tres meses, para que la voz tenga tiempo de asentarse',
-    'work.i5': 'Redaccion en ingles, espanol o catalan',
-    'work.i6': 'Facturacion en EUR o USD, 30 dias',
-    'contact.label': 'Contacto', 'contact.title': 'Trabajando con un numero limitado de clientes.',
-    'contact.email.label': 'Email directo', 'quotes.label': 'Qué dicen los clientes',
-    'contact.desc': 'Si trabajas en una empresa de datos o IA y necesitas contenido tecnico del que tus profesionales se enorgullezcan. Cuentame que estas construyendo y que necesitas. Respondo en 2 días laborables.'
+    "nav.home": "Inicio",
+    "nav.about": "Sobre mí",
+    "nav.services": "Servicios",
+    "nav.portfolio": "Portfolio",
+    "nav.writing": "Escritura",
+    "nav.cta": "Contacta",
+    "nav.work": "Trabaja conmigo",
+    "hero.eyebrow": "databites · Escritura técnica",
+    "hero.h1": "Escritura técnica para empresas de datos e IA",
+    "hero.sub": "por alguien que entiende el producto.",
+    "hero.desc": "Soy científico de datos y trabajo con ML a diario. Escribo para W&B, DataCamp, KDnuggets y UX Collective, entre otros, y para profesionales: la misma audiencia que lee mi newsletter cada semana.",
+    "hero.label1": "impresiones, un solo post",
+    "hero.label2": "suscriptores a la newsletter",
+    "hero.label3": "seguidores en X",
+    "hero.cta1": "Cuéntame qué necesitas →",
+    "hero.cta2": "Ver trabajo publicado ↓",
+    "samples.label": "Trabajo publicado",
+    "samples.title": "Muestras de escritura",
+    "samples.sub": "Nueve artículos en cuatro publicaciones. W&B para MLOps e ingeniería de LLM. DataCamp y KDnuggets para tutoriales, infraestructura, visualización de datos e ingeniería de datos. UX Collective para teoría de la visualización.",
+    "samples.note": "Estos son los artículos que llevan mi nombre. También escribo sin firma para blogs de clientes, incluido trabajo mensual recurrente para empresas de BI, analítica e IA. Encantado de comentar trabajos concretos en una llamada.",
+    "card.type.report": "Informe",
+    "card.type.tutorial": "Tutorial",
+    "card.type.guide": "Guía",
+    "card.type.crashcourse": "Curso exprés",
+    "card.type.essay": "Ensayo · 601K lectores",
+    "card.tag.advanced": "Avanzado",
+    "card.tag.code": "Código",
+    "card.tag.theory": "Teoría",
+    "card.read.wb": "Leer en W&B",
+    "card.read.dc": "Leer en DataCamp",
+    "card.read.kd": "Leer en KDnuggets",
+    "card.read.ux": "Leer en UX Collective",
+    "card1.title": "Evaluación de LLMs: más allá de BLEU y ROUGE",
+    "card1.desc": "La evaluación moderna de LLMs va mucho más allá de las métricas de NLP tradicionales. Cubre marcos de evaluación humana, jueces basados en modelos y benchmarks específicos para sistemas en producción.",
+    "card2.title": "Linaje de datos para sistemas de IA y machine learning",
+    "card2.desc": "Cómo rastrear la procedencia de los datos en pipelines de ML, desde las fuentes brutas hasta las salidas del modelo. Cubre herramientas de linaje, patrones de integración y reproducibilidad.",
+    "card3.title": "Parsing de documentos en un solo paso para RAG con Unlimited-OCR y W&B Weave",
+    "card3.desc": "Convertir documentos complejos en una salida estructurada lista para la recuperación en una sola pasada, con Weave trazando cada paso para que el pipeline se pueda depurar en producción.",
+    "card4.title": "La arquitectura de Kubernetes, explicada",
+    "card4.desc": "El funcionamiento interno del control plane y los nodos worker: API server, scheduler, etcd, kubelet y la capa de add-ons que deja un clúster listo para producción.",
+    "card5.title": "RAG multimodal: una guía práctica para aprender de documentos",
+    "card5.desc": "Un pipeline funcional de preguntas y respuestas sobre documentos visuales con GPT-4o y ChromaDB, con evaluación de la recuperación, latencia y coste real de ejecución.",
+    "card6.title": "Diseño eficaz de dashboards: principios, buenas prácticas y ejemplos",
+    "card6.desc": "Una guía para profesionales sobre dashboards que realmente comunican: principios de layout, selección de gráficos, jerarquía de la información y ejemplos reales.",
+    "card7.title": "Weights & Biases: un curso exprés de KDnuggets",
+    "card7.desc": "Un recorrido práctico por el seguimiento de experimentos, el versionado de modelos y la reproducibilidad con W&B, escrito para una audiencia independiente y no como material de marca.",
+    "card8.title": "Construir pipelines de datos de extremo a extremo: de la ingesta al análisis",
+    "card8.desc": "Diseño de pipelines que aguantan: ingesta, almacenamiento, transformación, orquestación y la capa de análisis que se apoya en todo lo anterior.",
+    "card9.title": "El arte y la ciencia de la visualización de datos",
+    "card9.desc": "Un análisis a fondo de la teoría de la visualización: codificaciones visuales, representaciones retinianas frente a espaciales y cómo elegir el gráfico adecuado. Publicado en UX Collective.",
+    "work.label": "Cómo trabajo",
+    "work.title": "Paquetes mensuales fijos",
+    "work.sub": "Un número acordado de piezas por una tarifa acordada, para que tu presupuesto y mi calendario sean predecibles.",
+    "work.i1": "De 2 a 5 piezas al mes, de 1.500 a 2.500 palabras cada una",
+    "work.i2": "Investigación, redacción y dos rondas de revisión incluidas",
+    "work.i3": "Plazos de entrega acordados al fijar el paquete",
+    "work.i4": "Mínimo de tres meses, para que la voz tenga tiempo de asentarse",
+    "work.i5": "Redacción en inglés, castellano o catalán",
+    "work.i6": "Facturación en EUR o USD, a 30 días",
+    "contact.label": "Contacto",
+    "contact.title": "Cuéntame qué necesitas.",
+    "contact.email.label": "Email",
+    "quotes.label": "Qué dicen los clientes",
+    "contact.desc": "Usa el formulario o escríbeme por email. Respondo en 2 días laborables.",
+    "form.topic": "Me interesa",
+    "opt.project": "Un proyecto de datos",
+    "opt.training": "Un taller, webinar o charla",
+    "opt.sponsorship": "Patrocinio",
+    "opt.writing": "Escritura técnica",
+    "opt.other": "Otra cosa",
+    "form.name": "Nombre",
+    "form.email": "Email",
+    "form.org": "Organización",
+    "form.msg": "¿Qué necesitas?",
+    "form.send": "Enviar mensaje",
+    "how.title": "Cómo funciona",
+    "how.1.t": "Me cuentas qué necesitas",
+    "how.1.d": "Temas, público y cuántas piezas al mes.",
+    "how.2.t": "Acordamos el paquete",
+    "how.2.d": "Piezas al mes, plazos y precio.",
+    "how.3.t": "Paso a ser tu redactor técnico externo",
+    "how.3.d": "Entrego cada mes, con dos rondas de revisión por pieza. Publicas con o sin mi firma.",
+    "contact.book": "O reserva una videollamada de 20 min →"
   },
   ca: {
-    'nav.home': 'Inici', 'nav.about': 'Sobre mi', 'nav.services': 'Serveis',
-    'nav.portfolio': 'Portfolio', 'nav.writing': 'Escriptura', 'nav.cta': 'Contacta', 'nav.work': 'Treballa amb mi',
-    'hero.eyebrow': 'databites · Escriptura Tecnica',
-    'hero.h1': 'Escriptura tecnica per a empreses de dades i IA',
-    'hero.sub': "per algu que enten el producte.",
-    'hero.desc': "Soc cientific de dades i practicant de ML escrivint per a W&B, DataCamp, KDnuggets i UX Collective. Escric per a professionals, la mateixa audiencia que llegeix el meu newsletter cada setmana.",
-    'hero.label1': 'impressions, una sola publicacio',
-    'hero.label2': 'subscriptors al newsletter',
-    'hero.label3': 'seguidors a X',
-    'hero.cta1': "Contacta'm → josep@databites.tech",
-    'hero.cta2': 'Veure treball publicat ↓',
-    'samples.label': 'Treball publicat',
-    'samples.title': "Mostres d'escriptura",
-    'samples.sub': 'Nou articles en quatre publicacions. W&B per a MLOps i enginyeria LLM. DataCamp i KDnuggets per a tutorials, infraestructura, visualització de dades i enginyeria de dades. UX Collective per a teoria de visualitzacio.',
-    'samples.note': "Aquests son els articles que porten el meu nom. Tambe escric sense signatura per a blogs de clients, incloent feina mensual recurrent per a empreses de BI, analitica i IA. Encantat de comentar feines concretes en una trucada.",
-    'card.type.report': 'Informe', 'card.type.tutorial': 'Tutorial', 'card.type.guide': 'Guia',
-    'card.type.crashcourse': 'Curs Express', 'card.type.essay': 'Assaig · 601K lectors',
-    'card.tag.advanced': 'Avançat', 'card.tag.code': 'Codi', 'card.tag.theory': 'Teoria',
-    'card.read.wb': 'Llegir a W&B', 'card.read.dc': 'Llegir a DataCamp',
-    'card.read.kd': 'Llegir a KDnuggets', 'card.read.ux': 'Llegir a UX Collective',
-    'card1.title': "Avaluacio de LLMs: mes enlla de BLEU i ROUGE",
-    'card1.desc': "L'avaluacio moderna de LLMs va molt mes enlla de les metriques NLP tradicionals. Cobreix marcs d'avaluacio humana, jutges basats en models i benchmarks especifics per a sistemes en produccio.",
-    'card2.title': "Llinatge de dades per a sistemes d'IA i machine learning",
-    'card2.desc': "Com rastrejar la procedencia de dades en pipelines de ML, des de fonts brutes fins a sortides del model. Cobreix eines de llinatge, patrons d'integracio i reproduibilitat.",
-    'card3.title': "Parsing de documents en un sol pas per a RAG amb Unlimited-OCR i W&B Weave",
-    'card3.desc': "Convertir documents complexos en sortida estructurada llesta per a recuperacio en una sola passada, amb Weave tracant cada pas per mantenir el pipeline depurable en produccio.",
-    'card4.title': "L'arquitectura de Kubernetes explicada",
-    'card4.desc': "Interioritats del control plane i els nodes worker: API server, scheduler, etcd, kubelet i la capa d'add-ons que converteix un cluster en quelcom apte per a produccio.",
-    'card5.title': 'RAG multimodal: una guia practica per aprendre de documents',
-    'card5.desc': "Un pipeline funcional de preguntes i respostes sobre documents visuals amb GPT-4o i ChromaDB, incloent avaluacio de recuperacio, latencia i cost real d'execucio.",
-    'card6.title': 'Disseny efectiu de dashboards: principis, bones practiques i exemples',
-    'card6.desc': "Una guia per a professionals sobre dashboards que realment comuniquen: principis de layout, seleccio de grafics, jerarquia d'informacio i exemples reals.",
-    'card7.title': 'Weights & Biases: un curs express de KDnuggets',
-    'card7.desc': "Un recorregut practic pel seguiment d'experiments, el versionat de models i la reproduibilitat amb W&B, escrit per a una audiencia independent i no com a material de marca.",
-    'card8.title': "Construir pipelines de dades d'extrem a extrem: de la ingesta a l'analisi",
-    'card8.desc': "Disseny de pipelines que aguanten: ingesta, emmagatzematge, transformacio, orquestracio i la capa d'analisi que s'hi recolza a sobre.",
-    'card9.title': "L'art i la ciencia de la visualitzacio de dades",
-    'card9.desc': 'Una analisi profunda de la teoria de visualitzacio: codificacions visuals, representacions retinals vs espacials, i com triar el grafic correcte. Publicat a UX Collective.',
-    'work.label': 'Com treballo', 'work.title': 'Paquets mensuals fixos',
-    'work.sub': 'Un nombre acordat de peces per una tarifa acordada, perque el teu pressupost i el meu calendari siguin predictibles.',
-    'work.i1': '2 a 5 peces al mes, de 1.500 a 2.500 paraules cadascuna',
-    'work.i2': 'Recerca, redaccio i dues rondes de revisio incloses',
-    'work.i3': '10 dies laborables des del brief fins a la versio final',
-    'work.i4': "Minim de tres mesos, perque la veu tingui temps d'assentar-se",
-    'work.i5': 'Redaccio en angles, castella o catala',
-    'work.i6': 'Facturacio en EUR o USD, 30 dies',
-    'contact.label': 'Contacte', 'contact.title': 'Treballant amb un nombre limitat de clients.',
-    'contact.email.label': 'Email directe', 'quotes.label': 'Què diuen els clients',
-    'contact.desc': "Si treballes en una empresa de dades o IA i necessites contingut tecnic del qual els teus professionals s'enorgulleixin. Explica'm que estàs construint i que necessites. Responc en 2 dies feiners."
+    "nav.home": "Inici",
+    "nav.about": "Sobre mi",
+    "nav.services": "Serveis",
+    "nav.portfolio": "Portfolio",
+    "nav.writing": "Escriptura",
+    "nav.cta": "Contacta",
+    "nav.work": "Treballa amb mi",
+    "hero.eyebrow": "databites · Escriptura tècnica",
+    "hero.h1": "Escriptura tècnica per a empreses de dades i IA",
+    "hero.sub": "per algú que entén el producte.",
+    "hero.desc": "Soc científic de dades i treballo amb ML cada dia. Escric per a W&B, DataCamp, KDnuggets i UX Collective, entre d'altres, i per a professionals: la mateixa audiència que llegeix la meva newsletter cada setmana.",
+    "hero.label1": "impressions, una sola publicació",
+    "hero.label2": "subscriptors a la newsletter",
+    "hero.label3": "seguidors a X",
+    "hero.cta1": "Explica'm què necessites →",
+    "hero.cta2": "Veure treball publicat ↓",
+    "samples.label": "Treball publicat",
+    "samples.title": "Mostres d'escriptura",
+    "samples.sub": "Nou articles en quatre publicacions. W&B per a MLOps i enginyeria de LLM. DataCamp i KDnuggets per a tutorials, infraestructura, visualització de dades i enginyeria de dades. UX Collective per a teoria de la visualització.",
+    "samples.note": "Aquests són els articles que porten el meu nom. També escric sense signatura per a blogs de clients, incloent-hi feina mensual recurrent per a empreses de BI, analítica i IA. Encantat de comentar feines concretes en una trucada.",
+    "card.type.report": "Informe",
+    "card.type.tutorial": "Tutorial",
+    "card.type.guide": "Guia",
+    "card.type.crashcourse": "Curs exprés",
+    "card.type.essay": "Assaig · 601K lectors",
+    "card.tag.advanced": "Avançat",
+    "card.tag.code": "Codi",
+    "card.tag.theory": "Teoria",
+    "card.read.wb": "Llegir a W&B",
+    "card.read.dc": "Llegir a DataCamp",
+    "card.read.kd": "Llegir a KDnuggets",
+    "card.read.ux": "Llegir a UX Collective",
+    "card1.title": "Avaluació de LLMs: més enllà de BLEU i ROUGE",
+    "card1.desc": "L'avaluació moderna de LLMs va molt més enllà de les mètriques de NLP tradicionals. Cobreix marcs d'avaluació humana, jutges basats en models i benchmarks específics per a sistemes en producció.",
+    "card2.title": "Llinatge de dades per a sistemes d'IA i machine learning",
+    "card2.desc": "Com rastrejar la procedència de les dades en pipelines de ML, des de les fonts brutes fins a les sortides del model. Cobreix eines de llinatge, patrons d'integració i reproductibilitat.",
+    "card3.title": "Parsing de documents en un sol pas per a RAG amb Unlimited-OCR i W&B Weave",
+    "card3.desc": "Convertir documents complexos en una sortida estructurada a punt per a la recuperació en una sola passada, amb Weave traçant cada pas perquè el pipeline es pugui depurar en producció.",
+    "card4.title": "L'arquitectura de Kubernetes, explicada",
+    "card4.desc": "El funcionament intern del control plane i els nodes worker: API server, scheduler, etcd, kubelet i la capa d'add-ons que deixa un clúster a punt per a producció.",
+    "card5.title": "RAG multimodal: una guia pràctica per aprendre de documents",
+    "card5.desc": "Un pipeline funcional de preguntes i respostes sobre documents visuals amb GPT-4o i ChromaDB, amb avaluació de la recuperació, latència i cost real d'execució.",
+    "card6.title": "Disseny eficaç de dashboards: principis, bones pràctiques i exemples",
+    "card6.desc": "Una guia per a professionals sobre dashboards que realment comuniquen: principis de layout, selecció de gràfics, jerarquia de la informació i exemples reals.",
+    "card7.title": "Weights & Biases: un curs exprés de KDnuggets",
+    "card7.desc": "Un recorregut pràctic pel seguiment d'experiments, el versionat de models i la reproductibilitat amb W&B, escrit per a una audiència independent i no com a material de marca.",
+    "card8.title": "Construir pipelines de dades d'extrem a extrem: de la ingesta a l'anàlisi",
+    "card8.desc": "Disseny de pipelines que aguanten: ingesta, emmagatzematge, transformació, orquestració i la capa d'anàlisi que s'hi recolza a sobre.",
+    "card9.title": "L'art i la ciència de la visualització de dades",
+    "card9.desc": "Una anàlisi a fons de la teoria de la visualització: codificacions visuals, representacions retinals i espacials, i com triar el gràfic adequat. Publicat a UX Collective.",
+    "work.label": "Com treballo",
+    "work.title": "Paquets mensuals fixos",
+    "work.sub": "Un nombre acordat de peces per una tarifa acordada, perquè el teu pressupost i el meu calendari siguin previsibles.",
+    "work.i1": "De 2 a 5 peces al mes, de 1.500 a 2.500 paraules cadascuna",
+    "work.i2": "Recerca, redacció i dues rondes de revisió incloses",
+    "work.i3": "Terminis d'entrega acordats en fixar el paquet",
+    "work.i4": "Mínim de tres mesos, perquè la veu tingui temps d'assentar-se",
+    "work.i5": "Redacció en anglès, castellà o català",
+    "work.i6": "Facturació en EUR o USD, a 30 dies",
+    "contact.label": "Contacte",
+    "contact.title": "Explica'm què necessites.",
+    "contact.email.label": "Email",
+    "quotes.label": "Què diuen els clients",
+    "contact.desc": "Fes servir el formulari o escriu-me per email. Responc en 2 dies feiners.",
+    "form.topic": "M'interessa",
+    "opt.project": "Un projecte de dades",
+    "opt.training": "Un taller, webinar o xerrada",
+    "opt.sponsorship": "Patrocini",
+    "opt.writing": "Escriptura tècnica",
+    "opt.other": "Una altra cosa",
+    "form.name": "Nom",
+    "form.email": "Email",
+    "form.org": "Organització",
+    "form.msg": "Què necessites?",
+    "form.send": "Enviar missatge",
+    "how.title": "Com funciona",
+    "how.1.t": "M'expliques què necessites",
+    "how.1.d": "Temes, públic i quantes peces al mes.",
+    "how.2.t": "Acordem el paquet",
+    "how.2.d": "Peces al mes, terminis i preu.",
+    "how.3.t": "Passo a ser el teu redactor tècnic extern",
+    "how.3.d": "Lliuro cada mes, amb dues rondes de revisió per peça. Publiques amb la meva signatura o sense.",
+    "contact.book": "O reserva una videotrucada de 20 min →"
   }
 };
 
