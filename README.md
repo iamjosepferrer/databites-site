@@ -1,104 +1,33 @@
 # databites-site
 
-**I'm [Josep Ferrer](https://www.linkedin.com/in/iamjosepferrer/) — data scientist and visual educator based in Rotterdam.**  
-This is the source for my personal site. One HTML file. No framework. Shipped.
+Source for [databites.tech](https://databites.tech), the site of Josep Ferrer. Plain HTML, CSS and JavaScript, with no build step. Deployed on Vercel.
 
-→ **[databites.tech](https://databites.tech)**
+## Pages
 
-[![databites.tech](https://api.microlink.io/?url=https://databites.tech&screenshot=true&meta=false&embed=screenshot.url)](https://databites.tech)
-
----
-
-## What this is
-
-The main DataBites website — portfolio, services, newsletter, and contact. Built as a single `index.html` with no build step, no framework, and no dependencies beyond Google Fonts. Everything is vanilla HTML, CSS, and JavaScript.
-
-Sections: hero · about · services · trusted by · newsletter · portfolio · contact.
-
-The portfolio section loads live from [`projects.databites.tech/projects.json`](https://projects.databites.tech/projects.json) — I only need to update one file to have new projects appear on both this site and the projects gallery.
-
----
-
-## Repo structure
-
-```
-databites-site/
-├── index.html          # The entire site
-├── .gitignore
-└── images/
-    ├── databitestech_logo.png
-    ├── databitestech_logo_letters.png
-    ├── databites_clearly_explained.png
-    ├── headshot.png
-    ├── catalonia-atlas.png
-    └── logos/          # Partner and client logos for the marquee
-        ├── logo_1.png
-        ├── logo_2.png
-        └── logo_n.png
-```
-
----
-
-## How to update content
-
-**Add a partner logo to the marquee**
-
-Drop the logo PNG into `images/logos/` (100×30px, transparent background works best). Then add it to both `marquee-set` blocks in `index.html`:
-
-```html
-<a href="https://company.com" target="_blank" rel="noopener" class="marquee-item">
-  <img src="images/logos/yourfile.png" alt="Company Name">
-</a>
-```
-
-**Update the portfolio section**
-
-Don't touch this file. Edit [`projects.json`](https://github.com/iamjosepferrer/databites-projects/blob/main/projects.json) in the `databites-projects` repo — this site fetches from it automatically.
-
-**Update translations**
-
-All copy is in the `translations` object in `index.html`, with `en`, `es`, and `ca` keys. The language switcher and browser auto-detection are already wired up.
-
----
-
-## How it works
-
-**i18n** — `data-i18n` attributes on every text element. `setLang(lang)` swaps all strings on click, stores the preference in `localStorage`, and auto-detects from `navigator.language` on load.
-
-**Portfolio** — `loadPortfolioPreview()` fetches `https://projects.databites.tech/projects.json`, filters for `live: true`, and renders the first 3 cards. Called on load and on every language switch.
-
-**Newsletter preview** — fetches the latest Substack RSS via `rss2json.com` and populates the mock newsletter card. Falls back to a skeleton if the fetch fails.
-
-**Hero canvas** — animated node graph drawn on a `<canvas>` element using vanilla JS. Pure CSS.
-
----
-
-## Deployment
-
-Hosted on [Vercel](https://vercel.com). Pushes to `main` deploy automatically.
-
-DNS managed via Namecheap. `databites.tech` → Vercel.
-
----
-
-## Brand
-
-Everything follows the [DataBites brand guidelines](https://databites.tech):
-
-| Token | Hex | Use |
+| URL | File | What it is |
 |---|---|---|
-| Forest | `#1A3829` | Text, dark backgrounds |
-| Green | `#2D9B4E` | Buttons, links |
-| Bright | `#38B86E` | Accents, highlights |
-| Mint | `#A8DDC4` | Tints, decorative |
-| Cream | `#FAF6F0` | Page canvas |
+| `/` | `index.html` | Home: hero, "What do you need?", featured projects, about, contact |
+| `/work-with-me` | `work-with-me.html` | The offer: data projects, workshops and talks, sponsorship, technical writing, plus the contact form |
+| `/projects` | `projects.html` | Portfolio gallery, rendered from `projects.json` |
+| `/write` | `write.html` | Technical writing samples and terms |
 
-Fonts: **Lilita One** (display) · **Space Grotesk** (body) · **Space Mono** (labels, code)
+`/learn` and `/teach` redirect to the matching choice on `/work-with-me`.
 
----
+## Shared files
 
-## About me
+- `site.css` and `site.js`: nav, phone menu, footer, copy-email button and contact form for every page.
+- `projects.json`: the single list of portfolio projects. Add an object here and it appears on `/projects` and on the home page (set `"featured": true` to show it on the home page; the first three featured projects are shown).
+- `images/`: logos, project headers and share images. `og-work.html` and `og-write.html` are the templates for the share images.
 
-I'm [Josep Ferrer](https://www.linkedin.com/in/iamjosepferrer/), a data scientist and educator who makes complex data and AI concepts click — through diagrams, writing, and interactive tools. I publish weekly at [databites.tech](https://databites.tech).
+## Settings
 
-→ [Newsletter](https://reads.databites.tech) · [@iamjosepferrer](https://x.com/iamjosepferrer) · [LinkedIn](https://linkedin.com/in/iamjosepferrer)
+Two values at the top of `site.js`:
+
+- `BOOKING_URL`: your booking page (for example a Cal.com event link). Empty means the booking button is hidden.
+- `FORM_KEY`: your Web3Forms access key. Empty means the form opens the visitor's mail app instead.
+
+Analytics use Umami. Replace `UMAMI_WEBSITE_ID` in the four HTML files with the website ID from your Umami dashboard.
+
+## Languages
+
+Each page holds its own EN, ES and CA text in a `translations` object at the bottom of the file. Nav and footer labels are in `site.js`.

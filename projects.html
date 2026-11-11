@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Analytics: Umami (cookieless). Replace the website ID with the one from your Umami dashboard. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID" data-domains="databites.tech,www.databites.tech"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects · databites · Josep Ferrer</title>
+<meta name="description" content="Maps, atlases and data stories by Josep Ferrer, built on public data. See what a project like this could do with your data.">
+<meta property="og:title" content="Projects · databites · Josep Ferrer">
+<meta property="og:description" content="Maps, atlases and data stories I built on public data.">
+<meta property="og:url" content="https://databites.tech/projects">
+<link rel="canonical" href="https://databites.tech/projects">
+<meta property="og:image" content="https://databites.tech/images/og-work.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="images/databitestech_logo.png">
+<link rel="apple-touch-icon" href="images/databitestech_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1A3829;
+  --green: #2D9B4E;
+  --bright: #38B86E;
+  --mint: #A8DDC4;
+  --mint-pale: #E8F5EE;
+  --cream: #FAF6F0;
+  --muted: #5E7D6A;
+  --rule: #D4E8DC;
+  --f-d: 'Gabarito', system-ui, sans-serif;
+  --f-b: 'Gabarito', system-ui, sans-serif;
+  --f-m: 'Gabarito', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--f-b); background: var(--cream); color: var(--forest); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cream); border-bottom: 1px solid var(--rule);
+  padding: 0 clamp(2rem, 5vw, 6rem);
+  display: flex; align-items: center; justify-content: space-between;
+  height: 80px;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.625rem; text-decoration: none; }
+.nav-logo-img { height: 52px; width: auto; display: block; }
+.nav-slash { color: var(--rule); font-family: var(--f-m); font-weight: 600; font-size: 1rem; margin: 0 0.125rem; }
+.nav-section { font-family: var(--f-m); font-weight: 600; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-size: 0.9375rem; font-weight: 500; color: var(--muted); transition: color .15s; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bright); border-radius: 1px; transition: width .22s ease; }
+.nav-links a:hover { color: var(--forest); }
+.nav-links a:hover::after { width: 100%; }
+.nav-back { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--rule); padding: 0.375rem 0.75rem; border-radius: 6px; transition: border-color .15s, color .15s; }
+.nav-back:hover { border-color: var(--mint); color: var(--forest); }
+.nav-back::after { display: none !important; }
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-switch { display: flex; align-items: center; gap: 0.25rem; margin-left: 1rem; }
+.lang-btn {
+  font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.25rem 0.5rem; border-radius: 4px;
+  border: 1px solid transparent; cursor: pointer;
+  color: var(--muted); background: transparent;
+  transition: all .15s;
+}
+.lang-btn:hover { color: var(--forest); border-color: var(--rule); }
+.lang-btn.active { color: var(--bright); border-color: var(--bright); background: var(--mint-pale); }
+
+/* ── HERO ── */
+.hero {
+  padding: 1.5rem clamp(2rem, 5vw, 6rem) 1rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+}
+.hero-left { max-width: 620px; }
+.section-label { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-label::after { content: ''; width: 36px; height: 1px; background: var(--rule); }
+.hero-title { font-family: var(--f-d); font-weight: 800; font-size: clamp(2.25rem, 4vw, 3.75rem); line-height: 1.0; color: var(--forest); margin-bottom: 0.75rem; }
+.hero-title span[data-i18n="hero.h1"] { color: var(--bright); }
+.hero-title span[data-i18n="hero.h2"] { color: var(--forest); }
+.hero-sub { font-size: 1rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.5rem; }
+.hero-stats { display: flex; gap: 2rem; flex-shrink: 0; }
+.stat-item { text-align: right; }
+.stat-num { font-family: var(--f-d); font-weight: 800; font-size: 2.25rem; color: var(--forest); line-height: 1; }
+.stat-num span { color: var(--bright); }
+.stat-label { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+.hero-sub-cta { font-family: var(--f-d); font-weight: 800; font-size: 1.375rem; color: var(--forest); max-width: 620px; }
+.hero-link { color: var(--green); font-weight: 600; border-bottom: 1px solid var(--rule); transition: border-color .15s; }
+.hero-link:hover { border-color: var(--green); }
+
+/* ── FILTER BAR ── */
+.filters {
+  padding: 1rem clamp(2rem, 5vw, 6rem);
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+}
+.filter-label { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-right: 0.25rem; }
+.filter-btn {
+  font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 20px;
+  border: 1px solid var(--rule); cursor: pointer;
+  color: var(--muted); background: transparent;
+  transition: all .15s;
+}
+.filter-btn:hover { border-color: var(--mint); color: var(--forest); }
+.filter-btn.active { background: var(--forest); color: var(--cream); border-color: var(--forest); }
+
+/* ── GRID ── */
+.projects-wrap { padding: 2.5rem clamp(2rem, 5vw, 6rem) 5rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+/* ── PROJECT CARD ── */
+.project-card {
+  background: white; border-radius: 14px;
+  border: 1px solid var(--rule); border-top: 3px solid var(--rule);
+  overflow: hidden; transition: transform .2s, box-shadow .2s, border-top-color .2s;
+  display: flex; flex-direction: column;
+}
+.project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,56,41,0.08); border-top-color: var(--bright); }
+.project-card a { display: contents; }
+.card-preview {
+  height: 200px; position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--rule); cursor: pointer;
+  background: linear-gradient(135deg, var(--mint-pale) 0%, var(--cream) 100%);
+  aspect-ratio: 16/9;
+}
+.card-preview img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.card-preview-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.625rem; position: relative; }
+.card-preview-placeholder.forest-bg { background: linear-gradient(135deg, var(--forest) 0%, rgba(26,56,41,0.85) 100%); }
+.card-preview-placeholder.pale-bg { background: linear-gradient(135deg, var(--mint-pale) 0%, rgba(232,245,238,0.6) 100%); }
+.card-preview-placeholder::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 60%, rgba(255,255,255,0.1) 0%, transparent 50%); pointer-events: none; }
+.card-body { padding: 1.125rem 1.25rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
+.card-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; margin-bottom: 0.625rem; }
+.card-tag { font-family: var(--f-m); font-weight: 600; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+.card-tag.green { background: var(--mint-pale); color: var(--green); }
+.card-tag.forest { background: rgba(26,56,41,0.08); color: var(--forest); }
+.card-tag.muted { background: var(--mint-pale); color: var(--muted); }
+.card-title { font-family: var(--f-d); font-weight: 800; font-size: 1.0625rem; color: var(--forest); margin-bottom: 0.375rem; line-height: 1.2; }
+.card-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.6; flex: 1; }
+.card-footer { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); display: flex; align-items: center; justify-content: space-between; }
+.card-link { font-size: 0.8125rem; font-weight: 600; color: var(--green); display: flex; align-items: center; gap: 0.25rem; transition: color .15s; }
+.card-link:hover { color: var(--forest); }
+.card-meta { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; color: var(--muted); opacity: 0.6; }
+
+.card-use { font-size: 0.78rem; color: var(--forest); line-height: 1.5; margin-top: 0.75rem; padding: 0.5rem 0.625rem; background: var(--mint-pale); border-radius: 6px; }
+.card-use b { font-family: var(--f-m); font-weight: 600; font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.125rem; }
+.project-card.cta-card { background: var(--forest); border-color: var(--forest); border-top-color: var(--bright); }
+.project-card.cta-card .card-title { color: var(--cream); }
+.project-card.cta-card .card-desc { color: var(--mint); }
+.project-card.cta-card .card-link { color: var(--bright); }
+.project-card.cta-card .card-footer { border-top-color: rgba(255,255,255,0.12); }
+.nav-work { background: var(--forest); color: var(--cream) !important; font-size: 0.8125rem !important; font-weight: 600 !important; padding: 0.45rem 1rem; border-radius: 6px; white-space: nowrap; }
+.nav-work::after { display: none !important; }
+.nav-work:hover { background: var(--green); }
+
+/* ── CTA BAND ── */
+.cta-band { background: var(--mint-pale); border-top: 1px solid var(--rule); padding: 3.5rem clamp(1.25rem, 5vw, 6rem); }
+.cta-band-inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.cta-band h2 { font-family: var(--f-d); font-weight: 800; font-size: clamp(1.5rem, 2.6vw, 2.25rem); line-height: 1.1; color: var(--forest); max-width: 640px; }
+.cta-band p { font-size: 0.9375rem; color: var(--muted); line-height: 1.7; margin-top: 0.5rem; max-width: 600px; }
+.cta-btn { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--forest); color: var(--cream); font-weight: 600; font-size: 0.9375rem; padding: 0.8rem 1.5rem; border-radius: 8px; transition: background .15s; white-space: nowrap; }
+.cta-btn:hover { background: var(--green); }
+
+/* ── EMPTY STATE ── */
+.empty-state { grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: var(--muted); }
+.empty-state p { font-size: 0.9375rem; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--forest); padding: 2rem clamp(2rem, 5vw, 6rem);
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo img { height: 42px; width: auto; display: block; opacity: 0.85; }
+.footer-right { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.1em; color: var(--mint); opacity: 0.6; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) {
+  .hero { flex-direction: column; align-items: flex-start; }
+  .hero-stats { flex-direction: row; }
+  .stat-item { text-align: left; }
+  .projects-grid { grid-template-columns: 1fr; }
+}
+</style>
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="databites.tech home" style="display:flex;align-items:center;gap:0.625rem;">
+    <img src="/images/databitestech_logo.png" alt="" style="height:34px;width:auto;">
+    <span class="nav-word" style="font-family:'Gabarito',system-ui,sans-serif;font-weight:800;font-size:1.25rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-menu" id="nav-menu">
+      <a href="/work-with-me" data-nav="work">Work with me</a>
+      <a href="/projects" data-nav="portfolio" class="active">Portfolio</a>
+      <a href="/write" data-nav="writing">Writing</a>
+      <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="nav">Newsletter</a>
+    </div>
+    <a href="/work-with-me#contact" class="nav-cta" data-umami-event="contact-click" data-umami-event-location="nav" data-nav="contact">Get in touch</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('ca')">CAT</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="section-label" data-i18n="hero.label">Portfolio</div>
+    <h1 class="hero-title">
+      <span data-i18n="hero.h1">Real work.</span><br>
+      <span data-i18n="hero.h2">Shipped and public.</span>
+    </h1>
+    <p class="hero-sub" data-i18n="hero.sub1">Maps, atlases and data stories I built on public data.</p>
+    <p class="hero-sub" data-i18n="hero.sub2">Every piece built by Josep Ferrer.</p>
+    <p class="hero-sub hero-sub-cta" data-i18n="hero.cta">Want one built on your data? <a href="/work-with-me" class="hero-link" data-umami-event="work-with-me-click" data-umami-event-location="projects-hero">See how we can work together →</a></p>
+  </div>
+  <div class="hero-stats" id="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num" id="stat-live"><span>6</span></div>
+      <div class="stat-label" data-i18n="stats.live">Live projects</div>
+    </div>
+  </div>
+</div>
+
+<div class="filters">
+  <span class="filter-label" data-i18n="filter.label">Filter:</span>
+  <button class="filter-btn active" onclick="filterProjects('all')" data-i18n="filter.all">All</button>
+  <button class="filter-btn" onclick="filterProjects('DataViz')">DataViz</button>
+  <button class="filter-btn" onclick="filterProjects('Maps')" data-i18n="filter.maps">Maps</button>
+  <button class="filter-btn" onclick="filterProjects('Tools')" data-i18n="filter.tools">Tools</button>
+</div>
+
+<div class="projects-wrap">
+  <div class="projects-grid" id="projects-grid"><noscript><p style="grid-column:1/-1">The project gallery needs JavaScript. You can also email me at josep@databites.tech and I will send you examples.</p></noscript></div>
+</div>
+
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div>
+      <h2 data-i18n="band.title">Have data that should drive a decision?</h2>
+      <p data-i18n="band.desc">I build projects like these for institutions and research organisations: pilots, retainers, commissioned data stories and workshops.</p>
+    </div>
+    <a href="/work-with-me" class="cta-btn" data-umami-event="work-with-me-click" data-umami-event-location="projects-band" data-i18n="band.cta">Work with me →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="sf-top">
+    <a href="/" class="sf-brand"><img src="/images/databitestech_logo.png" alt=""><span><span class="g">databites</span><span class="f">.tech</span></span></a>
+    <div class="sf-links">
+      <a href="/work-with-me" data-nav="work">Work with me</a>
+      <a href="/projects" data-nav="portfolio">Portfolio</a>
+      <a href="/write" data-nav="writing">Writing</a>
+      <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="footer">Newsletter</a>
+    </div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 databites.tech · Josep Ferrer · Rotterdam, NL</span>
+    <span>KvK 96481331 · VAT NL005212566B59</span>
+    <a href="mailto:josep@databites.tech" data-umami-event="email-click" data-umami-event-location="footer">josep@databites.tech</a>
+  </div>
+</footer>
+
+<script>
+/* ── TRANSLATIONS ─────────────────────────────────────────── */
+const translations = {
+  en: {
+    'projects.yourDataHere': "Your data here",
+    'nav.work': "Work with me",
+    'projects.useFor': "Useful for",
+    'projects.workWithMe': "Work with me →",
+    'projects.yourData': "Your data",
+    'band.title': "Have data that should drive a decision?",
+    'band.desc': "I build projects like these for institutions and research organisations: pilots, retainers, commissioned data stories and workshops.",
+    'band.cta': "Work with me →",
+    'nav.all': 'All', 'nav.maps': 'Maps', 'nav.back': '← databites.tech',
+    'hero.label': 'Portfolio',
+    'hero.h1': 'Real work.', 'hero.h2': 'Shipped and public.',
+    'hero.sub1': "Maps, atlases and data stories I built on public data.",
+    'hero.sub2': 'Every piece built by <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="hero-link">Josep Ferrer</a>.',
+    'hero.cta': "Want one built on your data? <a href=\"/work-with-me\" class=\"hero-link\" data-umami-event=\"work-with-me-click\" data-umami-event-location=\"projects-hero\">See how we can work together →</a>",
+    'stats.live': 'Live projects', 'stats.wip': 'In progress',
+    'filter.label': 'Filter:', 'filter.all': 'All', 'filter.maps': 'Maps', 'filter.tools': 'Tools',
+    'projects.atlas.title': 'Catalonia Income Atlas',
+    'projects.atlas.desc': 'Interactive choropleth map of income inequality across 5,108 census tracts, 947 municipalities, and 4 provinces in Catalonia. INE data, 2015–2023.',
+    'projects.popgrid.title': 'popgrid',
+    'projects.popgrid.desc': 'Open-source Python library that turns any country or region into a block cartogram, where every block is an equal share of land area or population. On PyPI: pip install popgrid.',
+    'projects.p2.title': 'Project #2',
+    'projects.p2.desc': 'The next DataViz project. Subscribe to the newsletter to be the first to see it.',
+    'projects.p3.title': 'Project #3',
+    'projects.p3.desc': 'The third portfolio piece. Consulting prospects: contact me to see private work samples.',
+    'projects.p4.title': 'Project #4',
+    'projects.p4.desc': 'More work in the pipeline. Follow on X @iamjosepferrer for updates.',
+    'projects.viewProject': 'View project →',
+    'projects.comingSoon': 'Coming soon',
+    'projects.inProgress': 'In progress',
+    'empty': "No projects in this category yet. Check back soon.",
+  },
+  es: {
+    'projects.yourDataHere': "Aquí, tus datos",
+    'nav.work': "Trabaja conmigo",
+    'projects.useFor': "Útil para",
+    'projects.workWithMe': "Trabaja conmigo →",
+    'projects.yourData': "Tus datos",
+    'band.title': "¿Tienes datos que deberían guiar una decisión?",
+    'band.desc': "Construyo proyectos como estos para instituciones y organizaciones de investigación: pilotos, retainers, historias de datos por encargo y talleres.",
+    'band.cta': "Trabaja conmigo →",
+    'nav.all': 'Todos', 'nav.maps': 'Mapas', 'nav.back': '← databites.tech',
+    'hero.label': 'Portfolio',
+    'hero.h1': 'Trabajo real.', 'hero.h2': 'Publicado y abierto.',
+    'hero.sub1': "Mapas, atlas e historias de datos que he construido con datos públicos.",
+    'hero.sub2': 'Cada pieza construida por <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="hero-link">Josep Ferrer</a>.',
+    'hero.cta': "¿Quieres uno con tus datos? <a href=\"/work-with-me\" class=\"hero-link\" data-umami-event=\"work-with-me-click\" data-umami-event-location=\"projects-hero\">Mira cómo podemos trabajar juntos →</a>",
+    'stats.live': 'Proyectos activos', 'stats.wip': 'En progreso',
+    'filter.label': 'Filtrar:', 'filter.all': 'Todos', 'filter.maps': 'Mapas', 'filter.tools': 'Herramientas',
+    'projects.atlas.title': 'Atlas de Renta de Cataluña',
+    'projects.atlas.desc': 'Mapa coroplético interactivo de desigualdad de renta en 5.108 secciones censales, 947 municipios y 4 provincias de Cataluña. Datos INE, 2015–2023.',
+    'projects.popgrid.title': 'popgrid',
+    'projects.popgrid.desc': 'Librería de Python de código abierto que convierte cualquier país o región en un cartograma de bloques, donde cada bloque es una parte igual de superficie o población. En PyPI: pip install popgrid.',
+    'projects.p2.title': 'Proyecto #2',
+    'projects.p2.desc': 'El próximo proyecto de DataViz. Suscríbete a la newsletter para verlo el primero.',
+    'projects.p3.title': 'Proyecto #3',
+    'projects.p3.desc': 'La tercera pieza del portfolio. Clientes de consultoría: contáctame para ver muestras privadas.',
+    'projects.p4.title': 'Proyecto #4',
+    'projects.p4.desc': 'Más trabajo en marcha. Sígueme en X @iamjosepferrer para actualizaciones.',
+    'projects.viewProject': 'Ver proyecto →',
+    'projects.comingSoon': 'Próximamente',
+    'projects.inProgress': 'En desarrollo',
+    'empty': "Aún no hay proyectos en esta categoría. Vuelve pronto.",
+  },
+  ca: {
+    'projects.yourDataHere': "Aquí, les teves dades",
+    'nav.work': "Treballa amb mi",
+    'projects.useFor': "Útil per a",
+    'projects.workWithMe': "Treballa amb mi →",
+    'projects.yourData': "Les teves dades",
+    'band.title': "Tens dades que haurien de guiar una decisió?",
+    'band.desc': "Construeixo projectes com aquests per a institucions i organitzacions de recerca: pilots, retainers, històries de dades per encàrrec i tallers.",
+    'band.cta': "Treballa amb mi →",
+    'nav.all': 'Tots', 'nav.maps': 'Mapes', 'nav.back': '← databites.tech',
+    'hero.label': 'Portfolio',
+    'hero.h1': 'Feina real.', 'hero.h2': 'Publicada i oberta.',
+    'hero.sub1': "Mapes, atles i històries de dades que he construït amb dades públiques.",
+    'hero.sub2': 'Cada peça construïda per <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="hero-link">Josep Ferrer</a>.',
+    'hero.cta': "En vols un amb les teves dades? <a href=\"/work-with-me\" class=\"hero-link\" data-umami-event=\"work-with-me-click\" data-umami-event-location=\"projects-hero\">Mira com podem treballar junts →</a>",
+    'stats.live': 'Projectes actius', 'stats.wip': 'En progrés',
+    'filter.label': 'Filtra:', 'filter.all': 'Tots', 'filter.maps': 'Mapes', 'filter.tools': 'Eines',
+    'projects.atlas.title': 'Atles de Renda de Catalunya',
+    'projects.atlas.desc': 'Mapa coroplètic interactiu de desigualtat de renda a 5.108 seccions censals, 947 municipis i 4 províncies de Catalunya. Dades INE, 2015–2023.',
+    'projects.popgrid.title': 'popgrid',
+    'projects.popgrid.desc': 'Llibreria de Python de codi obert que converteix qualsevol país o regió en un cartograma de blocs, on cada bloc és una part igual de superfície o població. A PyPI: pip install popgrid.',
+    'projects.p2.title': 'Projecte #2',
+    'projects.p2.desc': "El proper projecte de DataViz. Subscriu-te a la newsletter per ser el primer en veure'l.",
+    'projects.p3.title': 'Projecte #3',
+    'projects.p3.desc': "La tercera peça del portfolio. Clients de consultoria: contacta'm per veure mostres privades.",
+    'projects.p4.title': 'Projecte #4',
+    'projects.p4.desc': 'Més feina en curs. Segueix-me a X @iamjosepferrer per actualitzacions.',
+    'projects.viewProject': 'Veure projecte →',
+    'projects.comingSoon': 'Pròximament',
+    'projects.inProgress': 'En desenvolupament',
+    'empty': "Encara no hi ha projectes en aquesta categoria. Torna aviat.",
+  }
+};
+
+let currentLang = 'en';
+
+function T(key) {
+  return translations[currentLang][key] || translations.en[key] || key;
+}
+
+function pick(field, keyFallback) {
+  if (field && typeof field === 'object') return field[currentLang] || field.en || '';
+  return keyFallback ? T(keyFallback) : (field || '');
+}
+
+function applyI18n() {
+  document.documentElement.lang = currentLang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = translations[currentLang][key];
+    if (val !== undefined) el.innerHTML = val;
+  });
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  applyI18n();
+  // Re-render current filter state with new language
+  const activeBtn = document.querySelector('.filter-btn.active');
+  const activeTag = activeBtn ? activeBtn.getAttribute('data-tag') : 'all';
+  filterProjects(activeTag || 'all', true);
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const btnLang = btn.textContent.toLowerCase().replace('cat', 'ca');
+    btn.classList.toggle('active', btnLang === lang);
+  });
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+
+/* ── PROJECT REGISTRY ─────────────────────────────────────── */
+
+let PROJECTS = [];
+
+async function loadProjects() {
+  try {
+    const res = await fetch('/projects.json');
+    if (!res.ok) throw new Error(res.status);
+    PROJECTS = await res.json();
+  } catch (e) {
+    console.error('Could not load projects.json:', e);
+  }
+  filterProjects(_currentTag);
+}
+
+function buildCard(p) {
+  const chips = p.chips.map(c => {
+    const label = c.labelKey ? T(c.labelKey) : c.label;
+    return `<span class="card-tag ${c.style}">${label}</span>`;
+  }).join('');
+
+  const previewInner = p.cta
+    ? `<div class="card-preview-placeholder forest-bg" style="width:100%;height:100%;">
+         <span style="font-family:var(--f-d);font-weight:800;font-size:2.5rem;color:var(--bright);line-height:1;">+</span>
+         <span style="font-family:var(--f-d);font-weight:800;font-size:1rem;color:var(--cream);text-align:center;padding:0 1rem;">${T('projects.yourDataHere')}</span>
+       </div>`
+    : p.screenshot
+    ? `<img src="${p.screenshot}" alt="${pick(p.title, p.titleKey)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+       <div class="card-preview-placeholder forest-bg" style="display:none;position:absolute;inset:0;">${mapPinSVG()}</div>`
+    : `<div class="card-preview-placeholder ${p.live ? 'forest-bg' : 'pale-bg'}" style="width:100%;height:100%;">
+       ${p.live ? mapPinSVG() : comingSoonSVG()}
+       </div>`;
+
+  const footer = p.live
+    ? `<div class="card-footer">
+         <a href="${p.url}" class="card-link">${T('projects.viewProject')}</a>
+         ${p.year ? `<span class="card-meta">${p.year}</span>` : ''}
+       </div>`
+    : p.cta
+      ? `<div class="card-footer"><a href="${p.url}" class="card-link">${T('projects.workWithMe')}</a></div>`
+      : '';
+
+  const track = `if(window.umami){umami.track('${p.cta ? 'work-with-me-click' : 'project-click'}',{project:'${p.id}'})}`;
+  const cardClick = p.url
+    ? `onclick="${track};window.open('${p.url}','${p.cta ? '_self' : '_blank'}')" style="cursor:pointer"`
+    : `style="opacity:.65;cursor:default"`;
+
+  return `
+    <div class="project-card${p.cta ? ' cta-card' : ''}" data-tags="${p.tags.join(',')}" data-live="${p.live}" ${cardClick}>
+      <div class="card-preview" style="${!p.url ? 'cursor:default' : ''}">${previewInner}</div>
+      <div class="card-body">
+        <div class="card-tags">${chips}</div>
+        <div class="card-title">${pick(p.title, p.titleKey)}</div>
+        <div class="card-desc">${pick(p.desc, p.descKey)}</div>
+        ${p.useFor ? `<div class="card-use"><b>${T('projects.useFor')}</b>${pick(p.useFor)}</div>` : ''}
+        ${footer}
+      </div>
+    </div>`;
+}
+
+document.addEventListener('click', e => {
+  const link = e.target.closest('.project-card .card-link');
+  if (link) { e.preventDefault(); }
+});
+
+function mapPinSVG() {
+  return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+    <span style="font-family:var(--f-d);font-weight:800;font-size:0.875rem;color:var(--cream);text-align:center;line-height:1.3;padding:0 1rem;margin-top:0.5rem;">Live</span>
+    <span style="font-family:var(--f-m);font-weight:600;font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);opacity:0.6;">databites.tech/projects</span>`;
+}
+
+function comingSoonSVG() {
+  return `<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#A8DDC4" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2.5"/></svg>
+    <span style="font-family:var(--f-d);font-weight:800;font-size:0.875rem;color:var(--muted);text-align:center;line-height:1.3;padding:0 1rem;margin-top:0.5rem;">${T('projects.comingSoon')}</span>
+    <span style="font-family:var(--f-m);font-weight:600;font-size:0.5rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mint);opacity:0.6;">soon</span>`;
+}
+
+let _currentTag = 'all';
+
+function filterProjects(tag, silent) {
+  _currentTag = tag;
+  const grid = document.getElementById('projects-grid');
+  const active = tag === 'all' ? PROJECTS : PROJECTS.filter(p => p.tags.includes(tag));
+  grid.innerHTML = active.length
+    ? active.map(buildCard).join('')
+    : `<div class="empty-state"><p>${T('empty')}</p></div>`;
+
+  if (!silent) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      const btnTag = btn.getAttribute('data-tag') || btn.textContent.trim();
+      const isAll = tag === 'all' && (btn.getAttribute('data-tag') === 'all' || btn.textContent.trim() === T('filter.all'));
+      btn.classList.toggle('active', btnTag === tag || isAll);
+    });
+  }
+  updateStats(active);
+}
+
+function updateStats(list) {
+  document.getElementById('stat-live').innerHTML = `<span>${list.filter(p => p.live).length}</span>`;
+}
+
+// Add data-tag attributes to filter buttons so setLang can track active state
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  const text = btn.textContent.trim().toLowerCase();
+  if (text === 'all' || text === 'todos' || text === 'tots') btn.setAttribute('data-tag', 'all');
+  else if (text === 'dataviz') btn.setAttribute('data-tag', 'DataViz');
+  else if (text === 'maps' || text === 'mapas' || text === 'mapes') btn.setAttribute('data-tag', 'Maps');
+  else if (text === 'ml') btn.setAttribute('data-tag', 'ML');
+  else if (text === 'tools' || text === 'herramientas' || text === 'eines') btn.setAttribute('data-tag', 'Tools');
+});
+
+// Set data-tag on filter buttons from their onclick (more reliable)
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  const onclick = btn.getAttribute('onclick') || '';
+  const match = onclick.match(/filterProjects\('([^']+)'\)/);
+  if (match) btn.setAttribute('data-tag', match[1]);
+});
+
+// Auto-detect language on load
+(function() {
+  let saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  const browser = navigator.language?.slice(0, 2).toLowerCase();
+  const lang = saved || (browser === 'es' ? 'es' : browser === 'ca' ? 'ca' : 'en');
+  if (lang !== 'en') {
+    currentLang = lang;
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      const btnLang = btn.textContent.toLowerCase().replace('cat', 'ca');
+      btn.classList.toggle('active', btnLang === lang);
+    });
+  }
+  applyI18n();
+  loadProjects();
+})();
+</script>
+<script src="/site.js"></script>
+</body>
+</html>

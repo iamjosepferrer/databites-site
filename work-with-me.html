@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work with me · Josep Ferrer · databites</title>
+<meta name="description" content="Work with Josep Ferrer: data projects, workshops and talks, sponsorship and technical writing. Tell me what you need and I reply by email.">
+<meta property="og:title" content="Work with me · Josep Ferrer">
+<meta property="og:description" content="Data projects, workshops and talks, sponsorship and technical writing. Tell me what you need.">
+<meta property="og:url" content="https://databites.tech/work-with-me">
+<meta property="og:image" content="https://databites.tech/images/og-work.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://databites.tech/images/og-work.png">
+<link rel="canonical" href="https://databites.tech/work-with-me">
+<link rel="icon" type="image/png" href="images/databitestech_logo.png">
+<link rel="apple-touch-icon" href="images/databitestech_logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<!-- Analytics: Umami (cookieless). Replace the website ID with the one from your Umami dashboard. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID" data-domains="databites.tech,www.databites.tech"></script>
+
+<style>
+:root {
+  --forest:    #1A3829;
+  --green:     #2D9B4E;
+  --bright:    #38B86E;
+  --mint:      #A8DDC4;
+  --mint-pale: #E8F5EE;
+  --cream:     #FAF6F0;
+  --muted:     #5E7D6A;
+  --rule:      #D4E8DC;
+  --f-d: 'Gabarito', system-ui, sans-serif;
+  --f-b: 'Gabarito', system-ui, sans-serif;
+  --f-m: 'Gabarito', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { font-family: var(--f-b); background: var(--cream); color: var(--forest); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+:focus-visible { outline: 2px solid var(--bright); outline-offset: 3px; border-radius: 4px; }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 clamp(1.25rem, 5vw, 6rem);
+  display: flex; align-items: center; justify-content: space-between;
+  height: 80px;
+}
+.nav-logo { display: flex; align-items: center; gap: 0.625rem; }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-size: 1rem; font-weight: 500; color: var(--muted); transition: color .15s; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bright); border-radius: 1px; transition: width .22s ease; }
+.nav-links a:hover { color: var(--forest); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+.nav-links a.active { color: var(--forest); }
+.nav-cta { white-space: nowrap; background: var(--forest); color: var(--cream) !important; font-size: 0.8125rem !important; font-weight: 600 !important; padding: 0.5rem 1.125rem; border-radius: 6px; transition: background .15s !important; }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--green) !important; }
+.lang-switch { display: flex; align-items: center; gap: 0.25rem; margin-left: 1.5rem; }
+.lang-btn { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.5rem; border-radius: 4px; border: 1px solid transparent; cursor: pointer; color: var(--muted); background: transparent; transition: all .15s; }
+.lang-btn:hover { color: var(--forest); border-color: var(--rule); }
+.lang-btn.active { color: var(--bright); border-color: var(--bright); background: var(--mint-pale); }
+
+/* BUTTONS */
+.btn-reach { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--bright); color: var(--forest); font-family: var(--f-b); font-size: 0.9375rem; font-weight: 700; padding: 0.75rem 1.5rem; border-radius: 8px; transition: background .15s; }
+.btn-reach:hover { background: #44d07e; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.375rem; color: var(--mint); font-family: var(--f-b); font-size: 0.9375rem; font-weight: 500; padding: 0.75rem 0; border-bottom: 1px solid rgba(168,221,196,0.3); transition: color .15s, border-color .15s; }
+.btn-ghost:hover { color: var(--cream); border-color: var(--mint); }
+.btn-dark { display: inline-flex; align-items: center; gap: 0.375rem; background: var(--forest); color: var(--cream); font-family: var(--f-b); font-size: 0.9375rem; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 8px; transition: background .15s; }
+.btn-dark:hover { background: var(--green); }
+.text-link { color: var(--green); font-weight: 600; border-bottom: 1px solid var(--rule); transition: border-color .15s, color .15s; }
+.text-link:hover { color: var(--forest); border-color: var(--green); }
+
+/* SECTION SKELETON */
+section { padding: 5rem clamp(1.25rem, 5vw, 6rem); }
+.inner { max-width: clamp(900px, 85vw, 1400px); margin: 0 auto; width: 100%; }
+.section-label { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.section-title { font-family: var(--f-d); font-weight: 800; font-size: clamp(1.75rem, 3vw, 3rem); line-height: 1.1; color: var(--forest); margin-bottom: 0.75rem; text-wrap: balance; }
+.section-sub { font-size: clamp(0.9375rem, 1.1vw, 1.125rem); color: var(--muted); max-width: 680px; line-height: 1.75; }
+
+/* HERO */
+#hero { background: var(--forest); }
+.hero-inner { max-width: clamp(900px, 85vw, 1400px); margin: 0 auto; display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: center; }
+.hero-left { min-width: 0; }
+.hero-eyebrow { font-family: var(--f-m); font-weight: 600; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--bright); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-eyebrow::before { content: ''; width: 24px; height: 1.5px; background: var(--bright); opacity: 0.6; }
+.hero-h1 { font-family: var(--f-d); font-weight: 800; font-size: clamp(2rem, 3.6vw, 3.25rem); line-height: 1.05; color: var(--cream); margin-bottom: 0.5rem; max-width: 820px; text-wrap: balance; }
+.hero-sub { font-family: var(--f-d); font-weight: 800; font-size: clamp(1.25rem, 2.2vw, 1.875rem); line-height: 1.15; color: var(--bright); margin-bottom: 1.5rem; max-width: 820px; }
+.hero-desc { font-size: clamp(0.9375rem, 1.1vw, 1.0625rem); color: var(--mint); opacity: 0.9; line-height: 1.75; max-width: 600px; margin-bottom: 2rem; }
+.hero-proof { display: flex; gap: 2.5rem; flex-wrap: wrap; padding-top: 1.5rem; border-top: 1px solid rgba(168,221,196,0.15); margin-bottom: 2.5rem; }
+.proof-stat { display: flex; flex-direction: column; gap: 2px; }
+.proof-num { font-family: var(--f-d); font-weight: 800; font-size: 1.625rem; color: var(--bright); line-height: 1; font-variant-numeric: tabular-nums; }
+.proof-label { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mint); opacity: 0.7; max-width: 170px; }
+.hero-cta { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; }
+.hero-photo img { width: 100%; object-fit: cover; object-position: center top; border-radius: 14px; }
+
+/* FIT */
+#fit { background: var(--cream); }
+.fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2.5rem; }
+.fit-card { border-top: 2px solid var(--forest); padding-top: 1.125rem; }
+.fit-title { font-family: var(--f-d); font-weight: 800; font-size: 1.1875rem; color: var(--forest); margin-bottom: 0.5rem; line-height: 1.2; }
+.fit-desc { font-size: 0.9375rem; color: var(--muted); line-height: 1.7; }
+
+/* FORMATS */
+#formats { background: var(--mint-pale); }
+.format-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem; align-items: stretch; }
+.format-card { background: white; border: 1px solid var(--rule); border-top: 3px solid var(--bright); border-radius: 12px; padding: 1.375rem 1.25rem 1.25rem; display: flex; flex-direction: column; min-width: 0; }
+.format-meta { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
+.format-name { font-family: var(--f-d); font-weight: 800; font-size: 1.375rem; color: var(--forest); line-height: 1.1; margin-bottom: 0.5rem; }
+.format-desc { font-size: 0.875rem; color: var(--forest); line-height: 1.6; margin-bottom: 1rem; }
+.format-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding-top: 0.875rem; border-top: 1px solid var(--rule); flex: 1; }
+.format-list li { font-size: 0.8125rem; color: var(--muted); line-height: 1.55; display: flex; gap: 0.5rem; }
+.format-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--bright); flex-shrink: 0; margin-top: 0.5rem; }
+.format-fit { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed var(--rule); font-size: 0.75rem; color: var(--muted); line-height: 1.5; }
+.format-fit b { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--forest); display: block; margin-bottom: 0.125rem; font-weight: 700; }
+.formats-note { margin-top: 2rem; display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; font-size: 0.9375rem; color: var(--forest); }
+
+/* PROCESS */
+#process { background: var(--cream); }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2.5rem; counter-reset: step; }
+.step { counter-increment: step; position: relative; padding-top: 2.75rem; min-width: 0; }
+.step::before { content: counter(step); position: absolute; top: 0; left: 0; width: 2rem; height: 2rem; border-radius: 50%; background: var(--forest); color: var(--cream); font-family: var(--f-m); font-weight: 600; font-size: 0.8rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.step::after { content: ''; position: absolute; top: 1rem; left: 2.5rem; right: -1rem; height: 1px; background: var(--rule); }
+.step:last-child::after { display: none; }
+.step-title { font-family: var(--f-d); font-weight: 800; font-size: 1.125rem; color: var(--forest); margin-bottom: 0.375rem; }
+.step-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.65; }
+.process-note { margin-top: 2rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); font-size: 0.9375rem; color: var(--muted); line-height: 1.7; max-width: 720px; }
+
+/* WORK / CASES */
+#work { background: white; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+.case { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--cream); display: flex; flex-direction: column; min-width: 0; }
+.case-img { aspect-ratio: 16/8; background: var(--mint-pale); border-bottom: 1px solid var(--rule); overflow: hidden; }
+.case-img img { width: 100%; height: 100%; object-fit: cover; }
+.case-img.solid { aspect-ratio: 16/6; background: var(--forest); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+.case-img.solid .case-big { font-family: var(--f-d); font-weight: 800; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--bright); line-height: 1; text-align: center; }
+.case-img.solid .case-big small { display: block; font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mint); opacity: 0.75; margin-top: 0.625rem; }
+.case-body { padding: 1.375rem 1.375rem 1.5rem; display: flex; flex-direction: column; gap: 0.625rem; flex: 1; }
+.case-tag { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); }
+.case-title { font-family: var(--f-d); font-weight: 800; font-size: 1.3125rem; line-height: 1.2; color: var(--forest); }
+.case-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+.case-chips { display: flex; gap: 0.375rem; flex-wrap: wrap; margin-top: auto; padding-top: 0.5rem; }
+.chip { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; background: var(--mint-pale); color: var(--green); }
+.case-link { font-size: 0.875rem; font-weight: 600; color: var(--green); }
+.case-link:hover { color: var(--forest); }
+.case-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.case-side { display: flex; flex-direction: column; gap: 1.25rem; min-width: 0; }
+.work-more { margin-top: 2rem; }
+
+/* QUOTES */
+#quotes { background: var(--cream); }
+.quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+.quote { background: white; border: 1px solid var(--rule); border-radius: 12px; padding: 1.75rem 1.625rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.quote-text { font-size: 1rem; line-height: 1.75; color: var(--forest); }
+.quote-text::before { content: '“'; font-family: var(--f-d); font-weight: 800; font-size: 2.5rem; line-height: 0; color: var(--bright); display: block; height: 1.25rem; }
+.quote-who { font-size: 0.875rem; color: var(--muted); line-height: 1.4; margin-top: auto; }
+.quote-who strong { display: block; color: var(--forest); font-weight: 600; }
+
+/* CLIENTS */
+#clients { background: var(--cream); padding-top: 3.5rem; padding-bottom: 3.5rem; }
+.logo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.75rem 2rem; margin-top: 2rem; align-items: center; }
+.logo-grid a { display: flex; align-items: center; justify-content: center; height: 44px; filter: grayscale(1); opacity: 0.55; transition: opacity .2s, filter .2s; }
+.logo-grid a:hover { opacity: 1; filter: grayscale(0); }
+.logo-grid img { max-height: 34px; max-width: 120px; width: auto; object-fit: contain; }
+
+/* FAQ */
+#faq { background: var(--mint-pale); }
+.faq-list { margin-top: 2rem; max-width: 860px; border-top: 1px solid var(--rule); }
+.faq-list details { border-bottom: 1px solid var(--rule); }
+.faq-list summary { list-style: none; cursor: pointer; padding: 1.125rem 2.5rem 1.125rem 0; font-weight: 600; font-size: 1rem; color: var(--forest); position: relative; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; position: absolute; right: 0.25rem; top: 50%; transform: translateY(-50%); font-family: var(--f-m); font-weight: 600; font-size: 1.125rem; color: var(--green); }
+.faq-list details[open] summary::after { content: '−'; }
+.faq-list details p { padding: 0 2.5rem 1.25rem 0; font-size: 0.9375rem; color: var(--muted); line-height: 1.75; }
+
+/* CONTACT */
+#contact { background: var(--forest); }
+#contact .section-label { color: var(--mint); opacity: 0.7; }
+#contact .section-label::after { background: rgba(255,255,255,0.12); }
+#contact .section-title { color: var(--cream); }
+.contact-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; margin-top: 2.5rem; align-items: start; }
+.contact-desc { font-size: 1rem; color: var(--mint); opacity: 0.9; line-height: 1.75; max-width: 520px; }
+.contact-actions { display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; margin-top: 1.75rem; }
+.contact-email-label { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mint); opacity: 0.7; margin-bottom: 0.5rem; }
+.contact-email { font-family: var(--f-d); font-weight: 800; font-size: clamp(1.25rem, 2.4vw, 1.75rem); color: var(--cream); transition: color .15s; display: inline-block; word-break: break-all; }
+.contact-email:hover { color: var(--bright); }
+.contact-box { border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 1.5rem; background: rgba(255,255,255,0.04); }
+.contact-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1.25rem; }
+.contact-box li { font-size: 0.875rem; color: var(--mint); line-height: 1.55; display: flex; gap: 0.625rem; }
+.contact-box li::before { content: '→'; font-family: var(--f-m); font-weight: 600; color: var(--bright); flex-shrink: 0; }
+
+/* FOOTER */
+footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2rem clamp(1.25rem, 5vw, 2.5rem); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-left { display: flex; align-items: center; gap: 0.625rem; flex-wrap: wrap; }
+.footer-tag { font-family: var(--f-m); font-weight: 600; font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-left: 0.5rem; }
+.footer-right { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.1em; color: var(--muted); opacity: 0.8; }
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .format-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 2rem; }
+  .step:nth-child(2)::after { display: none; }
+}
+@media (max-width: 900px) {
+  .nav-links { gap: 0.75rem; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .lang-switch { margin-left: 0.25rem; }
+  section { padding: 4rem 1.25rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-photo { display: none; }
+  .hero-proof { gap: 1.5rem; }
+  .fit-grid { grid-template-columns: 1fr; }
+  .case-grid { grid-template-columns: 1fr; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+@media (max-width: 560px) {
+  .format-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .step::after { display: none; }
+  .logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-cta { padding: 0.45rem 0.75rem; }
+  .nav-word { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* v5: simple hero, need tabs */
+.card-ex { display: block; margin-top: 0.875rem; padding-top: 0.75rem; border-top: 1px dashed var(--rule); font-size: 0.8125rem; font-weight: 600; }
+.card-ex.muted { color: var(--muted); }
+.format-card { justify-content: flex-start; }
+.format-card .format-desc { flex: 1; }
+.panel-note { margin-top: 1rem; font-size: 0.875rem; color: var(--muted); }
+.quote.one { margin-top: 1.25rem; max-width: 760px; }
+.talk-list { list-style: none; margin-top: 1rem; border-top: 1px solid var(--rule); max-width: 860px; }
+.talk-list li { display: flex; justify-content: space-between; gap: 0.25rem 1.5rem; flex-wrap: wrap; padding: 0.875rem 0; border-bottom: 1px solid var(--rule); font-size: 0.9375rem; }
+.talk-list strong { font-weight: 600; color: var(--forest); }
+.talk-list a { font-weight: 600; }
+.talk-list span { color: var(--muted); }
+.channel-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.25rem; max-width: 860px; }
+.channel { display: flex; flex-direction: column; gap: 0.15rem; padding: 1.1rem 1.25rem; background: #fff; border: 1px solid var(--rule); border-radius: 10px; text-decoration: none; transition: border-color .15s; }
+.channel:hover { border-color: var(--bright); }
+.channel-num { font-family: var(--f-d); font-weight: 800; font-size: 1.9rem; line-height: 1; color: var(--forest); }
+.channel-name { font-weight: 600; color: var(--forest); margin-top: 0.35rem; }
+.channel-unit { color: var(--muted); font-size: 0.875rem; }
+@media (max-width: 640px) { .channel-row { grid-template-columns: 1fr; } }
+.panel-h { font-family: var(--f-d); font-weight: 800; font-size: 1.375rem; color: var(--forest); margin-top: 2.75rem; margin-bottom: 0.25rem; }
+.need-panel .steps { margin-top: 1.25rem; }
+.need-panel .case-grid, .need-panel .quote-grid { margin-top: 1.25rem; }
+.case-grid.two { grid-template-columns: repeat(2, 1fr); }
+a.case { transition: transform .15s, box-shadow .15s; }
+a.case:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41,0.08); }
+.need-panel .work-more { margin-top: 1.25rem; }
+.need-panel .panel-cta { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); }
+.need-tab[data-tab="other"] { border-style: dashed; }
+@media (max-width: 900px) { .case-grid.two { grid-template-columns: 1fr; } }
+#hero { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+.hero-h1 { font-size: clamp(2.25rem, 4.4vw, 3.75rem); margin-bottom: 1.25rem; }
+.hero-desc { font-size: clamp(1.0625rem, 1.3vw, 1.25rem); max-width: 620px; opacity: 1; }
+.hero-inner { grid-template-columns: 1fr 260px; }
+#need { background: var(--cream); }
+.need-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1.75rem; }
+.need-tab { font: inherit; font-size: 1rem; font-weight: 600; padding: 0.7rem 1.125rem; border-radius: 8px; border: 1.5px solid var(--rule); background: white; color: var(--forest); cursor: pointer; transition: border-color .15s, background .15s; }
+.need-tab:hover { border-color: var(--mint); }
+.need-tab.active { background: var(--forest); border-color: var(--forest); color: var(--cream); }
+.need-panel { margin-top: 1.75rem; }
+.need-panel + .need-panel { padding-top: 1.75rem; border-top: 1px solid var(--rule); }
+.need-panel > h3.panel-title { font-family: var(--f-d); font-weight: 800; font-size: 1.375rem; margin-bottom: 0.375rem; }
+.js .need-panel > h3.panel-title { display: none; }
+.js .need-panel + .need-panel { padding-top: 0; border-top: 0; }
+.panel-intro { font-size: 1.0625rem; color: var(--muted); line-height: 1.7; max-width: 720px; }
+.panel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.panel-proof { margin-top: 1.25rem; font-size: 0.9375rem; color: var(--forest); font-weight: 500; }
+.panel-cta { margin-top: 1.5rem; display: flex; gap: 1.25rem; align-items: center; flex-wrap: wrap; }
+.format-card .format-desc { margin-bottom: 0; font-size: 0.9375rem; color: var(--muted); }
+.steps { grid-template-columns: repeat(3, 1fr); }
+.case-grid { grid-template-columns: repeat(3, 1fr); }
+.contact-form select { font: inherit; font-size: 0.9375rem; color: var(--forest); background: var(--cream); border: 1px solid transparent; border-radius: 8px; padding: 0.65rem 0.75rem; width: 100%; }
+@media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } #hero { padding-top: 3rem; padding-bottom: 3rem; } .steps, .case-grid { grid-template-columns: 1fr; } .step::after { display: none; } .need-tab { flex: 1 1 100%; text-align: left; } }
+</style>
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo" aria-label="databites.tech home" style="display:flex;align-items:center;gap:0.625rem;">
+    <img src="/images/databitestech_logo.png" alt="" style="height:34px;width:auto;">
+    <span class="nav-word" style="font-family:'Gabarito',system-ui,sans-serif;font-weight:800;font-size:1.25rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
+  </a>
+  <div class="nav-links">
+    <div class="nav-menu" id="nav-menu">
+      <a href="/work-with-me" data-nav="work" class="active">Work with me</a>
+      <a href="/projects" data-nav="portfolio">Portfolio</a>
+      <a href="/write" data-nav="writing">Writing</a>
+      <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="nav">Newsletter</a>
+    </div>
+    <a href="/work-with-me#contact" class="nav-cta" data-umami-event="contact-click" data-umami-event-location="nav" data-nav="contact">Get in touch</a>
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('ca')">CAT</button>
+    </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <h1 class="hero-h1" data-i18n="hero.h1">Better decisions with your own data.</h1>
+      <p class="hero-desc" data-i18n="hero.desc">I build maps, analyses and GenAI tools for organisations, and I teach teams to do the same. Tell me what you need and I'll reply within 2 business days.</p>
+      <div class="hero-cta"><a href="#need" class="btn-reach" data-umami-event="hero-cta" data-i18n="hero.cta">Tell me what you need →</a><a href="#" class="btn-ghost js-book" data-book-only data-umami-event="book-call" data-umami-event-location="hero" data-i18n="hero.book">Or book a 20 min call</a></div>
+    </div>
+    <div class="hero-photo"><img src="/images/headshot.png" alt="Josep Ferrer"></div>
+  </div>
+</section>
+
+<section id="need">
+  <div class="inner">
+    <h2 class="section-title" data-i18n="need.title">What do you need?</h2>
+    <div class="need-tabs" role="tablist">
+      <button class="need-tab active" type="button" role="tab" data-tab="project" data-i18n="tab.project">A data project</button>
+      <button class="need-tab" type="button" role="tab" data-tab="training" data-i18n="tab.training">A workshop, webinar or talk</button>
+      <button class="need-tab" type="button" role="tab" data-tab="sponsorship" data-i18n="tab.sponsorship">Sponsorship</button>
+      <button class="need-tab" type="button" role="tab" data-tab="writing" data-i18n="tab.writing">Technical writing</button>
+      <button class="need-tab" type="button" data-tab="other" data-i18n="tab.other">Anything else</button>
+    </div>
+    <div class="need-panel" id="panel-project" role="tabpanel">
+      <h3 class="panel-title" data-i18n="tab.project">A data project</h3>
+      <p class="panel-intro" data-i18n="p1.intro">For public bodies, research groups and companies that have the data and need a decision, a tool or a story out of it.</p>
+      <div class="panel-grid"><article class="format-card"><div class="format-meta" data-i18n="p1.a.meta">6 to 8 weeks</div><h4 class="format-name" data-i18n="p1.a.name">Pilot</h4><p class="format-desc" data-i18n="p1.a.desc">One real question answered with your data: the analysis, a clear visual result and a tool your team keeps.</p><a href="https://catalonia-atlas.databites.tech/" target="_blank" rel="noopener" class="case-link card-ex" data-umami-event="project-click" data-umami-event-project="catalonia-atlas" data-i18n="p1.a.ex">Example: Catalonia Income Atlas →</a></article><article class="format-card"><div class="format-meta" data-i18n="p1.b.meta">Monthly</div><h4 class="format-name" data-i18n="p1.b.name">Retainer</h4><p class="format-desc" data-i18n="p1.b.desc">I join your team part-time as an external data person. Python, SQL, D3.js, Power BI, Tableau, cloud and LLMs.</p><span class="card-ex muted" data-i18n="p1.b.ex">Example: NECSTouR, since 2024</span></article><article class="format-card"><div class="format-meta" data-i18n="p1.c.meta">Per piece</div><h4 class="format-name" data-i18n="p1.c.name">Data story</h4><p class="format-desc" data-i18n="p1.c.desc">A map or visual story built from your data, ready for a report, website or campaign.</p><a href="https://five-ways-nyc.databites.tech/" target="_blank" rel="noopener" class="case-link card-ex" data-umami-event="project-click" data-umami-event-project="five-ways-nyc" data-i18n="p1.c.ex">Example: Five ways to hear New York →</a></article></div>
+      <p class="panel-note" data-i18n="p1.note">I work freelance and part-time, so I don't take full-time roles.</p>
+      <h3 class="panel-h" data-i18n="panel.how">How it works</h3>
+      <ol class="steps"><li class="step"><h4 class="step-title" data-i18n="s1.t">You write to me<span data-book-only> or book a call</span></h4><p class="step-desc" data-i18n="s1.d">Tell me what you need in a few lines<span data-book-only>, or pick a 20 minute slot</span>.</p></li><li class="step"><h4 class="step-title" data-i18n="s2.t">I send a one-page proposal</h4><p class="step-desc" data-i18n="s2.d">Scope, timeline and price, within a few working days.</p></li><li class="step"><h4 class="step-title" data-i18n="s3.t">We do the work</h4><p class="step-desc" data-i18n="s3.d">Short check-ins along the way. You keep the results, the code and the tools.</p></li></ol>
+      <h3 class="panel-h" data-i18n="work.title">Recent projects</h3>
+      <div class="case-grid">
+      <article class="case">
+        <a href="https://popgrid.databites.tech/" target="_blank" rel="noopener" class="case-img" data-umami-event="project-click" data-umami-event-project="popgrid-explorer"><img src="/images/projects-headers/popgrid-explorer.png" alt="popgrid explorer"></a>
+        <div class="case-body"><div class="case-tag" data-i18n="c4.tag">Open source. 2026</div><h3 class="case-title" data-i18n="c4.title">popgrid: every country as equal blocks</h3><p class="case-desc" data-i18n="c4.desc">An open-source Python library that redraws any country as blocks, where each block is an equal share of land, people or GDP. It powers my weekday map series: 35 countries so far.</p>
+          <div class="case-links"><a href="https://popgrid.databites.tech/" target="_blank" rel="noopener" class="case-link" data-i18n="c4.link1">Try the explorer →</a><a href="https://github.com/databites-tech/popgrid" target="_blank" rel="noopener" class="case-link" data-i18n="c4.link2">See the code →</a></div></div>
+      </article>
+      <article class="case">
+        <a href="https://catalonia-atlas.databites.tech/" target="_blank" rel="noopener" class="case-img" data-umami-event="project-click" data-umami-event-project="catalonia-atlas"><img src="/images/projects-headers/catalonia-atlas.png" alt="Catalonia Income Atlas"></a>
+        <div class="case-body"><div class="case-tag" data-i18n="c2.tag">Public project. 2025</div><h3 class="case-title" data-i18n="c2.title">Catalonia Income Atlas</h3><p class="case-desc" data-i18n="c2.desc">Income inequality across 5,108 census tracts, from INE data for 2015 to 2023. It shows where income is lowest at census-tract level.</p>
+          <a href="https://catalonia-atlas.databites.tech/" target="_blank" rel="noopener" class="case-link" data-i18n="c2.link">Open the atlas →</a></div>
+      </article>
+      <article class="case">
+        <div class="case-body"><div class="case-tag" data-i18n="c1.tag">NECSTouR. Ongoing</div><h3 class="case-title" data-i18n="c1.title">A shared data API for European tourism regions</h3><p class="case-desc" data-i18n="c1.desc">An API and dashboards that bring public tourism and mobility data into one place for the network's regions, plus LLM pilots and training for their teams.</p>
+          <div class="case-chips"><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Superset</span><span class="chip">LLMs</span></div></div>
+      </article>
+    </div>
+    
+      <p class="work-more"><a href="/projects" class="text-link" data-umami-event="portfolio-click" data-umami-event-location="work-with-me" data-i18n="work.more">See all public projects →</a></p>
+      <h3 class="panel-h" data-i18n="quotes.label">What clients say</h3>
+      <figure class="quote one"><blockquote class="quote-text">Consistently delivering high-quality work and meeting our deadlines. Josep has a rare ability to turn complex topics […] into clear, engaging, and accessible guides.</blockquote><figcaption class="quote-who"><strong>Axelle Dervaux</strong><span data-i18n="q.project.who">Marketing Director, ClicData, after 12 months of technical writing</span></figcaption></figure>
+      <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="project" data-umami-event="ask-click" data-umami-event-topic="project" data-i18n="panel.cta">Ask about this →</a></div>
+    </div>
+    <div class="need-panel" id="panel-training" role="tabpanel">
+      <h3 class="panel-title" data-i18n="tab.training">A workshop, webinar or talk</h3>
+      <p class="panel-intro" data-i18n="p2.intro">For teams, universities, training providers and event organisers. Online or on-site, in English, Spanish or Catalan.</p>
+      <div class="panel-grid"><article class="format-card"><div class="format-meta" data-i18n="p2.a.meta">1 day</div><h4 class="format-name" data-i18n="p2.a.name">Team workshop</h4><p class="format-desc" data-i18n="p2.a.desc">Your team works on its own data: how to analyse it with GenAI, what to trust and how to present it.</p></article><article class="format-card"><div class="format-meta" data-i18n="p2.b.meta">1 to 2 hours</div><h4 class="format-name" data-i18n="p2.b.name">Webinar or talk</h4><p class="format-desc" data-i18n="p2.b.desc">Data visualization, maps with Python or GenAI at work, for your event, community or company.</p></article><article class="format-card"><div class="format-meta" data-i18n="p2.c.meta">Several weeks</div><h4 class="format-name" data-i18n="p2.c.name">Course</h4><p class="format-desc" data-i18n="p2.c.desc">Hands-on courses for universities and training providers. I teach in the Big Data Master at Universidad de Navarra and lead GenAI for Professionals at Emeritus.</p></article></div><p class="panel-proof" data-i18n="p2.proof">So far: 350+ master's students, 150 professionals and 1,000+ webinar attendees.</p>
+      <h3 class="panel-h" data-i18n="panel.how">How it works</h3>
+      <ol class="steps"><li class="step"><h4 class="step-title" data-i18n="h.training.1.t">You tell me the audience</h4><p class="step-desc" data-i18n="h.training.1.d">Who it is for, the format and the date you have in mind.</p></li><li class="step"><h4 class="step-title" data-i18n="h.training.2.t">I send an outline and a price</h4><p class="step-desc" data-i18n="h.training.2.d">One page, within a few working days.</p></li><li class="step"><h4 class="step-title" data-i18n="h.training.3.t">I deliver the session</h4><p class="step-desc" data-i18n="h.training.3.d">Online or on-site. You keep the slides and materials.</p></li></ol>
+      <h3 class="panel-h" data-i18n="tr.title">Where I teach and speak</h3>
+      <ul class="talk-list"><li><strong data-i18n="tr1.t">Data Visualization, Big Data Master, Universidad de Navarra</strong><span data-i18n="tr1.d">Since 2023, 4 cohorts</span></li><li><strong data-i18n="tr2.t">GenAI for Professionals, Emeritus and UNAV</strong><span data-i18n="tr2.d">Since November 2025, 4 editions, in Spanish</span></li><li><a href="https://www.youtube.com/watch?v=xmv_skli_ZY" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv1">n8n Tutorial for Beginners: Build Powerful Open-Source Automations</a><span data-i18n="wv1.d">DataCamp video, Sep 2025, 51 min</span></li><li><a href="https://www.youtube.com/watch?v=QTK55_Otbqs" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv2">RAG 101: Learn how to build your first pipeline!</a><span data-i18n="wv2.d">DataCamp video, Sep 2025, 57 min</span></li><li><a href="https://www.youtube.com/watch?v=jh2geed5-Vc" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv3">GPT-5 Tutorial: Hands-On Projects With OpenAI’s Newest Model</a><span data-i18n="wv3.d">DataCamp video, Aug 2025, 59 min</span></li><li><a href="https://www.youtube.com/watch?v=bcygOasrldM" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv4">Grok 4 Full Breakdown: Deep Dive and 7 Practical Examples</a><span data-i18n="wv4.d">DataCamp video, Jul 2025, 38 min</span></li><li><a href="https://www.datacamp.com/code-along/understanding-llms-for-code-generation" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wb1">Understanding LLMs for Code Generation</a><span data-i18n="wb1.d">DataCamp code-along with Andrea Valenzuela, Oct 2024</span></li><li><a href="https://www.datacamp.com/code-along/fine-tuning-open-source-llms-with-mistral" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wb2">Fine-tuning Open Source LLMs with Mistral</a><span data-i18n="wb2.d">DataCamp code-along with Andrea Valenzuela, Jul 2024</span></li><li><a href="https://www.datacamp.com/code-along/chat-with-your-documents-using-gpt-and-lang-chain" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wb3">Chat with Your Documents Using GPT &amp; LangChain</a><span data-i18n="wb3.d">DataCamp code-along with Andrea Valenzuela, Jan 2024</span></li></ul>
+      <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="training" data-umami-event="ask-click" data-umami-event-topic="training" data-i18n="panel.cta">Ask about this →</a></div>
+    </div>
+    <div class="need-panel" id="panel-sponsorship" role="tabpanel">
+      <h3 class="panel-title" data-i18n="tab.sponsorship">Sponsorship</h3>
+      <p class="panel-intro" data-i18n="p3.intro">For companies that want to reach data and AI professionals.</p>
+      <h3 class="panel-h" data-i18n="panel.channels">Where it runs</h3>
+      <div class="channel-row">
+        <a href="https://www.linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="linkedin"><span class="channel-num" data-audience="linkedin">10k</span><span class="channel-name">LinkedIn</span><span class="channel-unit" data-i18n="ch.followers">followers</span></a>
+        <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="x"><span class="channel-num" data-audience="x">26k</span><span class="channel-name">X</span><span class="channel-unit" data-i18n="ch.followers">followers</span></a>
+        <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="newsletter"><span class="channel-num" data-audience="newsletter">10k</span><span class="channel-name">databites</span><span class="channel-unit" data-i18n="ch.readers">newsletter readers</span></a>
+      </div>
+      
+      <div class="panel-grid"><article class="format-card"><div class="format-meta" data-i18n="p3.a.meta">Per map</div><h4 class="format-name" data-i18n="p3.a.name">Sponsored map</h4><p class="format-desc" data-i18n="p3.a.desc">Your brand on one of my weekday maps on LinkedIn and X, clearly labelled. The maps have passed 1 million views in a week on LinkedIn.</p></article><article class="format-card"><div class="format-meta" data-i18n="p3.b.meta">Per issue</div><h4 class="format-name" data-i18n="p3.b.name">Newsletter slot</h4><p class="format-desc" data-i18n="p3.b.desc">One sponsor per issue of databites, sent to <span data-audience="newsletter">10k</span> readers.</p></article><article class="format-card"><div class="format-meta" data-i18n="p3.c.meta">Per post</div><h4 class="format-name" data-i18n="p3.c.name">Sponsored post</h4><p class="format-desc" data-i18n="p3.c.desc">A post about your book, course or tool on LinkedIn and X, with my own photos and my own take.</p></article></div>
+      <h3 class="panel-h" data-i18n="panel.how">How it works</h3>
+      <ol class="steps"><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.1.t">You tell me the product</h4><p class="step-desc" data-i18n="h.sponsorship.1.d">What you want to promote and when.</p></li><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.2.t">We agree format, date and price</h4><p class="step-desc" data-i18n="h.sponsorship.2.d">A map, a post or a newsletter slot.</p></li><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.3.t">I publish it</h4><p class="step-desc" data-i18n="h.sponsorship.3.d">Clearly labelled as sponsored. Afterwards I send you the numbers.</p></li></ol>
+      <h3 class="panel-h" data-i18n="panel.examples">Examples</h3>
+      <div class="case-grid two"><a href="https://x.com/iamjosepferrer/status/2059914536195666346" target="_blank" rel="noopener" class="case" data-umami-event="example-click" data-umami-event-example="ex1"><div class="case-img"><img src="/images/sponsor-x.jpg" alt="" loading="lazy"></div><div class="case-body"><h4 class="case-title" data-i18n="ex1.t">Packt book on multi-agent systems, on X</h4><p class="case-desc" data-i18n="ex1.d">25,400 views, 339 likes and 357 bookmarks.</p><span class="case-link" data-i18n="ex.link">See the post →</span></div></a><a href="https://www.linkedin.com/posts/iamjosepferrer_llm-ai-genai-ugcPost-7454463512346673152-7mRT/" target="_blank" rel="noopener" class="case" data-umami-event="example-click" data-umami-event-example="ex2"><div class="case-img"><img src="/images/sponsor-linkedin.jpg" alt="" loading="lazy"></div><div class="case-body"><h4 class="case-title" data-i18n="ex2.t">Packt book on GenAI applications, on LinkedIn</h4><p class="case-desc" data-i18n="ex2.d">72 reactions and 10 reposts.</p><span class="case-link" data-i18n="ex.link">See the post →</span></div></a></div>
+      <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="sponsorship" data-umami-event="ask-click" data-umami-event-topic="sponsorship" data-i18n="panel.cta">Ask about this →</a></div>
+    </div>
+    <div class="need-panel" id="panel-writing" role="tabpanel">
+      <h3 class="panel-title" data-i18n="tab.writing">Technical writing</h3>
+      <p class="panel-intro" data-i18n="p4.intro">For data and AI companies that need tutorials and articles written by someone who uses the tools.</p>
+      <div class="panel-grid"><article class="format-card"><div class="format-meta" data-i18n="p4.a.meta">3 months minimum</div><h4 class="format-name" data-i18n="p4.a.name">Monthly package</h4><p class="format-desc" data-i18n="p4.a.desc">2 to 5 pieces a month, 1,500 to 2,500 words each, with research and two revision rounds.</p></article><article class="format-card"><div class="format-meta" data-i18n="p4.b.meta">Languages</div><h4 class="format-name" data-i18n="p4.b.name">English, Spanish or Catalan</h4><p class="format-desc" data-i18n="p4.b.desc">Invoiced in EUR or USD, 30 days net.</p></article></div>
+      <h3 class="panel-h" data-i18n="panel.how">How it works</h3>
+      <ol class="steps"><li class="step"><h4 class="step-title" data-i18n="h.writing.1.t">You tell me what you need</h4><p class="step-desc" data-i18n="h.writing.1.d">Topics, audience and how many pieces a month.</p></li><li class="step"><h4 class="step-title" data-i18n="h.writing.2.t">We agree the package</h4><p class="step-desc" data-i18n="h.writing.2.d">Pieces per month, deadlines and price.</p></li><li class="step"><h4 class="step-title" data-i18n="h.writing.3.t">I become your external technical writer</h4><p class="step-desc" data-i18n="h.writing.3.d">I deliver every month, with two revision rounds per piece. You publish with or without my byline.</p></li></ol>
+      <h3 class="panel-h" data-i18n="panel.samples">Samples</h3>
+      <div class="case-grid"><a href="https://wandb.ai/ai-team-articles/llm-evaluation/reports/LLM-evaluation-benchmarking-Beyond-BLEU-and-ROUGE--VmlldzoxNTIzMTY0NQ" target="_blank" rel="noopener" class="case" data-umami-event="sample-click"><div class="case-body"><div class="case-tag">W&amp;B</div><h4 class="case-title">LLM evaluation benchmarking: Beyond BLEU and ROUGE</h4><span class="case-link" data-i18n="sm.link">Read it →</span></div></a><a href="https://www.datacamp.com/tutorial/multimodal-rag" target="_blank" rel="noopener" class="case" data-umami-event="sample-click"><div class="case-body"><div class="case-tag">DataCamp</div><h4 class="case-title">Multimodal RAG: A Hands-On Guide to Learning from Documents</h4><span class="case-link" data-i18n="sm.link">Read it →</span></div></a><a href="https://uxdesign.cc/the-art-and-science-of-data-visualization-4382a38c1935" target="_blank" rel="noopener" class="case" data-umami-event="sample-click"><div class="case-body"><div class="case-tag">UX Collective, 601K readers</div><h4 class="case-title">The art and science of data visualization</h4><span class="case-link" data-i18n="sm.link">Read it →</span></div></a></div>
+      <p class="work-more"><a href="/write" class="text-link" data-i18n="p4.link">See all nine samples and the full terms →</a></p>
+      <h3 class="panel-h" data-i18n="quotes.label">What clients say</h3>
+      <div class="quote-grid">
+      <figure class="quote">
+        <blockquote class="quote-text">For more than 12 months, Josep has been our main writer for technical blog articles, consistently delivering high-quality work and meeting our deadlines. Josep has a rare ability to turn complex topics, from data management and infrastructure to strategy, into clear, engaging, and accessible guides.</blockquote>
+        <figcaption class="quote-who"><strong>Axelle Dervaux</strong>Marketing Director, ClicData</figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote class="quote-text">Josep took on some of the most technical topics we covered: LLM evaluation, RAG pipelines, agentic RAG, guardrails for AI agents, prompt versioning, and document parsing with OCR. The first piece Josep wrote for us was strong enough that we used its structure to test a new format for the blog.</blockquote>
+        <figcaption class="quote-who"><strong>Dave Davies</strong>Principal SEO Manager, CoreWeave (Weights &amp; Biases)</figcaption>
+      </figure></div>
+      <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="writing" data-umami-event="ask-click" data-umami-event-topic="writing" data-i18n="panel.cta">Ask about this →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="inner">
+    <div class="section-label" data-i18n="clients.label">Who I've worked with</div>
+    <div class="logo-grid">
+      <a href="https://www.necstour.eu" target="_blank" rel="noopener"><img src="images/logos/necstour.png" alt="NECSTouR"></a>
+      <a href="https://www.unav.edu" target="_blank" rel="noopener"><img src="images/logos/unav.png" alt="Universidad de Navarra"></a>
+      <a href="https://www.upf.edu" target="_blank" rel="noopener"><img src="images/logos/upf.png" alt="Universitat Pompeu Fabra"></a>
+      <a href="https://www.upf.edu/web/tide" target="_blank" rel="noopener"><img src="images/logos/tide.png" alt="TIDE research group"></a>
+      <a href="https://en.unav.edu/web/institute-for-data-science-and-artificial-intelligence" target="_blank" rel="noopener"><img src="images/logos/datai.png" alt="DATAI"></a>
+      <a href="https://emeritus.org" target="_blank" rel="noopener"><img src="images/logos/emeritus.png" alt="Emeritus"></a>
+      <a href="https://www.datacamp.com" target="_blank" rel="noopener"><img src="images/logos/datacamp.png" alt="DataCamp"></a>
+      <a href="https://wandb.ai" target="_blank" rel="noopener"><img src="images/logos/wandb.png" alt="Weights &amp; Biases"></a>
+      <a href="https://www.stack-ai.com" target="_blank" rel="noopener"><img src="images/logos/stackai.png" alt="Stack AI"></a>
+      <a href="https://www.clicdata.com" target="_blank" rel="noopener"><img src="images/logos/clicdata.png" alt="ClicData"></a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="inner">
+    <h2 class="section-title" data-i18n="faq.label">Questions</h2>
+    <div class="faq-list">
+      <details><summary data-i18n="q1">Where do you work?</summary><p data-i18n="a1">From Rotterdam, online across Europe. On-site work is possible in the Netherlands, Spain and nearby countries, with travel agreed in the proposal.</p></details><details><summary data-i18n="q2">Which languages?</summary><p data-i18n="a2">English, Spanish and Catalan, for the work itself and for everything I deliver.</p></details><details><summary data-i18n="q3">How is it invoiced?</summary><p data-i18n="a3">In EUR, from the Netherlands. If your organisation needs a formal quote for a procurement process, I'll prepare it.</p></details><details><summary data-i18n="q4">What happens with our data?</summary><p data-i18n="a4">It stays under your control. I work within your data policies and I'm happy to sign an NDA. Nothing is shared or published without your approval.</p></details><details><summary data-i18n="q6">Can you join a funded project?</summary><p data-i18n="a6">Yes, as an external expert or subcontractor in EU-funded projects such as Horizon Europe or Interreg.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="inner">
+    <h2 class="section-title" data-i18n="contact.title">Tell me what you need.</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-desc" data-i18n="contact.desc">Use the form or email me. I reply within 2 business days.</p>
+        <div style="margin-top:1.75rem;">
+          <div class="contact-email-label" data-i18n="contact.email.label">Email</div>
+          <a href="mailto:josep@databites.tech?subject=Working%20together" class="contact-email" data-umami-event="email-click" data-umami-event-location="work-with-me">josep@databites.tech</a><button type="button" class="copy-btn" data-copy="josep@databites.tech">Copy</button>
+        </div>
+        <div class="contact-actions"><a href="#" class="btn-ghost js-book" data-book-only data-umami-event="book-call" data-umami-event-location="contact" data-i18n="contact.cta">Or book a 20 min video call →</a></div>
+      </div>
+      <div class="contact-box">
+        <form id="contact-form" class="contact-form"
+          data-ok="Thanks, your message is on its way. I reply within 2 business days." data-ok-es="Gracias, tu mensaje está en camino. Respondo en 2 días laborables." data-ok-ca="Gràcies, el teu missatge està en camí. Responc en 2 dies feiners."
+          data-err="That didn't send. Please email josep@databites.tech instead." data-err-es="No se ha podido enviar. Escríbeme a josep@databites.tech." data-err-ca="No s'ha pogut enviar. Escriu-me a josep@databites.tech.">
+          <label><span data-i18n="form.topic">I'm interested in</span><select id="f-topic" name="topic">
+            <option value="project" data-i18n="opt.project">A data project</option><option value="training" data-i18n="opt.training">A workshop, webinar or talk</option><option value="sponsorship" data-i18n="opt.sponsorship">Sponsorship</option><option value="writing" data-i18n="opt.writing">Technical writing</option><option value="other" data-i18n="opt.other">Something else</option></select></label>
+          <div class="row">
+            <label><span data-i18n="form.name">Name</span><input id="f-name" name="name" type="text" autocomplete="name" required></label>
+            <label><span data-i18n="form.email">Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <label><span data-i18n="form.org">Organisation</span><input id="f-org" name="organisation" type="text" autocomplete="organization"></label>
+          <label><span data-i18n="form.msg">What do you need?</span><textarea id="f-msg" name="message" required></textarea></label>
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+          <button type="submit" data-i18n="form.send">Send message</button>
+          <div class="form-status" role="status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="sf-top">
+    <a href="/" class="sf-brand"><img src="/images/databitestech_logo.png" alt=""><span><span class="g">databites</span><span class="f">.tech</span></span></a>
+    <div class="sf-links">
+      <a href="/work-with-me" data-nav="work">Work with me</a>
+      <a href="/projects" data-nav="portfolio">Portfolio</a>
+      <a href="/write" data-nav="writing">Writing</a>
+      <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="footer">Newsletter</a>
+    </div>
+  </div>
+  <div class="sf-bottom">
+    <span>© 2026 databites.tech · Josep Ferrer · Rotterdam, NL</span>
+    <span>KvK 96481331 · VAT NL005212566B59</span>
+    <a href="mailto:josep@databites.tech" data-umami-event="email-click" data-umami-event-location="footer">josep@databites.tech</a>
+  </div>
+</footer>
+
+<script>
+const translations = {
+ "en": {
+  "hero.h1": "Better decisions with your own data.",
+  "hero.desc": "I build maps, analyses and GenAI tools for organisations, and I teach teams to do the same. Tell me what you need and I'll reply within 2 business days.",
+  "hero.cta": "Tell me what you need →",
+  "hero.book": "Or book a 20 min call",
+  "need.label": "Work with me",
+  "need.title": "What do you need?",
+  "tab.project": "A data project",
+  "tab.training": "A workshop, webinar or talk",
+  "tab.sponsorship": "Sponsorship",
+  "tab.writing": "Technical writing",
+  "p1.intro": "For public bodies, research groups and companies that have the data and need a decision, a tool or a story out of it.",
+  "p1.a.meta": "6 to 8 weeks",
+  "p1.a.name": "Pilot",
+  "p1.a.desc": "One real question answered with your data: the analysis, a clear visual result and a tool your team keeps.",
+  "p1.b.meta": "Monthly",
+  "p1.b.name": "Retainer",
+  "p1.b.desc": "I join your team part-time as an external data person. Python, SQL, D3.js, Power BI, Tableau, cloud and LLMs.",
+  "p1.c.meta": "Per piece",
+  "p1.c.name": "Data story",
+  "p1.c.desc": "A map or visual story built from your data, ready for a report, website or campaign.",
+  "p2.intro": "For teams, universities, training providers and event organisers. Online or on-site, in English, Spanish or Catalan.",
+  "p2.a.meta": "1 day",
+  "p2.a.name": "Team workshop",
+  "p2.a.desc": "Your team works on its own data: how to analyse it with GenAI, what to trust and how to present it.",
+  "p2.b.meta": "1 to 2 hours",
+  "p2.b.name": "Webinar or talk",
+  "p2.b.desc": "Data visualization, maps with Python or GenAI at work, for your event, community or company.",
+  "p2.c.meta": "Several weeks",
+  "p2.c.name": "Course",
+  "p2.c.desc": "Hands-on courses for universities and training providers. I teach in the Big Data Master at Universidad de Navarra and lead GenAI for Professionals at Emeritus.",
+  "p2.proof": "So far: 350+ master's students, 150 professionals and 1,000+ webinar attendees.",
+  "p3.intro": "For companies that want to reach data and AI professionals.",
+  "p3.a.meta": "Per map",
+  "p3.a.name": "Sponsored map",
+  "p3.a.desc": "Your brand on one of my weekday maps on LinkedIn and X, clearly labelled. The maps have passed 1 million views in a week on LinkedIn.",
+  "p3.b.meta": "Per issue",
+  "p3.b.name": "Newsletter slot",
+  "p3.b.desc": "One sponsor per issue of databites, sent to <span data-audience=\"newsletter\">10k</span> readers.",
+  "p4.intro": "For data and AI companies that need tutorials and articles written by someone who uses the tools.",
+  "p4.a.meta": "3 months minimum",
+  "p4.a.name": "Monthly package",
+  "p4.a.desc": "2 to 5 pieces a month, 1,500 to 2,500 words each, with research and two revision rounds.",
+  "p4.b.meta": "Languages",
+  "p4.b.name": "English, Spanish or Catalan",
+  "p4.b.desc": "Invoiced in EUR or USD, 30 days net.",
+  "p4.link": "See all nine samples and the full terms →",
+  "panel.cta": "Ask about this →",
+  "how.label": "How it works",
+  "how.title": "Three steps",
+  "s1.t": "You write to me<span data-book-only> or book a call</span>",
+  "s1.d": "Tell me what you need in a few lines<span data-book-only>, or pick a 20 minute slot</span>.",
+  "s2.t": "I send a one-page proposal",
+  "s2.d": "Scope, timeline and price, within a few working days.",
+  "s3.t": "We do the work",
+  "s3.d": "Short check-ins along the way. You keep the results, the code and the tools.",
+  "work.label": "Recent work",
+  "work.title": "Recent projects",
+  "c4.tag": "Open source. 2026",
+  "c4.title": "popgrid: every country as equal blocks",
+  "c4.desc": "An open-source Python library that redraws any country as blocks, where each block is an equal share of land, people or GDP. It powers my weekday map series: 35 countries so far.",
+  "c4.link1": "Try the explorer →",
+  "c4.link2": "See the code →",
+  "c2.tag": "Public project. 2025",
+  "c2.title": "Catalonia Income Atlas",
+  "c2.desc": "Income inequality across 5,108 census tracts, from INE data for 2015 to 2023. It shows where income is lowest at census-tract level.",
+  "c2.link": "Open the atlas →",
+  "c1.tag": "NECSTouR. Ongoing",
+  "c1.title": "A shared data API for European tourism regions",
+  "c1.desc": "An API and dashboards that bring public tourism and mobility data into one place for the network's regions, plus LLM pilots and training for their teams.",
+  "work.more": "See all public projects →",
+  "quotes.label": "What clients say",
+  "clients.label": "Who I've worked with",
+  "faq.label": "Questions",
+  "faq.title": "Before you write",
+  "q1": "Where do you work?",
+  "a1": "From Rotterdam, online across Europe. On-site work is possible in the Netherlands, Spain and nearby countries, with travel agreed in the proposal.",
+  "q2": "Which languages?",
+  "a2": "English, Spanish and Catalan, for the work itself and for everything I deliver.",
+  "q3": "How is it invoiced?",
+  "a3": "In EUR, from the Netherlands. If your organisation needs a formal quote for a procurement process, I'll prepare it.",
+  "q4": "What happens with our data?",
+  "a4": "It stays under your control. I work within your data policies and I'm happy to sign an NDA. Nothing is shared or published without your approval.",
+  "q6": "Can you join a funded project?",
+  "a6": "Yes, as an external expert or subcontractor in EU-funded projects such as Horizon Europe or Interreg.",
+  "contact.label": "Get in touch",
+  "contact.title": "Tell me what you need.",
+  "contact.desc": "Use the form or email me. I reply within 2 business days.",
+  "contact.cta": "Or book a 20 min video call →",
+  "contact.email.label": "Email",
+  "form.topic": "I'm interested in",
+  "opt.project": "A data project",
+  "opt.training": "A workshop, webinar or talk",
+  "opt.sponsorship": "Sponsorship",
+  "opt.writing": "Technical writing",
+  "opt.other": "Something else",
+  "form.name": "Name",
+  "form.email": "Email",
+  "form.org": "Organisation",
+  "form.msg": "What do you need?",
+  "form.send": "Send message",
+  "tab.other": "Anything else",
+  "panel.how": "How it works",
+  "panel.examples": "Examples",
+  "panel.channels": "Where it runs",
+  "ch.followers": "followers",
+  "ch.readers": "newsletter readers",
+  "panel.samples": "Samples",
+  "ex.link": "See the post →",
+  "sm.link": "Read it →",
+  "h.training.1.t": "You tell me the audience",
+  "h.training.1.d": "Who it is for, the format and the date you have in mind.",
+  "h.training.2.t": "I send an outline and a price",
+  "h.training.2.d": "One page, within a few working days.",
+  "h.training.3.t": "I deliver the session",
+  "h.training.3.d": "Online or on-site. You keep the slides and materials.",
+  "h.sponsorship.1.t": "You tell me the product",
+  "h.sponsorship.1.d": "What you want to promote and when.",
+  "h.sponsorship.2.t": "We agree format, date and price",
+  "h.sponsorship.2.d": "A map, a post or a newsletter slot.",
+  "h.sponsorship.3.t": "I publish it",
+  "h.sponsorship.3.d": "Clearly labelled as sponsored. Afterwards I send you the numbers.",
+  "h.writing.1.t": "You tell me what you need",
+  "h.writing.1.d": "Topics, audience and how many pieces a month.",
+  "h.writing.2.t": "We agree the package",
+  "h.writing.2.d": "Pieces per month, deadlines and price.",
+  "h.writing.3.t": "I become your external technical writer",
+  "h.writing.3.d": "I deliver every month, with two revision rounds per piece. You publish with or without my byline.",
+  "p3.c.meta": "Per post",
+  "p3.c.name": "Sponsored post",
+  "p3.c.desc": "A post about your book, course or tool on LinkedIn and X, with my own photos and my own take.",
+  "ex1.t": "Packt book on multi-agent systems, on X",
+  "ex1.d": "25,400 views, 339 likes and 357 bookmarks.",
+  "ex2.t": "Packt book on GenAI applications, on LinkedIn",
+  "ex2.d": "72 reactions and 10 reposts.",
+  "p1.a.ex": "Example: Catalonia Income Atlas →",
+  "p1.b.ex": "Example: NECSTouR, since 2024",
+  "p1.c.ex": "Example: Five ways to hear New York →",
+  "p1.note": "I work freelance and part-time, so I don't take full-time roles.",
+  "q.project.who": "Marketing Director, ClicData, after 12 months of technical writing",
+  "tr.title": "Where I teach and speak",
+  "tr1.t": "Data Visualization, Big Data Master, Universidad de Navarra",
+  "tr1.d": "Since 2023, 4 cohorts",
+  "tr2.t": "GenAI for Professionals, Emeritus and UNAV",
+  "tr2.d": "Since November 2025, 4 editions, in Spanish",
+  "wv1.d": "DataCamp video, Sep 2025, 51 min",
+  "wv2.d": "DataCamp video, Sep 2025, 57 min",
+  "wv3.d": "DataCamp video, Aug 2025, 59 min",
+  "wv4.d": "DataCamp video, Jul 2025, 38 min",
+  "wb1.d": "DataCamp code-along with Andrea Valenzuela, Oct 2024",
+  "wb2.d": "DataCamp code-along with Andrea Valenzuela, Jul 2024",
+  "wb3.d": "DataCamp code-along with Andrea Valenzuela, Jan 2024"
+ },
+ "es": {
+  "hero.h1": "Mejores decisiones con tus propios datos.",
+  "hero.desc": "Construyo mapas, análisis y herramientas con IA generativa para organizaciones, y enseño a los equipos a hacer lo mismo. Cuéntame qué necesitas y te respondo en 2 días laborables.",
+  "hero.cta": "Cuéntame qué necesitas →",
+  "hero.book": "O reserva una llamada de 20 min",
+  "need.label": "Trabaja conmigo",
+  "need.title": "¿Qué necesitas?",
+  "tab.project": "Un proyecto de datos",
+  "tab.training": "Un taller, webinar o charla",
+  "tab.sponsorship": "Patrocinio",
+  "tab.writing": "Escritura técnica",
+  "p1.intro": "Para organismos públicos, grupos de investigación y empresas que tienen los datos y necesitan sacar de ellos una decisión, una herramienta o una historia.",
+  "p1.a.meta": "6 a 8 semanas",
+  "p1.a.name": "Piloto",
+  "p1.a.desc": "Una pregunta real respondida con tus datos: el análisis, un resultado visual claro y una herramienta que se queda tu equipo.",
+  "p1.b.meta": "Mensual",
+  "p1.b.name": "Retainer",
+  "p1.b.desc": "Me uno a tu equipo a tiempo parcial como perfil externo de datos. Python, SQL, D3.js, Power BI, Tableau, cloud y LLMs.",
+  "p1.c.meta": "Por pieza",
+  "p1.c.name": "Historia de datos",
+  "p1.c.desc": "Un mapa o una historia visual con tus datos, lista para un informe, una web o una campaña.",
+  "p2.intro": "Para equipos, universidades, escuelas de formación y organizadores de eventos. Online o presencial, en inglés, castellano o catalán.",
+  "p2.a.meta": "1 día",
+  "p2.a.name": "Taller para equipos",
+  "p2.a.desc": "Tu equipo trabaja con sus propios datos: cómo analizarlos con IA generativa, en qué confiar y cómo presentarlos.",
+  "p2.b.meta": "1 a 2 horas",
+  "p2.b.name": "Webinar o charla",
+  "p2.b.desc": "Visualización de datos, mapas con Python o IA generativa en el trabajo, para tu evento, comunidad o empresa.",
+  "p2.c.meta": "Varias semanas",
+  "p2.c.name": "Curso",
+  "p2.c.desc": "Cursos prácticos para universidades y escuelas de formación. Doy clase en el Máster en Big Data de la Universidad de Navarra y dirijo IA Generativa para Profesionales en Emeritus.",
+  "p2.proof": "Hasta ahora: más de 350 estudiantes de máster, 150 profesionales y más de 1.000 asistentes a webinars.",
+  "p3.intro": "Para empresas que quieren llegar a profesionales de datos e IA.",
+  "p3.a.meta": "Por mapa",
+  "p3.a.name": "Mapa patrocinado",
+  "p3.a.desc": "Tu marca en uno de mis mapas diarios en LinkedIn y X, claramente identificado. Los mapas han superado el millón de visualizaciones en una semana en LinkedIn.",
+  "p3.b.meta": "Por edición",
+  "p3.b.name": "Espacio en la newsletter",
+  "p3.b.desc": "Un patrocinador por edición de databites, para <span data-audience=\"newsletter\">10k</span> lectores.",
+  "p4.intro": "Para empresas de datos e IA que necesitan tutoriales y artículos escritos por alguien que usa las herramientas.",
+  "p4.a.meta": "Mínimo 3 meses",
+  "p4.a.name": "Paquete mensual",
+  "p4.a.desc": "De 2 a 5 piezas al mes, de 1.500 a 2.500 palabras, con investigación y dos rondas de revisión.",
+  "p4.b.meta": "Idiomas",
+  "p4.b.name": "Inglés, castellano o catalán",
+  "p4.b.desc": "Facturación en EUR o USD, a 30 días.",
+  "p4.link": "Ver las nueve muestras y las condiciones completas →",
+  "panel.cta": "Pregúntame por esto →",
+  "how.label": "Cómo funciona",
+  "how.title": "Tres pasos",
+  "s1.t": "Me escribes<span data-book-only> o reservas una llamada</span>",
+  "s1.d": "Cuéntame qué necesitas en unas líneas<span data-book-only>, o elige un hueco de 20 minutos</span>.",
+  "s2.t": "Te envío una propuesta de una página",
+  "s2.d": "Alcance, calendario y precio, en pocos días laborables.",
+  "s3.t": "Hacemos el trabajo",
+  "s3.d": "Revisiones cortas durante el proceso. Te quedas los resultados, el código y las herramientas.",
+  "work.label": "Trabajo reciente",
+  "work.title": "Proyectos recientes",
+  "c4.tag": "Código abierto. 2026",
+  "c4.title": "popgrid: cada país en bloques iguales",
+  "c4.desc": "Una librería de Python de código abierto que redibuja cualquier país en bloques, donde cada bloque es una parte igual de superficie, población o PIB. Es la base de mi serie de mapas diarios: 35 países hasta ahora.",
+  "c4.link1": "Probar el explorador →",
+  "c4.link2": "Ver el código →",
+  "c2.tag": "Proyecto público. 2025",
+  "c2.title": "Atlas de Renta de Cataluña",
+  "c2.desc": "Desigualdad de renta en 5.108 secciones censales, con datos del INE de 2015 a 2023. Muestra dónde la renta es más baja a nivel de sección censal.",
+  "c2.link": "Abrir el atlas →",
+  "c1.tag": "NECSTouR. En curso",
+  "c1.title": "Una API de datos compartida para regiones turísticas europeas",
+  "c1.desc": "Una API y dashboards que reúnen datos públicos de turismo y movilidad para las regiones de la red, además de pilotos con LLMs y formación para sus equipos.",
+  "work.more": "Ver todos los proyectos públicos →",
+  "quotes.label": "Qué dicen los clientes",
+  "clients.label": "Con quién he trabajado",
+  "faq.label": "Preguntas",
+  "faq.title": "Antes de escribir",
+  "q1": "¿Desde dónde trabajas?",
+  "a1": "Desde Rotterdam, online para toda Europa. El trabajo presencial es posible en Países Bajos, España y países cercanos, con el desplazamiento acordado en la propuesta.",
+  "q2": "¿En qué idiomas?",
+  "a2": "Inglés, castellano y catalán, tanto en el trabajo como en todo lo que entrego.",
+  "q3": "¿Cómo se factura?",
+  "a3": "En euros, desde Países Bajos. Si tu organización necesita un presupuesto formal para un proceso de contratación, lo preparo.",
+  "q4": "¿Qué pasa con nuestros datos?",
+  "a4": "Siguen bajo vuestro control. Trabajo dentro de vuestras políticas de datos y firmo un acuerdo de confidencialidad si hace falta. Nada se comparte ni se publica sin vuestra aprobación.",
+  "q6": "¿Puedes participar en un proyecto financiado?",
+  "a6": "Sí, como experto externo o subcontratista en proyectos con financiación europea como Horizon Europe o Interreg.",
+  "contact.label": "Contacto",
+  "contact.title": "Cuéntame qué necesitas.",
+  "contact.desc": "Usa el formulario o escríbeme por email. Respondo en 2 días laborables.",
+  "contact.cta": "O reserva una videollamada de 20 min →",
+  "contact.email.label": "Email",
+  "form.topic": "Me interesa",
+  "opt.project": "Un proyecto de datos",
+  "opt.training": "Un taller, webinar o charla",
+  "opt.sponsorship": "Patrocinio",
+  "opt.writing": "Escritura técnica",
+  "opt.other": "Otra cosa",
+  "form.name": "Nombre",
+  "form.email": "Email",
+  "form.org": "Organización",
+  "form.msg": "¿Qué necesitas?",
+  "form.send": "Enviar mensaje",
+  "tab.other": "Otra cosa",
+  "panel.how": "Cómo funciona",
+  "panel.examples": "Ejemplos",
+  "panel.channels": "Dónde se publica",
+  "ch.followers": "seguidores",
+  "ch.readers": "lectores de la newsletter",
+  "panel.samples": "Muestras",
+  "ex.link": "Ver la publicación →",
+  "sm.link": "Leer →",
+  "h.training.1.t": "Me cuentas la audiencia",
+  "h.training.1.d": "Para quién es, el formato y la fecha que tienes en mente.",
+  "h.training.2.t": "Te envío un guion y un precio",
+  "h.training.2.d": "Una página, en pocos días laborables.",
+  "h.training.3.t": "Imparto la sesión",
+  "h.training.3.d": "Online o presencial. Te quedas las diapositivas y los materiales.",
+  "h.sponsorship.1.t": "Me cuentas el producto",
+  "h.sponsorship.1.d": "Qué quieres promocionar y cuándo.",
+  "h.sponsorship.2.t": "Acordamos formato, fecha y precio",
+  "h.sponsorship.2.d": "Un mapa, una publicación o un espacio en la newsletter.",
+  "h.sponsorship.3.t": "Lo publico",
+  "h.sponsorship.3.d": "Claramente identificado como patrocinado. Después te envío los números.",
+  "h.writing.1.t": "Me cuentas qué necesitas",
+  "h.writing.1.d": "Temas, público y cuántas piezas al mes.",
+  "h.writing.2.t": "Acordamos el paquete",
+  "h.writing.2.d": "Piezas al mes, plazos y precio.",
+  "h.writing.3.t": "Paso a ser tu redactor técnico externo",
+  "h.writing.3.d": "Entrego cada mes, con dos rondas de revisión por pieza. Publicas con o sin mi firma.",
+  "p3.c.meta": "Por publicación",
+  "p3.c.name": "Publicación patrocinada",
+  "p3.c.desc": "Una publicación sobre tu libro, curso o herramienta en LinkedIn y X, con mis fotos y mi opinión.",
+  "ex1.t": "Libro de Packt sobre sistemas multiagente, en X",
+  "ex1.d": "25.400 visualizaciones, 339 me gusta y 357 guardados.",
+  "ex2.t": "Libro de Packt sobre aplicaciones de IA generativa, en LinkedIn",
+  "ex2.d": "72 reacciones y 10 republicaciones.",
+  "p1.a.ex": "Ejemplo: Atlas de Renta de Cataluña →",
+  "p1.b.ex": "Ejemplo: NECSTouR, desde 2024",
+  "p1.c.ex": "Ejemplo: Cinco formas de escuchar Nueva York →",
+  "p1.note": "Trabajo como freelance y a tiempo parcial, así que no acepto puestos a tiempo completo.",
+  "q.project.who": "Marketing Director, ClicData, tras 12 meses de escritura técnica",
+  "tr.title": "Dónde enseño y doy charlas",
+  "tr1.t": "Visualización de Datos, Máster en Big Data, Universidad de Navarra",
+  "tr1.d": "Desde 2023, 4 promociones",
+  "tr2.t": "IA Generativa para Profesionales, Emeritus y UNAV",
+  "tr2.d": "Desde noviembre de 2025, 4 ediciones, en castellano",
+  "wv1.d": "Vídeo de DataCamp, sept. 2025, 51 min",
+  "wv2.d": "Vídeo de DataCamp, sept. 2025, 57 min",
+  "wv3.d": "Vídeo de DataCamp, ago. 2025, 59 min",
+  "wv4.d": "Vídeo de DataCamp, jul. 2025, 38 min",
+  "wb1.d": "Code-along en DataCamp con Andrea Valenzuela, oct. 2024",
+  "wb2.d": "Code-along en DataCamp con Andrea Valenzuela, jul. 2024",
+  "wb3.d": "Code-along en DataCamp con Andrea Valenzuela, ene. 2024"
+ },
+ "ca": {
+  "hero.h1": "Millors decisions amb les teves pròpies dades.",
+  "hero.desc": "Construeixo mapes, anàlisis i eines amb IA generativa per a organitzacions, i ensenyo els equips a fer el mateix. Explica'm què necessites i et responc en 2 dies feiners.",
+  "hero.cta": "Explica'm què necessites →",
+  "hero.book": "O reserva una trucada de 20 min",
+  "need.label": "Treballa amb mi",
+  "need.title": "Què necessites?",
+  "tab.project": "Un projecte de dades",
+  "tab.training": "Un taller, webinar o xerrada",
+  "tab.sponsorship": "Patrocini",
+  "tab.writing": "Escriptura tècnica",
+  "p1.intro": "Per a organismes públics, grups de recerca i empreses que tenen les dades i en necessiten treure una decisió, una eina o una història.",
+  "p1.a.meta": "6 a 8 setmanes",
+  "p1.a.name": "Pilot",
+  "p1.a.desc": "Una pregunta real resposta amb les teves dades: l'anàlisi, un resultat visual clar i una eina que es queda el teu equip.",
+  "p1.b.meta": "Mensual",
+  "p1.b.name": "Retainer",
+  "p1.b.desc": "M'uneixo al teu equip a temps parcial com a perfil extern de dades. Python, SQL, D3.js, Power BI, Tableau, cloud i LLMs.",
+  "p1.c.meta": "Per peça",
+  "p1.c.name": "Història de dades",
+  "p1.c.desc": "Un mapa o una història visual amb les teves dades, a punt per a un informe, una web o una campanya.",
+  "p2.intro": "Per a equips, universitats, escoles de formació i organitzadors d'esdeveniments. En línia o presencial, en anglès, castellà o català.",
+  "p2.a.meta": "1 dia",
+  "p2.a.name": "Taller per a equips",
+  "p2.a.desc": "El teu equip treballa amb les seves pròpies dades: com analitzar-les amb IA generativa, en què confiar i com presentar-les.",
+  "p2.b.meta": "D'1 a 2 hores",
+  "p2.b.name": "Webinar o xerrada",
+  "p2.b.desc": "Visualització de dades, mapes amb Python o IA generativa a la feina, per al teu esdeveniment, comunitat o empresa.",
+  "p2.c.meta": "Diverses setmanes",
+  "p2.c.name": "Curs",
+  "p2.c.desc": "Cursos pràctics per a universitats i escoles de formació. Faig classe al Màster en Big Data de la Universidad de Navarra i dirigeixo IA Generativa per a Professionals a Emeritus.",
+  "p2.proof": "Fins ara: més de 350 estudiants de màster, 150 professionals i més de 1.000 assistents a webinars.",
+  "p3.intro": "Per a empreses que volen arribar a professionals de dades i IA.",
+  "p3.a.meta": "Per mapa",
+  "p3.a.name": "Mapa patrocinat",
+  "p3.a.desc": "La teva marca en un dels meus mapes diaris a LinkedIn i X, clarament identificat. Els mapes han superat el milió de visualitzacions en una setmana a LinkedIn.",
+  "p3.b.meta": "Per edició",
+  "p3.b.name": "Espai a la newsletter",
+  "p3.b.desc": "Un patrocinador per edició de databites, per a <span data-audience=\"newsletter\">10k</span> lectors.",
+  "p4.intro": "Per a empreses de dades i IA que necessiten tutorials i articles escrits per algú que fa servir les eines.",
+  "p4.a.meta": "Mínim 3 mesos",
+  "p4.a.name": "Paquet mensual",
+  "p4.a.desc": "De 2 a 5 peces al mes, de 1.500 a 2.500 paraules, amb recerca i dues rondes de revisió.",
+  "p4.b.meta": "Idiomes",
+  "p4.b.name": "Anglès, castellà o català",
+  "p4.b.desc": "Facturació en EUR o USD, a 30 dies.",
+  "p4.link": "Veure les nou mostres i les condicions completes →",
+  "panel.cta": "Pregunta'm per això →",
+  "how.label": "Com funciona",
+  "how.title": "Tres passos",
+  "s1.t": "M'escrius<span data-book-only> o reserves una trucada</span>",
+  "s1.d": "Explica'm què necessites en unes línies<span data-book-only>, o tria un forat de 20 minuts</span>.",
+  "s2.t": "T'envio una proposta d'una pàgina",
+  "s2.d": "Abast, calendari i preu, en pocs dies laborables.",
+  "s3.t": "Fem la feina",
+  "s3.d": "Revisions curtes durant el procés. Et quedes els resultats, el codi i les eines.",
+  "work.label": "Feina recent",
+  "work.title": "Projectes recents",
+  "c4.tag": "Codi obert. 2026",
+  "c4.title": "popgrid: cada país en blocs iguals",
+  "c4.desc": "Una llibreria de Python de codi obert que redibuixa qualsevol país en blocs, on cada bloc és una part igual de superfície, població o PIB. És la base de la meva sèrie de mapes diaris: 35 països fins ara.",
+  "c4.link1": "Provar l'explorador →",
+  "c4.link2": "Veure el codi →",
+  "c2.tag": "Projecte públic. 2025",
+  "c2.title": "Atles de Renda de Catalunya",
+  "c2.desc": "Desigualtat de renda a 5.108 seccions censals, amb dades de l'INE del 2015 al 2023. Mostra on la renda és més baixa a nivell de secció censal.",
+  "c2.link": "Obrir l'atles →",
+  "c1.tag": "NECSTouR. En curs",
+  "c1.title": "Una API de dades compartida per a regions turístiques europees",
+  "c1.desc": "Una API i dashboards que reuneixen dades públiques de turisme i mobilitat per a les regions de la xarxa, a més de pilots amb LLMs i formació per als seus equips.",
+  "work.more": "Veure tots els projectes públics →",
+  "quotes.label": "Què diuen els clients",
+  "clients.label": "Amb qui he treballat",
+  "faq.label": "Preguntes",
+  "faq.title": "Abans d'escriure",
+  "q1": "Des d'on treballes?",
+  "a1": "Des de Rotterdam, en línia per a tota Europa. La feina presencial és possible als Països Baixos, Espanya i països propers, amb el desplaçament acordat a la proposta.",
+  "q2": "En quins idiomes?",
+  "a2": "Anglès, castellà i català, tant a la feina com en tot el que lliuro.",
+  "q3": "Com es factura?",
+  "a3": "En euros, des dels Països Baixos. Si la teva organització necessita un pressupost formal per a un procés de contractació, el preparo.",
+  "q4": "Què passa amb les nostres dades?",
+  "a4": "Continuen sota el vostre control. Treballo dins de les vostres polítiques de dades i signo un acord de confidencialitat si cal. Res no es comparteix ni es publica sense la vostra aprovació.",
+  "q6": "Pots participar en un projecte finançat?",
+  "a6": "Sí, com a expert extern o subcontractista en projectes amb finançament europeu com Horizon Europe o Interreg.",
+  "contact.label": "Contacte",
+  "contact.title": "Explica'm què necessites.",
+  "contact.desc": "Fes servir el formulari o escriu-me per email. Responc en 2 dies feiners.",
+  "contact.cta": "O reserva una videotrucada de 20 min →",
+  "contact.email.label": "Email",
+  "form.topic": "M'interessa",
+  "opt.project": "Un projecte de dades",
+  "opt.training": "Un taller, webinar o xerrada",
+  "opt.sponsorship": "Patrocini",
+  "opt.writing": "Escriptura tècnica",
+  "opt.other": "Una altra cosa",
+  "form.name": "Nom",
+  "form.email": "Email",
+  "form.org": "Organització",
+  "form.msg": "Què necessites?",
+  "form.send": "Enviar missatge",
+  "tab.other": "Una altra cosa",
+  "panel.how": "Com funciona",
+  "panel.examples": "Exemples",
+  "panel.channels": "On es publica",
+  "ch.followers": "seguidors",
+  "ch.readers": "lectors de la newsletter",
+  "panel.samples": "Mostres",
+  "ex.link": "Veure la publicació →",
+  "sm.link": "Llegir →",
+  "h.training.1.t": "M'expliques l'audiència",
+  "h.training.1.d": "Per a qui és, el format i la data que tens al cap.",
+  "h.training.2.t": "T'envio un guió i un preu",
+  "h.training.2.d": "Una pàgina, en pocs dies laborables.",
+  "h.training.3.t": "Imparteixo la sessió",
+  "h.training.3.d": "En línia o presencial. Et quedes les diapositives i els materials.",
+  "h.sponsorship.1.t": "M'expliques el producte",
+  "h.sponsorship.1.d": "Què vols promocionar i quan.",
+  "h.sponsorship.2.t": "Acordem format, data i preu",
+  "h.sponsorship.2.d": "Un mapa, una publicació o un espai a la newsletter.",
+  "h.sponsorship.3.t": "Ho publico",
+  "h.sponsorship.3.d": "Clarament identificat com a patrocinat. Després t'envio els números.",
+  "h.writing.1.t": "M'expliques què necessites",
+  "h.writing.1.d": "Temes, públic i quantes peces al mes.",
+  "h.writing.2.t": "Acordem el paquet",
+  "h.writing.2.d": "Peces al mes, terminis i preu.",
+  "h.writing.3.t": "Passo a ser el teu redactor tècnic extern",
+  "h.writing.3.d": "Lliuro cada mes, amb dues rondes de revisió per peça. Publiques amb la meva signatura o sense.",
+  "p3.c.meta": "Per publicació",
+  "p3.c.name": "Publicació patrocinada",
+  "p3.c.desc": "Una publicació sobre el teu llibre, curs o eina a LinkedIn i X, amb les meves fotos i la meva opinió.",
+  "ex1.t": "Llibre de Packt sobre sistemes multiagent, a X",
+  "ex1.d": "25.400 visualitzacions, 339 m'agrada i 357 desats.",
+  "ex2.t": "Llibre de Packt sobre aplicacions d'IA generativa, a LinkedIn",
+  "ex2.d": "72 reaccions i 10 republicacions.",
+  "p1.a.ex": "Exemple: Atles de Renda de Catalunya →",
+  "p1.b.ex": "Exemple: NECSTouR, des del 2024",
+  "p1.c.ex": "Exemple: Cinc maneres d'escoltar Nova York →",
+  "p1.note": "Treballo com a freelance i a temps parcial, així que no accepto feines a temps complet.",
+  "q.project.who": "Marketing Director, ClicData, després de 12 mesos d'escriptura tècnica",
+  "tr.title": "On ensenyo i faig xerrades",
+  "tr1.t": "Visualització de Dades, Màster en Big Data, Universidad de Navarra",
+  "tr1.d": "Des del 2023, 4 promocions",
+  "tr2.t": "IA Generativa per a Professionals, Emeritus i UNAV",
+  "tr2.d": "Des del novembre del 2025, 4 edicions, en castellà",
+  "wv1.d": "Vídeo de DataCamp, set. 2025, 51 min",
+  "wv2.d": "Vídeo de DataCamp, set. 2025, 57 min",
+  "wv3.d": "Vídeo de DataCamp, ag. 2025, 59 min",
+  "wv4.d": "Vídeo de DataCamp, jul. 2025, 38 min",
+  "wb1.d": "Code-along a DataCamp amb Andrea Valenzuela, oct. 2024",
+  "wb2.d": "Code-along a DataCamp amb Andrea Valenzuela, jul. 2024",
+  "wb3.d": "Code-along a DataCamp amb Andrea Valenzuela, gen. 2024"
+ }
+};
+
+function setLang(lang) {
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang || (lang === 'ca' && btn.textContent === 'CAT'));
+  });
+  document.documentElement.lang = lang;
+  try { localStorage.setItem('lang', lang); } catch (e) {}
+}
+
+(function () {
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  const browser = navigator.language?.slice(0, 2).toLowerCase();
+  const lang = saved || (browser === 'es' ? 'es' : browser === 'ca' ? 'ca' : 'en');
+  setLang(lang);
+})();
+
+document.documentElement.classList.add('js');
+(function () {
+  const ids = ['project', 'training', 'sponsorship', 'writing'];
+  const tabs = [...document.querySelectorAll('.need-tab')];
+  function pick(id, scroll) {
+    tabs.filter(t => t.dataset.tab !== 'other').forEach(t => { const on = t.dataset.tab === id; t.classList.toggle('active', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+    ids.forEach(i => { document.getElementById('panel-' + i).hidden = i !== id; });
+    const sel = document.getElementById('f-topic'); if (sel) sel.value = id;
+    if (scroll) document.getElementById('need').scrollIntoView();
+  }
+  tabs.forEach(t => t.addEventListener('click', () => {
+    if (window.umami) umami.track('need-tab', { topic: t.dataset.tab });
+    if (t.dataset.tab === 'other') { document.getElementById('f-topic').value = 'other'; document.getElementById('contact').scrollIntoView(); return; }
+    pick(t.dataset.tab);
+  }));
+  document.querySelectorAll('.ask').forEach(a => a.addEventListener('click', () => { document.getElementById('f-topic').value = a.dataset.topic; }));
+  function fromHash() { const h = location.hash.slice(1); if (ids.includes(h)) pick(h, true); }
+  pick(/\/write/.test(document.referrer) ? 'writing' : 'project'); fromHash(); window.addEventListener('hashchange', fromHash);
+})();
+</script>
+<script src="/site.js"></script>
+</body>
+</html>

@@ -3,20 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Josep Ferrer | Data and GenAI for institutional decisions</title>
-<meta name="description" content="Josep Ferrer helps institutions and research organisations make better decisions with their own data and GenAI: workshops, pilots and ongoing support. Maps, dashboards and data stories people act on.">
-<meta property="og:title" content="Josep Ferrer | Data and GenAI for institutional decisions">
-<meta property="og:description" content="Workshops, pilots and ongoing support for institutions that want to decide with their own data.">
+<title>Josep Ferrer | Data projects, workshops and technical writing</title>
+<meta name="description" content="Josep Ferrer builds maps, analyses and GenAI tools for organisations, and teaches teams to do the same. Data projects, workshops, sponsorship and technical writing.">
+<meta property="og:title" content="Josep Ferrer | Data projects, workshops and technical writing">
+<meta property="og:description" content="Maps, analyses and GenAI tools for organisations. Data projects, workshops, sponsorship and technical writing.">
 <meta property="og:url" content="https://databites.tech">
-<meta property="og:image" content="https://databites.tech/images/og-write.png">
+<meta property="og:image" content="https://databites.tech/images/og-work.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://databites.tech/images/og-write.png">
+<meta name="twitter:image" content="https://databites.tech/images/og-work.png">
 <link rel="canonical" href="https://databites.tech">
 <link rel="icon" type="image/png" href="images/databitestech_logo.png">
 <link rel="apple-touch-icon" href="images/databitestech_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+<!-- Analytics: Umami (cookieless). Replace the website ID with the one from your Umami dashboard. -->
+<script defer src="https://cloud.umami.is/script.js" data-website-id="UMAMI_WEBSITE_ID" data-domains="databites.tech,www.databites.tech"></script>
 
 <style>
 :root {
@@ -28,9 +30,9 @@
   --cream:     #FAF6F0;
   --muted:     #5E7D6A;
   --rule:      #D4E8DC;
-  --f-d: 'Lilita One', cursive;
-  --f-b: 'Space Grotesk', system-ui, sans-serif;
-  --f-m: 'Space Mono', monospace;
+  --f-d: 'Gabarito', system-ui, sans-serif;
+  --f-b: 'Gabarito', system-ui, sans-serif;
+  --f-m: 'Gabarito', system-ui, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -58,7 +60,7 @@ nav {
 .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--bright); border-radius: 1px; transition: width .22s ease; }
 .nav-links a:hover { color: var(--forest); }
 .nav-links a:hover::after { width: 100%; }
-.nav-cta { background: var(--forest); color: var(--cream) !important; font-size: 0.8125rem !important; font-weight: 600 !important; padding: 0.5rem 1.125rem; border-radius: 6px; transition: background .15s !important; }
+.nav-cta { white-space: nowrap; background: var(--forest); color: var(--cream) !important; font-size: 0.8125rem !important; font-weight: 600 !important; padding: 0.5rem 1.125rem; border-radius: 6px; transition: background .15s !important; }
 .nav-cta::after { display: none !important; }
 .nav-cta:hover { background: var(--green) !important; }
 
@@ -69,29 +71,29 @@ nav {
 .btn-secondary:hover { border-color: var(--mint); background: var(--mint-pale); }
 
 /* ── HERO ── */
-.hero { height: calc(100dvh - 80px); min-height: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 2rem 4rem; position: relative; overflow: hidden; }
+.hero { height: calc(100vh - 80px); height: calc(100dvh - 80px); min-height: 500px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 2rem 4rem; position: relative; overflow: hidden; }
 #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .hero-content { position: relative; z-index: 2; max-width: 900px; width: 100%; }
-.hero-who { font-family: var(--f-m); font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--forest); font-weight: 700; margin-bottom: 0.625rem; display: inline-flex; align-items: center; gap: 0.75rem; }
+.hero-who { font-family: var(--f-m); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--forest); font-weight: 700; margin-bottom: 0.625rem; display: inline-flex; align-items: center; gap: 0.75rem; }
 .hero-who::before, .hero-who::after { content: ''; width: 28px; height: 1.5px; background: var(--forest); opacity: 0.4; }
 .hero-cycling-wrap { height: 1.625rem; overflow: hidden; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
-.hero-cycling { font-size: 1rem; color: var(--muted); font-weight: 400; transition: opacity .4s ease, transform .4s ease; }
+.hero-cycling { font-size: 1rem; color: var(--muted); font-weight: 500; }
 .hero-cycling.fade-out { opacity: 0; transform: translateY(-8px); }
 .hero-cycling.fade-in  { opacity: 1; transform: translateY(0); }
-.hero-headline { font-family: var(--f-d); font-size: clamp(2rem, 5.5vw, 7rem); line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
+.hero-headline { font-family: var(--f-d); font-weight: 800; font-size: clamp(2rem, 5.5vw, 7rem); line-height: 1.0; letter-spacing: -0.01em; margin-bottom: 1.5rem; }
 .hero-headline .w1 { color: var(--bright); display: block; }
 .hero-headline .w2 { color: var(--forest); display: block; }
-.btn-hero { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--f-d); font-size: clamp(1rem, 1.2vw, 1.25rem); color: var(--forest); padding: 0.6875rem 1.875rem; border-radius: 50px; border: 2.5px solid var(--forest); outline: 3px solid var(--bright); outline-offset: 3px; background: transparent; transition: background .2s, color .2s, outline-color .2s; cursor: pointer; text-decoration: none; }
+.btn-hero { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--f-d); font-weight: 800; font-size: clamp(1rem, 1.2vw, 1.25rem); color: var(--forest); padding: 0.6875rem 1.875rem; border-radius: 50px; border: 2.5px solid var(--forest); outline: 3px solid var(--bright); outline-offset: 3px; background: transparent; transition: background .2s, color .2s, outline-color .2s; cursor: pointer; text-decoration: none; }
 .btn-hero:hover { background: var(--forest); color: var(--cream); outline-color: var(--mint); }
 .hero-bio { margin-top: 1.25rem; font-size: clamp(0.8125rem, 1vw, 1.0625rem); color: var(--muted); line-height: 1.7; max-width: clamp(460px, 45vw, 680px); margin-left: auto; margin-right: auto; }
 .hero-bio strong { color: var(--forest); font-weight: 600; }
-.scroll-hint { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.3rem; font-family: var(--f-m); font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); opacity: 0.55; animation: scrollBounce 2s ease-in-out infinite; }
+.scroll-hint { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.3rem; font-family: var(--f-m); font-weight: 600; font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); opacity: 0.55; animation: scrollBounce 2s ease-in-out infinite; }
 @keyframes scrollBounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(5px); } }
 
 /* ── TRUSTED BY ── */
 #trusted { background: var(--cream); padding: 1.25rem 0 1.25rem; overflow: hidden; min-height: auto; }
 .trusted-head { max-width: clamp(900px, 85vw, 1400px); margin: 0 auto 0.875rem; padding: 0 clamp(2rem, 5vw, 6rem); }
-.trusted-title { font-family: var(--f-d); font-size: clamp(1.375rem, 2vw, 2rem); line-height: 1.1; margin-bottom: 0.2rem; }
+.trusted-title { font-family: var(--f-d); font-weight: 800; font-size: clamp(1.375rem, 2vw, 2rem); line-height: 1.1; margin-bottom: 0.2rem; }
 .trusted-title .t1 { color: var(--bright); }
 .trusted-title .t2 { color: var(--forest); }
 .trusted-title-rule { width: 36px; height: 3px; background: var(--bright); border-radius: 2px; margin-top: 0.375rem; }
@@ -110,11 +112,11 @@ nav {
 .marquee-item-text { font-family: var(--f-b); font-size: 0.9375rem; font-weight: 700; color: var(--forest); white-space: nowrap; letter-spacing: -0.01em; }
 
 /* ── SECTION SKELETON ── */
-section { padding: 5rem clamp(2rem, 5vw, 6rem); min-height: calc(100dvh - 80px); display: flex; flex-direction: column; justify-content: center; }
+section { padding: 5rem clamp(2rem, 5vw, 6rem); display: flex; flex-direction: column; justify-content: center; }
 .inner { max-width: clamp(900px, 85vw, 1400px); margin: 0 auto; width: 100%; }
-.section-label { font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem; }
+.section-label { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.875rem; display: flex; align-items: center; gap: 0.75rem; }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
-.section-title { font-family: var(--f-d); font-size: clamp(1.75rem, 3vw, 3rem); color: var(--forest); margin-bottom: 0.75rem; }
+.section-title { font-family: var(--f-d); font-weight: 800; font-size: clamp(1.75rem, 3vw, 3rem); color: var(--forest); margin-bottom: 0.75rem; }
 .section-sub { font-size: clamp(0.9375rem, 1.1vw, 1.125rem); color: var(--muted); max-width: 620px; line-height: 1.75; }
 
 /* ── ABOUT ── */
@@ -124,90 +126,17 @@ section { padding: 5rem clamp(2rem, 5vw, 6rem); min-height: calc(100dvh - 80px);
 .about-body p strong { color: var(--forest); font-weight: 600; }
 .creds { margin-top: 1.125rem; display: flex; flex-direction: column; gap: 0.375rem; }
 .cred { display: flex; align-items: flex-start; gap: 0.625rem; font-size: 0.8375rem; color: var(--muted); line-height: 1.45; }
-.cred::before { content: '→'; font-family: var(--f-m); font-size: 0.7rem; color: var(--green); margin-top: 2px; flex-shrink: 0; }
+.cred::before { content: '→'; font-family: var(--f-m); font-weight: 600; font-size: 0.7rem; color: var(--green); margin-top: 2px; flex-shrink: 0; }
 .cred a { color: var(--green); font-weight: 600; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
 .cred a:hover { border-bottom-color: var(--green); }
 .about-photo-wrap { height: 100%; }
-.about-photo-wrap img { max-height: calc(100dvh - 220px); width: 100%; object-fit: cover; object-position: center top; border-radius: 14px; display: block; }
+.about-photo-wrap img { max-height: calc(100vh - 220px); max-height: calc(100dvh - 220px); width: 100%; object-fit: cover; object-position: center top; border-radius: 14px; display: block; }
 .about-socials { margin-top: 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
-.social-pill { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.08em; color: var(--forest); border: 1px solid var(--rule); padding: 0.35rem 0.75rem; border-radius: 20px; white-space: nowrap; background: white; transition: border-color .15s, background .15s; }
+.social-pill { display: inline-flex; align-items: center; gap: 0.35rem; font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.08em; color: var(--forest); border: 1px solid var(--rule); padding: 0.35rem 0.75rem; border-radius: 20px; white-space: nowrap; background: white; transition: border-color .15s, background .15s; }
 .social-pill:hover { border-color: var(--mint); background: var(--mint-pale); }
 .social-pill .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--bright); flex-shrink: 0; }
 
-/* ── SERVICES — compact, no forced full height ── */
-#services { background: var(--cream); min-height: auto; padding: 2.5rem 2.5rem 1.5rem; }
-.services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; align-items: stretch; }
-.service-card {
-  padding: 1.25rem 1.125rem 1.125rem;
-  border: 1px solid var(--rule); border-radius: 14px;
-  background: white; transition: border-color .2s, box-shadow .2s, transform .2s;
-  display: flex; flex-direction: column;
-  border-top: 3px solid var(--rule);
-}
-.service-card:hover { border-top-color: var(--bright); box-shadow: 0 6px 24px rgba(26,56,41,0.08); transform: translateY(-2px); }
-.service-card[style*="border-color:var(--mint)"] { border-top-color: var(--bright); }
-.service-header { display: flex; align-items: center; gap: 0.625rem; margin-bottom: 0.75rem; }
-.service-num {
-  font-family: var(--f-m); font-size: 0.62rem; font-weight: 700;
-  color: var(--bright); letter-spacing: 0.08em; flex-shrink: 0;
-  background: var(--mint-pale); padding: 0.2rem 0.45rem; border-radius: 4px;
-}
-.service-name { font-family: var(--f-d); font-size: 1.0625rem; line-height: 1; }
-.service-name .sn-db  { color: var(--bright); }
-.service-name .sn-arm { color: var(--forest); }
-/* min-height forces divider to same row across all cards */
-.service-desc { font-size: 0.775rem; color: var(--muted); line-height: 1.6; min-height: 6.25rem; }
-.service-divider { height: 1px; background: var(--rule); margin-bottom: 0.625rem; }
-.service-items { display: flex; flex-direction: column; gap: 0.275rem; flex: 1; }
-.service-item { font-size: 0.75rem; color: var(--forest); display: flex; gap: 0.5rem; align-items: flex-start; line-height: 1.45; }
-.service-item::before { content: '–'; color: var(--bright); flex-shrink: 0; font-size: 0.75rem; margin-top: 1px; }
-.service-btn-wrap { margin-top: 1rem; }
-.btn-reach {
-  display: inline-flex; align-items: center; gap: 0.375rem;
-  background: var(--forest); color: var(--cream);
-  font-family: var(--f-b); font-size: 0.8125rem; font-weight: 600;
-  padding: 0.5625rem 1.125rem; border-radius: 8px;
-  transition: background .15s;
-}
-.btn-reach:hover { background: var(--green); }
-
-/* ── NEWSLETTER ── */
-#newsletter { background: var(--mint-pale); }
-.newsletter-inner { max-width: clamp(900px, 85vw, 1400px); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 5vw, 7rem); align-items: start; }
-.newsletter-left .section-title { margin-top: 0.75rem; }
-.nl-desc { font-size: clamp(0.9375rem, 1.1vw, 1.0625rem); color: var(--muted); line-height: 1.75; margin: 1.25rem 0 2rem; max-width: clamp(380px, 40vw, 520px); }
-.nl-desc strong { color: var(--forest); }
-.nl-issue-mock { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--rule); box-shadow: 0 4px 20px rgba(26,56,41,0.06); }
-.nl-header { background: var(--forest); padding: 1.25rem 1.5rem; }
-.nl-header-wm { font-family: var(--f-d); font-size: 1rem; color: var(--cream); }
-.nl-header-wm span { color: var(--bright); }
-.nl-header-tag { font-family: var(--f-m); font-size: 0.55rem; letter-spacing: 0.14em; color: var(--mint); opacity: 0.65; margin-top: 3px; text-transform: uppercase; }
-.nl-issue-body { padding: 1.25rem 1.5rem 1.5rem; }
-.nl-issue-meta { font-family: var(--f-m); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
-.nl-issue-title { font-family: var(--f-d); font-size: 1.0625rem; color: var(--forest); margin-bottom: 1rem; line-height: 1.25; }
-.nl-diagram-preview { border-radius: 8px; overflow: hidden; border: 1px solid var(--rule); margin-bottom: 1rem; }
-.nl-issue-excerpt { font-size: 0.8125rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
-.nl-read-link { font-family: var(--f-b); font-size: 0.875rem; font-weight: 600; color: var(--green); display: inline-flex; align-items: center; gap: 0.25rem; transition: color .15s; }
-.nl-read-link:hover { color: var(--forest); }
-.nl-read-everything {
-  font-family: var(--f-m); font-size: 0.65rem; letter-spacing: 0.08em;
-  color: var(--muted); text-decoration: none;
-  display: inline-flex; align-items: center; gap: 0.375rem;
-  border-bottom: 1px solid var(--rule); padding-bottom: 2px;
-  transition: color .15s, border-color .15s;
-}
-.nl-read-everything span { color: var(--green); }
-.nl-read-everything:hover { color: var(--forest); border-color: var(--green); }
-/* latest-issues list */
-.nl-list { display: flex; flex-direction: column; gap: 0.75rem; }
-.nl-item { display: flex; align-items: stretch; background: white; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(26,56,41,0.06); transition: transform .2s, box-shadow .2s, border-color .2s; text-decoration: none; }
-.nl-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41,0.10); border-color: var(--mint); }
-.nl-item-thumb { width: 112px; min-width: 112px; height: 92px; object-fit: cover; display: block; background: var(--mint-pale); border-right: 1px solid var(--rule); }
-.nl-item-body { padding: 0.75rem 1rem; display: flex; flex-direction: column; justify-content: center; gap: 0.2rem; }
-.nl-item-date { font-family: var(--f-m); font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-.nl-item-title { font-family: var(--f-d); font-size: 0.95rem; color: var(--forest); line-height: 1.25; }
-.nl-skel { pointer-events: none; }
-.nl-skel .nl-item-date, .nl-skel .nl-item-title { background: var(--mint-pale); border-radius: 4px; color: transparent; }
+#services { background: var(--cream); padding: 3.5rem clamp(2rem, 5vw, 6rem) 3rem; }
 
 /* ── PORTFOLIO ── */
 #portfolio { background: var(--cream); }
@@ -215,17 +144,17 @@ section { padding: 5rem clamp(2rem, 5vw, 6rem); min-height: calc(100dvh - 80px);
 .portfolio-card { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: white; transition: transform .2s, box-shadow .2s, border-top-color .2s; cursor: pointer; border-top: 3px solid var(--rule); }
 .portfolio-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(26,56,41,0.08); border-top-color: var(--bright); }
 .pc-img { height: 160px; background: var(--mint-pale); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--rule); }
-.pc-img-label { font-family: var(--f-d); font-size: 0.9375rem; color: var(--forest); opacity: 0.6; text-align: center; padding: 1rem; }
+.pc-img-label { font-family: var(--f-d); font-weight: 800; font-size: 0.9375rem; color: var(--forest); opacity: 0.6; text-align: center; padding: 1rem; }
 .pc-body { padding: 1.25rem; }
 .pc-tags { display: flex; gap: 0.375rem; flex-wrap: wrap; margin-bottom: 0.625rem; }
-.pc-tag { font-family: var(--f-m); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
+.pc-tag { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 3px; }
 .pc-tag.green { background: var(--mint-pale); color: var(--green); }
 .pc-tag.forest { background: rgba(26,56,41,0.08); color: var(--forest); }
-.pc-title { font-family: var(--f-d); font-size: 1rem; color: var(--forest); margin-bottom: 0.375rem; }
+.pc-title { font-family: var(--f-d); font-weight: 800; font-size: 1rem; color: var(--forest); margin-bottom: 0.375rem; }
 .pc-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.6; }
 .pc-link { margin-top: 1rem; font-size: 0.8125rem; font-weight: 600; color: var(--green); display: flex; align-items: center; gap: 0.25rem; }
 .pc-link::after { content: '→'; }
-.portfolio-cta { margin-top: 2.5rem; text-align: center; }
+.portfolio-cta { margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
 /* ── CONTACT ── */
 #contact { background: var(--forest); }
@@ -233,23 +162,23 @@ section { padding: 5rem clamp(2rem, 5vw, 6rem); min-height: calc(100dvh - 80px);
 #contact .section-label::after { background: rgba(255,255,255,0.12); }
 #contact .section-title { color: var(--cream); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
-.contact-email-label { font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mint); opacity: 0.65; margin-bottom: 0.5rem; }
-.contact-email { font-family: var(--f-d); font-size: 1.5rem; color: var(--cream); transition: color .15s; display: inline-block; }
+.contact-email-label { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--mint); opacity: 0.65; margin-bottom: 0.5rem; }
+.contact-email { font-family: var(--f-d); font-weight: 800; font-size: 1.5rem; color: var(--cream); transition: color .15s; display: inline-block; }
 .contact-email:hover { color: var(--bright); }
 .contact-desc { font-size: 0.9375rem; color: var(--mint); opacity: 0.8; line-height: 1.75; margin-top: 1rem; }
 .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
 .contact-link { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04); transition: background .15s, border-color .15s; }
 .contact-link:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
 .cl-left { display: flex; align-items: center; gap: 0.875rem; }
-.cl-platform { font-family: var(--f-m); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mint); opacity: 0.65; }
+.cl-platform { font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mint); opacity: 0.65; }
 .cl-handle { font-size: 0.9375rem; font-weight: 500; color: var(--cream); margin-top: 1px; }
-.cl-stat { font-family: var(--f-m); font-size: 0.65rem; color: var(--bright); letter-spacing: 0.08em; }
+.cl-stat { font-family: var(--f-m); font-weight: 600; font-size: 0.65rem; color: var(--bright); letter-spacing: 0.08em; }
 .cl-arrow { color: var(--mint); opacity: 0.4; font-size: 1rem; }
 
 /* ── FOOTER ── */
 footer { background: var(--cream); border-top: 1px solid var(--rule); padding: 2rem 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
 .footer-left { display: flex; align-items: center; gap: 0.875rem; }
-.footer-right { font-family: var(--f-m); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--muted); opacity: 0.7; }
+.footer-right { font-family: var(--f-m); font-weight: 600; font-size: 0.58rem; letter-spacing: 0.1em; color: var(--muted); opacity: 0.7; }
 
 svg.mark-icon { display: block; }
 
@@ -279,7 +208,7 @@ svg.mark-icon { display: block; }
 /* ── LANGUAGE SWITCHER ── */
 .lang-switch { display: flex; align-items: center; gap: 0.25rem; margin-left: 1.5rem; }
 .lang-btn {
-  font-family: var(--f-m); font-size: 0.6rem; font-weight: 700;
+  font-family: var(--f-m); font-weight: 600; font-size: 0.6rem; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
   padding: 0.25rem 0.5rem; border-radius: 4px;
   border: 1px solid transparent; cursor: pointer;
@@ -289,26 +218,29 @@ svg.mark-icon { display: block; }
 .lang-btn:hover { color: var(--forest); border-color: var(--rule); }
 .lang-btn.active { color: var(--bright); border-color: var(--bright); background: var(--mint-pale); }
 </style>
+<link rel="stylesheet" href="/site.css">
 </head>
 <body>
 
 <nav>
-  <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:0.625rem;">
-    <img src="images/databitestech_logo.png" alt="" style="height:34px;width:auto;" onerror="this.style.display='none'">
-    <span style="font-family:'Lilita One',cursive;font-size:1.25rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
+  <a href="/" class="nav-logo" aria-label="databites.tech home" style="display:flex;align-items:center;gap:0.625rem;">
+    <img src="/images/databitestech_logo.png" alt="" style="height:34px;width:auto;">
+    <span class="nav-word" style="font-family:'Gabarito',system-ui,sans-serif;font-weight:800;font-size:1.25rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
   </a>
   <div class="nav-links">
-    <a href="#about" data-i18n="nav.about">About</a>
-    <a href="#services" data-i18n="nav.services">Services</a>
-    <a href="#newsletter" data-i18n="nav.newsletter">Newsletter</a>
-    <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-    <a href="/write" data-i18n="nav.writing">Writing</a>
-    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch</a>
+    <div class="nav-menu" id="nav-menu">
+      <a href="/work-with-me" data-nav="work">Work with me</a>
+      <a href="/projects" data-nav="portfolio">Portfolio</a>
+      <a href="/write" data-nav="writing">Writing</a>
+      <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="nav">Newsletter</a>
+    </div>
+    <a href="/work-with-me#contact" class="nav-cta" data-umami-event="contact-click" data-umami-event-location="nav" data-nav="contact">Get in touch</a>
     <div class="lang-switch">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('es')">ES</button>
       <button class="lang-btn" onclick="setLang('ca')">CAT</button>
     </div>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -317,16 +249,13 @@ svg.mark-icon { display: block; }
     <canvas id="hero-canvas"></canvas>
     <div class="hero-content">
       <div class="hero-who">Josep Ferrer</div>
-      <div class="hero-cycling-wrap">
-        <span class="hero-cycling" id="hero-cycling">Data and GenAI for institutional decisions.</span>
-      </div>
       <h1 class="hero-headline">
         <span class="w1" data-i18n="hero.h1">BETTER DECISIONS</span>
         <span class="w2" data-i18n="hero.h2">With your own data.</span>
       </h1>
-      <a href="#services" class="btn-hero" data-i18n="hero.cta">Work with me →</a>
+      <a href="/work-with-me" class="btn-hero" data-umami-event="work-with-me-click" data-umami-event-location="home-hero" data-i18n="hero.cta">Work with me →</a>
       <p class="hero-bio">
-        <span data-i18n="hero.bio1">I help institutions and research organisations turn their data into decisions: workshops, pilots and ongoing support.</span><br>
+        <span data-i18n="hero.bio1">I help institutions and research organisations turn their data into decisions: pilots, retainers, data stories and workshops.</span><br>
         <strong data-i18n="hero.bio2">Based in Rotterdam. Working across Europe.</strong>
       </p>
     </div>
@@ -337,110 +266,16 @@ svg.mark-icon { display: block; }
   </div>
 </section>
 
-<section id="about">
-  <div class="inner">
-    <div class="section-label" data-i18n="about.label">About</div>
-    <h2 class="section-title" data-i18n="about.title">A practitioner who shows his work</h2>
-    <div class="about-grid">
-      <div class="about-body">
-        <p data-i18n="about.p1">I'm a <strong>data scientist, educator, and technical writer</strong> from Barcelona and currently based in Rotterdam. I consult on <strong>Data Analytics, DataViz</strong> and <strong>AI</strong>, create content that makes complex AI and data concepts click, and teach data science to professionals and students worldwide.</p>
-        <p data-i18n="about.p2">With a bachelor in Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF), I combine technical rigour with clear communication. If you need a Data Science project built, a data concept explained, a course designed, or technical articles written, I deliver work people can actually use.</p>
-        <div class="creds">
-          <div class="cred" data-i18n="about.cred1">Data Scientist — NECSTouR (European project)</div>
-          <div class="cred" data-i18n="about.cred2">Associate Professor, Big Data Masters — Universidad de Navarra</div>
-          <div class="cred" data-i18n="about.cred3">Technical Writer — DataCamp, ClicData and Weights &amp; Biases (W&amp;B)</div>
-          <div class="cred" data-i18n="about.cred4">AI Course Lead — Emeritus / UNAV</div>
-          <div class="cred" data-i18n="about.cred5">Newsletter &amp; Articles — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a></div>
-        </div>
-        <div class="about-socials">
-          <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>X @iamjosepferrer</a>
-          <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>LinkedIn</a>
-          <a href="https://github.com/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>GitHub</a>
-          <a href="https://substack.com/@iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>Substack 10k</a>
-          <a href="https://medium.com/@iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>Medium 12k</a>
-        </div>
-      </div>
-      <div class="about-photo-wrap">
-        <img src="images/headshot.png" alt="Josep Ferrer" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;display:block;">
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section id="services">
   <div class="inner">
-    <div class="section-label" data-i18n="services.label">Services</div>
-    <h2 class="section-title" data-i18n="services.title">How I work with you</h2>
-    <div class="services-grid">
-
-      <div class="service-card" style="border-color:var(--mint)">
-        <div class="service-header">
-          <span class="service-num">01</span>
-          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Consult</span></div>
-        </div>
-        <div class="service-desc" data-i18n="services.consult.desc">I help institutions and research organisations make better decisions with their own data and GenAI. Three ways to work together:</div>
-        <div class="service-divider"></div>
-        <div class="service-items">
-          <div class="service-item" data-i18n="services.consult.i1">Workshop (1 day): your team analyses its own data with GenAI and presents it to the people who decide</div>
-          <div class="service-item" data-i18n="services.consult.i2">Pilot (6 to 8 weeks): one real decision answered, with a clear visual result and a tool you keep</div>
-          <div class="service-item" data-i18n="services.consult.i3">Ongoing support: the tool kept up to date and new questions answered every month</div>
-        </div>
-        <div class="service-btn-wrap">
-          <a href="mailto:josep@databites.tech?subject=Working%20together" class="btn-reach" data-i18n="services.consult.cta">Work with me →</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <span class="service-num">02</span>
-          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Learn</span></div>
-        </div>
-        <div class="service-desc" data-i18n="services.learn.desc">Weekly diagrams, threads, and a newsletter reaching 10k+ data professionals. The content engine that everything else flows from.</div>
-        <div class="service-divider"></div>
-        <div class="service-items">
-          <div class="service-item" data-i18n="services.learn.i1">Weekly diagram (X + LinkedIn)</div>
-          <div class="service-item" data-i18n="services.learn.i2">Newsletter at reads.databites.tech</div>
-          <div class="service-item" data-i18n="services.learn.i3">Sponsorships available</div>
-        </div>
-        <div class="service-btn-wrap">
-          <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="btn-reach" data-i18n="services.learn.cta">Subscribe free →</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <span class="service-num">03</span>
-          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Teach</span></div>
-        </div>
-        <div class="service-desc" data-i18n="services.teach.desc">University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.</div>
-        <div class="service-divider"></div>
-        <div class="service-items">
-          <div class="service-item" data-i18n="services.teach.i1">Conference & meetup talks</div>
-          <div class="service-item" data-i18n="services.teach.i2">University course partnerships</div>
-          <div class="service-item" data-i18n="services.teach.i3">Online courses (EN, ES, CAT)</div>
-        </div>
-        <div class="service-btn-wrap">
-          <a href="mailto:josep@databites.tech?subject=DataBites%20Teach%20enquiry" class="btn-reach" data-i18n="services.teach.cta">Reach out →</a>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <div class="service-header">
-          <span class="service-num">04</span>
-          <div class="service-name"><span class="sn-db">databites</span> <span class="sn-arm">Write</span></div>
-        </div>
-        <div class="service-desc" data-i18n="services.write.desc">Freelance technical writing for data and AI companies. Articles, tutorials, and documentation that are precise, visual-first, and actually useful.</div>
-        <div class="service-divider"></div>
-        <div class="service-items">
-          <div class="service-item" data-i18n="services.write.i1">Technical tutorials & how-tos</div>
-          <div class="service-item" data-i18n="services.write.i2">AI/ML concept explainers</div>
-          <div class="service-item" data-i18n="services.write.i3">Documentation & developer guides</div>
-        </div>
-        <div class="service-btn-wrap">
-          <a href="/write" class="btn-reach" data-i18n="services.write.cta">See writing portfolio →</a>
-        </div>
-      </div>
-
+    <h2 class="section-title" data-i18n="doors.title"></h2>
+    <div class="doors">
+      <a href="/work-with-me#project" class="door" data-umami-event="door-click" data-umami-event-topic="project"><h3 data-i18n="door.project.t"></h3><p data-i18n="door.project.d"></p><span data-i18n="door.project.l"></span></a>
+      <a href="/work-with-me#training" class="door" data-umami-event="door-click" data-umami-event-topic="training"><h3 data-i18n="door.training.t"></h3><p data-i18n="door.training.d"></p><span data-i18n="door.training.l"></span></a>
+      <a href="/work-with-me#sponsorship" class="door" data-umami-event="door-click" data-umami-event-topic="sponsorship"><h3 data-i18n="door.sponsorship.t"></h3><p data-i18n="door.sponsorship.d"></p><span data-i18n="door.sponsorship.l"></span></a>
+      <a href="/write" class="door" data-umami-event="door-click" data-umami-event-topic="writing"><h3 data-i18n="door.writing.t"></h3><p data-i18n="door.writing.d"></p><span data-i18n="door.writing.l"></span></a>
     </div>
   </div>
 </section>
@@ -449,7 +284,7 @@ svg.mark-icon { display: block; }
   <div class="trusted-head">
     <div class="trusted-title"><span class="t1" data-i18n="trusted.t1">trusted</span> <span class="t2" data-i18n="trusted.t2">by teams</span></div>
     <div class="trusted-title-rule"></div>
-    <p class="trusted-desc" data-i18n="trusted.desc">I've worked with research institutes, education organisations, international projects, and data companies across Europe and beyond.</p>
+    <p class="trusted-desc" data-i18n="trusted.desc">I've worked with public bodies, universities, research groups and data companies in Europe and the US.</p>
   </div>
   <div class="marquee-wrap">
     <div class="marquee-track">
@@ -487,34 +322,45 @@ svg.mark-icon { display: block; }
   </div>
 </section>
 
-<section id="newsletter">
-  <div class="newsletter-inner inner">
-    <div class="newsletter-left">
-      <div class="section-label" data-i18n="newsletter.label">Newsletter</div>
-      <h2 class="section-title" data-i18n="newsletter.title">Read everything from me</h2>
-      <p class="nl-desc" data-i18n="newsletter.desc">Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a></p>
-      <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;margin-top:0.5rem" data-i18n="newsletter.cta">Subscribe free →</a>
-    </div>
-    <div class="newsletter-right">
-      <!-- Latest issues pulled live from the Substack RSS feed -->
-      <div class="nl-list" id="nl-list">
-        <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
-        <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
-        <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
-        <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
-        <div class="nl-item nl-skel"><div class="nl-item-thumb"></div><div class="nl-item-body"><div class="nl-item-date">&nbsp;&nbsp;&nbsp;</div><div class="nl-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 <section id="portfolio">
   <div class="inner">
     <div class="section-label" data-i18n="portfolio.label">Portfolio</div>
     <h2 class="section-title" data-i18n="portfolio.title">Projects & work</h2>
-    <p class="section-sub" data-i18n="portfolio.sub">Real DataViz projects — built, shipped, and public. See the full portfolio at <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a></p>
-    <div class="portfolio-grid" id="portfolio-grid"></div>
-    <div class="portfolio-cta"><a href="https://projects.databites.tech" target="_blank" rel="noopener" class="btn-secondary" data-i18n="portfolio.seeAll">See all projects →</a></div>
+    <p class="section-sub" data-i18n="portfolio.sub">Maps, atlases and data stories I built on public data. The full portfolio is at <a href="/projects" style="color:var(--green);font-weight:600">databites.tech/projects</a>.</p>
+    <div class="portfolio-grid" id="portfolio-grid"><noscript><p style="grid-column:1/-1">The project gallery needs JavaScript. You can also email me at josep@databites.tech and I will send you examples.</p></noscript></div>
+    <div class="portfolio-cta"><a href="/projects" class="btn-secondary" data-umami-event="portfolio-click" data-umami-event-location="home" data-i18n="portfolio.seeAll">See all projects →</a><a href="/work-with-me" class="btn-primary" data-umami-event="work-with-me-click" data-umami-event-location="home-portfolio" data-i18n="portfolio.cta">Want one built on your data? →</a></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="inner">
+    <div class="section-label" data-i18n="about.label">About</div>
+    <h2 class="section-title" data-i18n="about.title">A practitioner who shows his work</h2>
+    <div class="about-grid">
+      <div class="about-body">
+        <p data-i18n="about.p1">I'm a <strong>data scientist and educator</strong> from Barcelona, based in Rotterdam. I help institutions and research organisations make decisions with their own data, through <strong>data visualization, analytics and GenAI</strong>.</p>
+        <p data-i18n="about.p2">I studied Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF). Before going independent I was an analytics engineer in the Generalitat de Catalunya's tourism data unit. Every weekday I publish a map or data story built on public data.</p>
+        <div class="creds">
+          <div class="cred" data-i18n="about.cred1">Data Scientist at NECSTouR, a network of 30+ European tourism regions</div>
+          <div class="cred" data-i18n="about.cred2">Associate Professor, Big Data Master, Universidad de Navarra</div>
+          <div class="cred" data-i18n="about.cred3">External research collaborator, TIDE group, Universitat Pompeu Fabra</div>
+          <div class="cred" data-i18n="about.cred4">Course Lead, GenAI for Professionals, Emeritus and UNAV</div>
+          <div class="cred" data-i18n="about.cred5">Technical writer for DataCamp and Weights &amp; Biases (<a href="/write">writing</a>)</div>
+        </div>
+        <div class="about-socials">
+          <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>X @iamjosepferrer</a>
+          <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>LinkedIn</a>
+          <a href="https://github.com/iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>GitHub</a>
+          <a href="https://substack.com/@iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>Substack <span data-audience="newsletter">10k</span></a>
+          <a href="https://medium.com/@iamjosepferrer" target="_blank" rel="noopener" class="social-pill"><span class="dot"></span>Medium 12k</a>
+        </div>
+      </div>
+      <div class="about-photo-wrap">
+        <img src="images/headshot.png" alt="Josep Ferrer" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;display:block;">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -525,42 +371,44 @@ svg.mark-icon { display: block; }
     <div class="contact-grid">
       <div>
         <div class="contact-email-label" data-i18n="contact.emailLabel">Email</div>
-        <a href="mailto:josep@databites.tech" class="contact-email">josep@databites.tech</a>
-        <p class="contact-desc" data-i18n="contact.desc">If you have a decision you want answered with data, a workshop for your team, or a dataviz project, get in touch directly. I read every email.</p>
+        <a href="mailto:josep@databites.tech" class="contact-email" data-umami-event="email-click" data-umami-event-location="home-contact">josep@databites.tech</a><button type="button" class="copy-btn" data-copy="josep@databites.tech">Copy</button>
+        <p class="contact-desc" data-i18n="contact.desc">If you have a decision you want answered with data, a workshop for your team, or a data story to publish, get in touch directly. I reply within 2 business days.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.75rem;margin-top:1.75rem;"><a href="/work-with-me#contact" class="btn-hero" style="color:var(--cream);border-color:var(--cream);" data-umami-event="contact-click" data-umami-event-location="home-contact" data-i18n="contact.cta"></a>
+        <a href="#" class="btn-hero js-book" data-book-only style="color:var(--cream);border-color:var(--cream);" data-umami-event="book-call" data-umami-event-location="home-contact" data-i18n="contact.book"></a></div>
       </div>
       <div class="contact-links">
         <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">X / Twitter</div><div class="cl-handle">@iamjosepferrer</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">26k followers</div><div class="cl-arrow">→</div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat"><span data-audience="x">26k</span> followers</div><div class="cl-arrow">→</div></div>
         </a>
         <a href="https://linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">LinkedIn</div><div class="cl-handle">iamjosepferrer</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">9.5k followers</div><div class="cl-arrow">→</div></div>
-        </a>
-        <a href="https://substack.com/@iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
-          <div class="cl-left"><div><div class="cl-platform">Substack</div><div class="cl-handle">@iamjosepferrer</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">10k subscribers</div><div class="cl-arrow">→</div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat"><span data-audience="linkedin">10k</span> followers</div><div class="cl-arrow">→</div></div>
         </a>
         <a href="https://github.com/iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
           <div class="cl-left"><div><div class="cl-platform">GitHub</div><div class="cl-handle">@iamjosepferrer</div></div></div>
           <div class="cl-arrow">→</div>
-        </a>
-        <a href="https://medium.com/@iamjosepferrer" target="_blank" rel="noopener" class="contact-link">
-          <div class="cl-left"><div><div class="cl-platform">Medium</div><div class="cl-handle">@iamjosepferrer</div></div></div>
-          <div style="display:flex;align-items:center;gap:1rem"><div class="cl-stat">12k followers</div><div class="cl-arrow">→</div></div>
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="footer-left" style="display:flex;align-items:center;gap:0.625rem;">
-    <img src="images/databitestech_logo.png" alt="" style="height:28px;width:auto;" onerror="this.style.display='none'">
-    <span style="font-family:'Lilita One',cursive;font-size:1rem;line-height:1;letter-spacing:-0.01em;"><span style="color:#38B86E;">databites</span><span style="color:#1A3829;">.tech</span></span>
-    <span style="font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:#5E7D6A;margin-left:0.5rem;">DATA &amp; AI · CLEARLY EXPLAINED</span>
+<footer class="site-footer">
+  <div class="sf-top">
+    <a href="/" class="sf-brand"><img src="/images/databitestech_logo.png" alt=""><span><span class="g">databites</span><span class="f">.tech</span></span></a>
+    <div class="sf-links">
+      <a href="/work-with-me" data-nav="work">Work with me</a>
+      <a href="/projects" data-nav="portfolio">Portfolio</a>
+      <a href="/write" data-nav="writing">Writing</a>
+      <a href="https://reads.databites.tech" data-nav="newsletter" target="_blank" rel="noopener" data-umami-event="newsletter-click" data-umami-event-location="footer">Newsletter</a>
+    </div>
   </div>
-  <div class="footer-right">© 2026 DataBites · Josep Ferrer · Rotterdam, NL</div>
+  <div class="sf-bottom">
+    <span>© 2026 databites.tech · Josep Ferrer · Rotterdam, NL</span>
+    <span>KvK 96481331 · VAT NL005212566B59</span>
+    <a href="mailto:josep@databites.tech" data-umami-event="email-click" data-umami-event-location="footer">josep@databites.tech</a>
+  </div>
 </footer>
 
 <script>
@@ -595,7 +443,7 @@ async function loadPortfolioPreview() {
   if (!grid) return;
   if (!window._portfolioProjects) {
     try {
-      const res = await fetch('https://projects.databites.tech/projects.json');
+      const res = await fetch('/projects.json');
       if (!res.ok) throw new Error(res.status);
       const data = await res.json();
       window._portfolioProjects = Array.isArray(data) ? data : (data.projects || []);
@@ -604,7 +452,7 @@ async function loadPortfolioPreview() {
   const projects = window._portfolioProjects;
   const pick = f => (f && typeof f === 'object') ? (f[currentLang] || f.en || '') : (f || '');
   const featured = projects.filter(p => p.featured && p.live);
-  const list = featured.length ? featured : projects.filter(p => p.live).slice(0, 3);
+  const list = (featured.length ? featured : projects.filter(p => p.live)).slice(0, 3);
   grid.innerHTML = list.map(p => {
     const chips = (p.chips || []).filter(c => c.label)
       .map(c => `<span class="pc-tag ${c.style === 'green' ? 'green' : 'forest'}">${c.label}</span>`).join('');
@@ -628,151 +476,121 @@ async function loadPortfolioPreview() {
 // ── MULTILINGUAL ─────────────────────────────────────────
 const translations = {
   en: {
-    'nav.about': 'About', 'nav.services': 'Services', 'nav.newsletter': 'Newsletter',
-    'nav.portfolio': 'Portfolio', 'nav.writing': 'Writing', 'nav.cta': 'Get in touch',
+    'doors.title': "What do you need?",
+    'door.project.t': "A data project",
+    'door.project.d': "A pilot, a retainer or a data story built on your data.",
+    'door.project.l': "See how it works →",
+    'door.training.t': "A workshop, webinar or talk",
+    'door.training.d': "For teams, universities and events, online or on-site.",
+    'door.training.l': "See the formats →",
+    'door.sponsorship.t': "Sponsorship",
+    'door.sponsorship.d': "A sponsored map or a newsletter slot.",
+    'door.sponsorship.l': "See the options →",
+    'door.writing.t': "Technical writing",
+    'door.writing.d': "Tutorials and articles for data and AI companies.",
+    'door.writing.l': "See samples and terms →",
+    'portfolio.cta': "Want one built on your data? →",
+    'contact.cta': "Open the contact form →",
+    'contact.book': "Book a 20 min call →",
     'hero.h1': 'BETTER DECISIONS', 'hero.h2': 'With your own data.',
-    'hero.cta': 'Work with me →',
-    'hero.bio1': 'I help institutions and research organisations turn their data into decisions: workshops, pilots and ongoing support.',
+    'hero.cta': "Work with me →",
+    'hero.bio1': "I build maps, analyses and GenAI tools for organisations, and I teach teams to do the same.",
     'hero.bio2': 'Based in Rotterdam. Working across Europe.',
     'about.label': 'About', 'about.title': 'A practitioner who shows his work',
-    'about.p1': 'I\'m a <strong>data scientist, educator, and technical writer</strong> from Barcelona and currently based in Rotterdam. I consult on <strong>Data Analytics, DataViz</strong> and <strong>AI</strong>, create content that makes complex AI and data concepts click, and teach data science to professionals and students worldwide.',
-    'about.p2': 'With a bachelor in Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF), I combine technical rigour with clear communication. If you need a Data Science project built, a data concept explained, a course designed, or technical articles written, I deliver work people can actually use.',
-    'about.cred1': 'Data Scientist — NECSTouR (European project)',
-    'about.cred2': 'Associate Professor, Big Data Masters — Universidad de Navarra',
-    'about.cred3': 'Technical Writer — DataCamp, ClicData and Weights &amp; Biases (W&amp;B)',
-    'about.cred4': 'AI Course Lead — Emeritus / UNAV',
-    'about.cred5': 'Newsletter &amp; Articles — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a>',
+    'about.p1': "I'm a <strong>data scientist and educator</strong> from Barcelona, based in Rotterdam. I help institutions and research organisations make decisions with their own data, through <strong>data visualization, analytics and GenAI</strong>.",
+    'about.p2': "I studied Engineering Physics (UPC) and a master in Intelligent Interactive Systems (UPF). Before going independent I was an analytics engineer in the Generalitat de Catalunya's tourism data unit. Every weekday I publish a map or data story built on public data.",
+    'about.cred1': "Data Scientist at NECSTouR, a network of 30+ European tourism regions",
+    'about.cred2': "Associate Professor, Big Data Master, Universidad de Navarra",
+    'about.cred3': "External research collaborator, TIDE group, Universitat Pompeu Fabra",
+    'about.cred4': "Course Lead, GenAI for Professionals, Emeritus and UNAV",
+    'about.cred5': "Technical writer for DataCamp and Weights &amp; Biases (<a href=\"/write\">writing</a>)",
     'trusted.t1': 'trusted', 'trusted.t2': 'by teams',
-    'trusted.desc': 'I\'ve worked with research institutes, education organisations, international projects, and data companies across Europe and beyond.',
-    'services.label': 'Services', 'services.title': 'How I work with you',
-    'services.learn.desc': 'Weekly diagrams, threads, and a newsletter reaching 10k+ data professionals. The content engine that everything else flows from.',
-    'services.learn.i1': 'Weekly diagram (X + LinkedIn)', 'services.learn.i2': 'Newsletter at reads.databites.tech', 'services.learn.i3': 'Sponsorships available', 'services.learn.cta': 'Subscribe free →',
-    'services.consult.desc': 'I help institutions and research organisations make better decisions with their own data and GenAI. Three ways to work together:',
-    'services.consult.i1': 'Workshop (1 day): your team analyses its own data with GenAI and presents it to the people who decide', 'services.consult.i2': 'Pilot (6 to 8 weeks): one real decision answered, with a clear visual result and a tool you keep', 'services.consult.i3': 'Ongoing support: the tool kept up to date and new questions answered every month', 'services.consult.cta': 'Work with me →',
-    'services.teach.desc': 'University partnerships, online courses, conference speaking, and brand ambassador deals. The institutional credibility layer.',
-    'services.teach.i1': 'Conference & meetup talks', 'services.teach.i2': 'University course partnerships', 'services.teach.i3': 'Online courses (EN, ES, CAT)', 'services.teach.cta': 'Reach out →',
-    'services.write.desc': 'Freelance technical writing for data and AI companies. Articles, tutorials, and documentation that are precise, visual-first, and actually useful.',
-    'services.write.i1': 'Technical tutorials & how-tos', 'services.write.i2': 'AI/ML concept explainers', 'services.write.i3': 'Documentation & developer guides', 'services.write.cta': 'See writing portfolio →',
-    'newsletter.label': 'Newsletter', 'newsletter.title': 'Read everything from me',
-    'newsletter.desc': 'Weekly data and AI concepts, <strong>clearly explained through diagrams</strong>. Built, written, and published every week. Read the full newsletter at <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
-    'newsletter.cta': 'Subscribe free →',
+    'trusted.desc': "I've worked with public bodies, universities, research groups and data companies in Europe and the US.",
     'portfolio.label': 'Portfolio', 'portfolio.title': 'Projects & work',
-    'portfolio.sub': 'Real DataViz projects — built, shipped, and public. See the full portfolio at <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a>',
-    'portfolio.atlas.title': 'Catalonia Income Atlas',
-    'portfolio.atlas.desc': 'Interactive choropleth map of income inequality across 5,108 census tracts, 947 municipalities, and 4 provinces in Catalonia. INE data, 2015–2023.',
-    'portfolio.viewProject': 'View project', 'portfolio.comingSoon': 'Coming soon',
-    'portfolio.inProgress': 'In progress',
-    'portfolio.p2.desc': 'The next DataViz project. Subscribe to the newsletter to be the first to see it.',
-    'portfolio.p3.desc': 'The third portfolio piece. Consulting prospects: contact me to see private work samples.',
+    'portfolio.sub': "Maps, atlases and data stories I built on public data. The full portfolio is at <a href=\"/projects\" style=\"color:var(--green);font-weight:600\">databites.tech/projects</a>.",
+    'portfolio.viewProject': 'View project',
     'portfolio.seeAll': 'See all projects →',
-    'contact.label': 'Contact', 'contact.title': "Let's work together",
+    'contact.label': 'Contact', 'contact.title': "Tell me what you need",
     'contact.emailLabel': 'Email',
-    'contact.desc': 'If you have a decision you want answered with data, a workshop for your team, or a dataviz project, get in touch directly. I read every email.',
-    phrases: [
-      'Data and GenAI for institutional decisions.',
-      'Maps, dashboards and data stories people act on.',
-      'Workshops, pilots and ongoing support for institutions.',
-      'One real decision, answered with your own data.',
-      'Where GenAI helps your analysis, and where it misleads.'
-    ]
+    'contact.desc': "Email me or use the form. I reply within 2 business days."
   },
   es: {
-    'nav.about': 'Sobre mí', 'nav.services': 'Servicios', 'nav.newsletter': 'Newsletter',
-    'nav.portfolio': 'Portfolio', 'nav.writing': 'Escritura', 'nav.cta': 'Contacta',
+    'doors.title': "¿Qué necesitas?",
+    'door.project.t': "Un proyecto de datos",
+    'door.project.d': "Un piloto, un retainer o una historia de datos con tus datos.",
+    'door.project.l': "Ver cómo funciona →",
+    'door.training.t': "Un taller, webinar o charla",
+    'door.training.d': "Para equipos, universidades y eventos, online o presencial.",
+    'door.training.l': "Ver los formatos →",
+    'door.sponsorship.t': "Patrocinio",
+    'door.sponsorship.d': "Un mapa patrocinado o un espacio en la newsletter.",
+    'door.sponsorship.l': "Ver las opciones →",
+    'door.writing.t': "Escritura técnica",
+    'door.writing.d': "Tutoriales y artículos para empresas de datos e IA.",
+    'door.writing.l': "Ver muestras y condiciones →",
+    'portfolio.cta': "¿Quieres uno con tus datos? →",
+    'contact.cta': "Abrir el formulario →",
+    'contact.book': "Reserva una llamada de 20 min →",
     'hero.h1': 'MEJORES DECISIONES', 'hero.h2': 'Con tus propios datos.',
-    'hero.cta': 'Trabaja conmigo →',
-    'hero.bio1': 'Ayudo a instituciones y organizaciones de investigación a convertir sus datos en decisiones: talleres, pilotos y soporte continuo.',
+    'hero.cta': "Trabaja conmigo →",
+    'hero.bio1': "Construyo mapas, análisis y herramientas con IA generativa para organizaciones, y enseño a los equipos a hacer lo mismo.",
     'hero.bio2': 'Desde Rotterdam. Trabajando en toda Europa.',
     'about.label': 'Sobre mí', 'about.title': 'Un profesional que muestra su trabajo',
-    'about.p1': 'Soy <strong>científico de datos, educador y escritor técnico</strong> de Barcelona, actualmente en Rotterdam. Consulto sobre <strong>Data Analytics, DataViz</strong> e <strong>IA</strong>, creo contenido que hace que conceptos complejos de datos e IA sean comprensibles, y enseño ciencia de datos a profesionales y estudiantes en todo el mundo.',
-    'about.p2': 'Con un grado en Física de Ingeniería (UPC) y un máster en Sistemas Interactivos Inteligentes (UPF), combino profundidad técnica con comunicación clara. Si necesitas un proyecto de Data Science, un concepto explicado, un curso diseñado o artículos técnicos escritos, entrego trabajo que la gente puede usar.',
-    'about.cred1': 'Científico de Datos — NECSTouR (proyecto europeo)',
-    'about.cred2': 'Profesor Asociado, Máster en Big Data — Universidad de Navarra',
-    'about.cred3': 'Escritor Técnico — DataCamp, ClicData y Weights &amp; Biases (W&amp;B)',
-    'about.cred4': 'Responsable de Curso de IA — Emeritus / UNAV',
-    'about.cred5': 'Newsletter y Artículos — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a>',
+    'about.p1': "Soy <strong>científico de datos y educador</strong> de Barcelona, afincado en Rotterdam. Ayudo a instituciones y organizaciones de investigación a decidir con sus propios datos, con <strong>visualización de datos, analítica e IA generativa</strong>.",
+    'about.p2': "Estudié Ingeniería Física (UPC) y un máster en Sistemas Interactivos Inteligentes (UPF). Antes de trabajar por mi cuenta fui analytics engineer en la unidad de datos turísticos de la Generalitat de Catalunya. Cada día laborable publico un mapa o una historia de datos con datos públicos.",
+    'about.cred1': "Científico de datos en NECSTouR, una red de más de 30 regiones turísticas europeas",
+    'about.cred2': "Profesor Asociado, Máster en Big Data, Universidad de Navarra",
+    'about.cred3': "Colaborador externo de investigación, grupo TIDE, Universitat Pompeu Fabra",
+    'about.cred4': "Responsable del curso IA Generativa para Profesionales, Emeritus y UNAV",
+    'about.cred5': "Escritor técnico para DataCamp y Weights &amp; Biases (<a href=\"/write\">escritura</a>)",
     'trusted.t1': 'confianza', 'trusted.t2': 'de equipos',
-    'trusted.desc': 'He trabajado con institutos de investigación, organizaciones educativas, proyectos internacionales y empresas de datos en Europa y más allá.',
-    'services.label': 'Servicios', 'services.title': 'Cómo trabajo contigo',
-    'services.learn.desc': 'Diagramas semanales, hilos y una newsletter que llega a más de 10k profesionales de datos. El motor de contenido del que fluye todo lo demás.',
-    'services.learn.i1': 'Diagrama semanal (X + LinkedIn)', 'services.learn.i2': 'Newsletter en reads.databites.tech', 'services.learn.i3': 'Patrocinios disponibles', 'services.learn.cta': 'Suscríbete gratis →',
-    'services.consult.desc': 'Ayudo a instituciones y organizaciones de investigación a tomar mejores decisiones con sus propios datos e IA generativa. Tres formas de trabajar juntos:',
-    'services.consult.i1': 'Taller (1 día): tu equipo analiza sus propios datos con IA generativa y los presenta a quienes deciden', 'services.consult.i2': 'Piloto (6 a 8 semanas): una decisión real respondida, con un resultado visual claro y una herramienta que te quedas', 'services.consult.i3': 'Soporte continuo: la herramienta actualizada y nuevas preguntas respondidas cada mes', 'services.consult.cta': 'Trabaja conmigo →',
-    'services.teach.desc': 'Asociaciones universitarias, cursos online, charlas en conferencias y acuerdos de embajador de marca. La capa de credibilidad institucional.',
-    'services.teach.i1': 'Charlas en conferencias y meetups', 'services.teach.i2': 'Asociaciones con cursos universitarios', 'services.teach.i3': 'Cursos online (EN, ES, CAT)', 'services.teach.cta': 'Contáctame →',
-    'services.write.desc': 'Escritura técnica freelance para empresas de datos e IA. Artículos, tutoriales y documentación precisos, visuales y realmente útiles.',
-    'services.write.i1': 'Tutoriales técnicos y guías', 'services.write.i2': 'Explainers de conceptos de IA/ML', 'services.write.i3': 'Documentación y guías para desarrolladores', 'services.write.cta': 'Ver portfolio de escritura →',
-    'newsletter.label': 'Newsletter', 'newsletter.title': 'Lee todo lo que publico',
-    'newsletter.desc': 'Conceptos de datos e IA, <strong>explicados claramente con diagramas</strong>. Construido, escrito y publicado cada semana. Lee la newsletter en <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
-    'newsletter.cta': 'Suscríbete gratis →',
+    'trusted.desc': "He trabajado con organismos públicos, universidades, grupos de investigación y empresas de datos en Europa y Estados Unidos.",
     'portfolio.label': 'Portfolio', 'portfolio.title': 'Proyectos y trabajo',
-    'portfolio.sub': 'Proyectos reales de DataViz — construidos, publicados y disponibles. Ve el portfolio completo en <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a>',
-    'portfolio.atlas.title': 'Atlas de Renta de Cataluña',
-    'portfolio.atlas.desc': 'Mapa coroplético interactivo de desigualdad de renta en 5.108 secciones censales, 947 municipios y 4 provincias de Cataluña. Datos INE, 2015–2023.',
-    'portfolio.viewProject': 'Ver proyecto', 'portfolio.comingSoon': 'Próximamente',
-    'portfolio.inProgress': 'En desarrollo',
-    'portfolio.p2.desc': 'El próximo proyecto de DataViz. Suscríbete a la newsletter para verlo el primero.',
-    'portfolio.p3.desc': 'La tercera pieza del portfolio. Clientes de consultoría: contáctame para ver muestras privadas.',
+    'portfolio.sub': "Mapas, atlas e historias de datos que he construido con datos públicos. El portfolio completo está en <a href=\"/projects\" style=\"color:var(--green);font-weight:600\">databites.tech/projects</a>.",
+    'portfolio.viewProject': 'Ver proyecto',
     'portfolio.seeAll': 'Ver todos los proyectos →',
-    'contact.label': 'Contacto', 'contact.title': 'Trabajemos juntos',
+    'contact.label': 'Contacto', 'contact.title': "Cuéntame qué necesitas",
     'contact.emailLabel': 'Email',
-    'contact.desc': 'Si tienes una decisión que quieres responder con datos, un taller para tu equipo o un proyecto de DataViz, escríbeme directamente. Leo todos los emails.',
-    phrases: [
-      'Datos e IA generativa para decisiones institucionales.',
-      'Mapas, dashboards e historias de datos que generan acción.',
-      'Talleres, pilotos y soporte continuo para instituciones.',
-      'Una decisión real, respondida con tus propios datos.',
-      'Dónde la IA generativa ayuda a tu análisis y dónde engaña.'
-    ]
+    'contact.desc': "Escríbeme por email o usa el formulario. Respondo en 2 días laborables."
   },
   ca: {
-    'nav.about': 'Sobre mi', 'nav.services': 'Serveis', 'nav.newsletter': 'Newsletter',
-    'nav.portfolio': 'Portfolio', 'nav.writing': 'Escriptura', 'nav.cta': 'Contacta',
+    'doors.title': "Què necessites?",
+    'door.project.t': "Un projecte de dades",
+    'door.project.d': "Un pilot, un retainer o una història de dades amb les teves dades.",
+    'door.project.l': "Veure com funciona →",
+    'door.training.t': "Un taller, webinar o xerrada",
+    'door.training.d': "Per a equips, universitats i esdeveniments, en línia o presencial.",
+    'door.training.l': "Veure els formats →",
+    'door.sponsorship.t': "Patrocini",
+    'door.sponsorship.d': "Un mapa patrocinat o un espai a la newsletter.",
+    'door.sponsorship.l': "Veure les opcions →",
+    'door.writing.t': "Escriptura tècnica",
+    'door.writing.d': "Tutorials i articles per a empreses de dades i IA.",
+    'door.writing.l': "Veure mostres i condicions →",
+    'portfolio.cta': "En vols un amb les teves dades? →",
+    'contact.cta': "Obrir el formulari →",
+    'contact.book': "Reserva una trucada de 20 min →",
     'hero.h1': 'MILLORS DECISIONS', 'hero.h2': 'Amb les teves pròpies dades.',
-    'hero.cta': 'Treballa amb mi →',
-    'hero.bio1': 'Ajudo institucions i organitzacions de recerca a convertir les seves dades en decisions: tallers, pilots i suport continu.',
+    'hero.cta': "Treballa amb mi →",
+    'hero.bio1': "Construeixo mapes, anàlisis i eines amb IA generativa per a organitzacions, i ensenyo els equips a fer el mateix.",
     'hero.bio2': 'Des de Rotterdam. Treballant a tota Europa.',
     'about.label': 'Sobre mi', 'about.title': 'Un professional que mostra el seu treball',
-    'about.p1': 'Soc <strong>científic de dades, educador i escriptor tècnic</strong> de Barcelona, actualment a Rotterdam. Consulto sobre <strong>Data Analytics, DataViz</strong> i <strong>IA</strong>, creo contingut que fa que conceptes complexos de dades i IA siguin comprensibles, i ensenyo ciència de dades a professionals i estudiants arreu del món.',
-    'about.p2': 'Amb un grau en Física de l\'Enginyeria (UPC) i un màster en Sistemes Interactius Intel·ligents (UPF), combino profunditat tècnica amb comunicació clara. Si necessites un projecte de Data Science, un concepte explicat, un curs dissenyat o articles tècnics escrits, lliuro feina que la gent pot usar.',
-    'about.cred1': 'Científic de Dades — NECSTouR (projecte europeu)',
-    'about.cred2': 'Professor Associat, Màster en Big Data — Universidad de Navarra',
-    'about.cred3': 'Escriptor Tècnic — DataCamp, ClicData i Weights &amp; Biases (W&amp;B)',
-    'about.cred4': 'Responsable de Curs d\'IA — Emeritus / UNAV',
-    'about.cred5': 'Newsletter i Articles — <a href="https://reads.databites.tech" target="_blank" rel="noopener">reads.databites.tech</a>',
+    'about.p1': "Soc <strong>científic de dades i educador</strong> de Barcelona, establert a Rotterdam. Ajudo institucions i organitzacions de recerca a decidir amb les seves pròpies dades, amb <strong>visualització de dades, analítica i IA generativa</strong>.",
+    'about.p2': "Vaig estudiar Enginyeria Física (UPC) i un màster en Sistemes Interactius Intel·ligents (UPF). Abans de treballar pel meu compte vaig ser analytics engineer a la unitat de dades turístiques de la Generalitat de Catalunya. Cada dia laborable publico un mapa o una història de dades amb dades públiques.",
+    'about.cred1': "Científic de dades a NECSTouR, una xarxa de més de 30 regions turístiques europees",
+    'about.cred2': "Professor Associat, Màster en Big Data, Universidad de Navarra",
+    'about.cred3': "Col·laborador extern de recerca, grup TIDE, Universitat Pompeu Fabra",
+    'about.cred4': "Responsable del curs IA Generativa per a Professionals, Emeritus i UNAV",
+    'about.cred5': "Escriptor tècnic per a DataCamp i Weights &amp; Biases (<a href=\"/write\">escriptura</a>)",
     'trusted.t1': 'confiança', 'trusted.t2': 'd\'equips',
-    'trusted.desc': 'He treballat amb instituts de recerca, organitzacions educatives, projectes internacionals i empreses de dades a Europa i més enllà.',
-    'services.label': 'Serveis', 'services.title': 'Com treballo amb tu',
-    'services.learn.desc': 'Diagrames setmanals, fils i una newsletter que arriba a més de 10k professionals de dades. El motor de contingut del qual flueix tot.',
-    'services.learn.i1': 'Diagrama setmanal (X + LinkedIn)', 'services.learn.i2': 'Newsletter a reads.databites.tech', 'services.learn.i3': 'Patrocinis disponibles', 'services.learn.cta': 'Subscriu-te gratis →',
-    'services.consult.desc': 'Ajudo institucions i organitzacions de recerca a prendre millors decisions amb les seves pròpies dades i IA generativa. Tres maneres de treballar junts:',
-    'services.consult.i1': 'Taller (1 dia): el teu equip analitza les seves pròpies dades amb IA generativa i les presenta a qui decideix', 'services.consult.i2': 'Pilot (6 a 8 setmanes): una decisió real resposta, amb un resultat visual clar i una eina que et quedes', 'services.consult.i3': 'Suport continu: l\'eina actualitzada i noves preguntes respostes cada mes', 'services.consult.cta': 'Treballa amb mi →',
-    'services.teach.desc': 'Associacions universitàries, cursos online, xerrades a conferències i acords d\'ambaixador de marca. La capa de credibilitat institucional.',
-    'services.teach.i1': 'Xerrades a conferències i meetups', 'services.teach.i2': 'Associacions amb cursos universitaris', 'services.teach.i3': 'Cursos online (EN, ES, CAT)', 'services.teach.cta': 'Contacta\'m →',
-    'services.write.desc': 'Escriptura tècnica freelance per a empreses de dades i IA. Articles, tutorials i documentació precisos, visuals i realment útils.',
-    'services.write.i1': 'Tutorials tècnics i guies', 'services.write.i2': 'Explicadors de conceptes d\'IA/ML', 'services.write.i3': 'Documentació i guies per a desenvolupadors', 'services.write.cta': 'Veure portfolio d\'escriptura →',
-    'newsletter.label': 'Newsletter', 'newsletter.title': 'Llegeix tot el que publico',
-    'newsletter.desc': 'Conceptes de dades i IA, <strong>clarament explicats amb diagrames</strong>. Construït, escrit i publicat cada setmana. Llegeix la newsletter a <a href="https://reads.databites.tech" target="_blank" rel="noopener" style="color:var(--green);font-weight:600">reads.databites.tech</a>',
-    'newsletter.cta': 'Subscriu-te gratis →',
+    'trusted.desc': "He treballat amb organismes públics, universitats, grups de recerca i empreses de dades a Europa i als Estats Units.",
     'portfolio.label': 'Portfolio', 'portfolio.title': 'Projectes i treball',
-    'portfolio.sub': 'Projectes reals de DataViz — construïts, publicats i disponibles. Veu el portfolio complet a <a href="https://projects.databites.tech" style="color:var(--green);font-weight:600">projects.databites.tech</a>',
-    'portfolio.atlas.title': 'Atles de Renda de Catalunya',
-    'portfolio.atlas.desc': 'Mapa coroplètic interactiu de desigualtat de renda a 5.108 seccions censals, 947 municipis i 4 províncies de Catalunya. Dades INE, 2015–2023.',
-    'portfolio.viewProject': 'Veure projecte', 'portfolio.comingSoon': 'Pròximament',
-    'portfolio.inProgress': 'En desenvolupament',
-    'portfolio.p2.desc': 'El proper projecte de DataViz. Subscriu-te a la newsletter per ser el primer en veure\'l.',
-    'portfolio.p3.desc': 'La tercera peça del portfolio. Clients de consultoria: contacta\'m per veure mostres privades.',
+    'portfolio.sub': "Mapes, atles i històries de dades que he construït amb dades públiques. El portfolio complet és a <a href=\"/projects\" style=\"color:var(--green);font-weight:600\">databites.tech/projects</a>.",
+    'portfolio.viewProject': 'Veure projecte',
     'portfolio.seeAll': 'Veure tots els projectes →',
-    'contact.label': 'Contacte', 'contact.title': 'Treballem junts',
+    'contact.label': 'Contacte', 'contact.title': "Explica'm què necessites",
     'contact.emailLabel': 'Email',
-    'contact.desc': 'Si tens una decisió que vols respondre amb dades, un taller per al teu equip o un projecte de DataViz, escriu-me directament. Llegeixo tots els emails.',
-    phrases: [
-      'Dades i IA generativa per a decisions institucionals.',
-      'Mapes, dashboards i històries de dades que generen acció.',
-      'Tallers, pilots i suport continu per a institucions.',
-      'Una decisió real, resposta amb les teves pròpies dades.',
-      'On la IA generativa ajuda la teva anàlisi i on enganya.'
-    ]
+    'contact.desc': "Escriu-me per email o fes servir el formulari. Responc en 2 dies feiners."
   }
 };
 
@@ -788,10 +606,6 @@ function setLang(lang) {
     if (t[key] !== undefined) el.innerHTML = t[key];
   });
 
-  // Update cycling phrases
-  window._i18nPhrases = t.phrases;
-  document.getElementById('hero-cycling').textContent = t.phrases[0];
-
   // Update active button
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.textContent.toLowerCase() === lang || (lang === 'ca' && btn.textContent === 'CAT'));
@@ -799,28 +613,11 @@ function setLang(lang) {
 
   // Store preference
   document.documentElement.lang = lang;
-  localStorage.setItem('lang', lang);
+  try { localStorage.setItem('lang', lang); } catch (e) {}
   loadPortfolioPreview();
 }
 
-// Swap cycling phrases per language
-window._i18nPhrases = translations.en.phrases;
 
-// Override the cycling interval to use translated phrases
-(function() {
-  let _idx = 0;
-  const el = document.getElementById('hero-cycling');
-  setInterval(() => {
-    el.classList.add('fade-out');
-    setTimeout(() => {
-      _idx = (_idx + 1) % (window._i18nPhrases || translations.en.phrases).length;
-      el.textContent = (window._i18nPhrases || translations.en.phrases)[_idx];
-      el.classList.remove('fade-out');
-      el.classList.add('fade-in');
-      setTimeout(() => el.classList.remove('fade-in'), 400);
-    }, 420);
-  }, 3200);
-})();
 
 
 function T(key) {
@@ -833,95 +630,13 @@ function T(key) {
 
 // Auto-detect browser language on load
 (function() {
-  const saved = localStorage.getItem('lang');
+  let saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
   const browser = navigator.language?.slice(0, 2).toLowerCase();
   const lang = saved || (browser === 'es' ? 'es' : browser === 'ca' ? 'ca' : 'en');
-  if (lang !== 'en') setLang(lang);
+  setLang(lang);
   loadPortfolioPreview();
 })();
 </script>
-<script>
-// ── LIVE SUBSTACK — LATEST ISSUES (with covers) ─────
-(function () {
-  const list = document.getElementById('nl-list');
-  if (!list) return;
-  const localeMap = { en: 'en-GB', es: 'es-ES', ca: 'ca-ES' };
-
-  function coverOf(item) {
-    if (item.thumbnail) return item.thumbnail;
-    if (item.enclosure && item.enclosure.link) return item.enclosure.link;
-    const tmp = document.createElement('div');
-    tmp.innerHTML = item.content || item.description || '';
-    const img = tmp.querySelector('img');
-    return img ? img.src : '';
-  }
-
-  function fmtDate(d) {
-    const lang = (typeof currentLang !== 'undefined') ? currentLang : 'en';
-    const loc = localeMap[lang] || 'en-GB';
-    try { return new Date(d).toLocaleDateString(loc, { day: 'numeric', month: 'short', year: 'numeric' }); }
-    catch (e) { return ''; }
-  }
-
-  function card(item) {
-    const cover = coverOf(item);
-    const thumb = cover
-      ? `<img class="nl-item-thumb" src="${cover}" alt="" loading="lazy" onerror="this.style.display='none'">`
-      : `<div class="nl-item-thumb"></div>`;
-    return `
-      <a href="${item.link}" target="_blank" rel="noopener" class="nl-item">
-        ${thumb}
-        <div class="nl-item-body">
-          <div class="nl-item-date">${fmtDate(item.pubDate)}</div>
-          <div class="nl-item-title">${item.title}</div>
-        </div>
-      </a>`;
-  }
-
-  function fallback() {
-    list.innerHTML = `
-      <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="nl-item">
-        <div class="nl-item-thumb"></div>
-        <div class="nl-item-body">
-          <div class="nl-item-date">Newsletter</div>
-          <div class="nl-item-title">Read the latest issues at reads.databites.tech</div>
-        </div>
-      </a>`;
-  }
-
-  // Parse the Substack RSS feed directly. /substack-feed is a same-origin
-  // rewrite to https://reads.databites.tech/feed (see vercel.json), so no
-  // third-party converter and no CORS problem.
-  function parseFeed(xmlText) {
-    const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
-    if (doc.querySelector('parsererror')) throw new Error('Invalid RSS');
-    const text = (el, sel) => { const n = el.querySelector(sel); return n ? n.textContent.trim() : ''; };
-    return Array.from(doc.querySelectorAll('item')).map(it => {
-      const enc = it.querySelector('enclosure');
-      const encoded = it.getElementsByTagNameNS('*', 'encoded')[0];
-      return {
-        title: text(it, 'title'),
-        link: text(it, 'link'),
-        pubDate: text(it, 'pubDate'),
-        thumbnail: enc && /^image\//.test(enc.getAttribute('type') || '') ? enc.getAttribute('url') : '',
-        content: encoded ? encoded.textContent : text(it, 'description')
-      };
-    });
-  }
-
-  (async function () {
-    try {
-      const res = await fetch('/substack-feed', { signal: AbortSignal.timeout(6000) });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const items = parseFeed(await res.text());
-      if (!items.length) { fallback(); return; }
-      list.innerHTML = items.slice(0, 5).map(card).join('');
-    } catch (e) {
-      console.error('Substack feed load failed:', e);
-      fallback();
-    }
-  })();
-})();
-</script>
+<script src="/site.js"></script>
 </body>
 </html>

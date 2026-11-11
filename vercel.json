@@ -3,16 +3,32 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/substack-feed",
-      "destination": "https://reads.databites.tech/feed"
-    },
-    {
       "source": "/write",
       "destination": "/write.html"
     },
     {
+      "source": "/work-with-me",
+      "destination": "/work-with-me.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/projects.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/learn",
+      "destination": "/work-with-me#sponsorship",
+      "permanent": false
+    },
+    {
+      "source": "/teach",
+      "destination": "/work-with-me#training",
+      "permanent": false
     }
   ]
 }

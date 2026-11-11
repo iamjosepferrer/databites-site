@@ -1,0 +1,278 @@
+[
+  {
+    "id": "five-ways-nyc",
+    "featured": true,
+    "live": true,
+    "year": "2026",
+    "url": "https://five-ways-nyc.databites.tech/",
+    "screenshot": "/images/projects-headers/five-ways-nyc.png",
+    "tags": [
+      "DataViz",
+      "Maps"
+    ],
+    "chips": [
+      {
+        "label": "D3.js",
+        "style": "green"
+      },
+      {
+        "label": "Canvas",
+        "style": "forest"
+      },
+      {
+        "label": "NYC 311 open data",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "Five ways to hear New York",
+      "es": "Cinco formas de escuchar Nueva York",
+      "ca": "Cinc maneres d'escoltar Nova York"
+    },
+    "desc": {
+      "en": "One dataset, five maps. 5.6 million NYC 311 noise complaints from 2015 to 2025, drawn by street, by border, by hour, by change over time and all at once. Each map is right. Each one tells a different story.",
+      "es": "Un dataset, cinco mapas. 5,6 millones de quejas por ruido del 311 de Nueva York, de 2015 a 2025, dibujadas por calle, por distrito, por hora, por cambio en el tiempo y todas a la vez. Cada mapa es correcto. Cada uno cuenta una historia distinta.",
+      "ca": "Un dataset, cinc mapes. 5,6 milions de queixes per soroll del 311 de Nova York, de 2015 a 2025, dibuixades per carrer, per districte, per hora, per canvi en el temps i totes alhora. Cada mapa és correcte. Cadascun explica una història diferent."
+    },
+    "useFor": {
+      "en": "For city services deciding where and when to act on complaints.",
+      "es": "Para servicios municipales que deciden dónde y cuándo actuar ante las quejas.",
+      "ca": "Per a serveis municipals que decideixen on i quan actuar davant les queixes."
+    }
+  },
+  {
+    "id": "after-the-lights",
+    "featured": false,
+    "live": true,
+    "year": "2026",
+    "url": "https://after-the-lights.databites.tech/",
+    "screenshot": "/images/projects-headers/after-the-lights.png",
+    "tags": [
+      "DataViz",
+      "Maps"
+    ],
+    "chips": [
+      {
+        "label": "D3.js",
+        "style": "green"
+      },
+      {
+        "label": "TopoJSON",
+        "style": "forest"
+      },
+      {
+        "label": "UN Data Commons",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "After the lights came on",
+      "es": "Cuando se encendió la luz",
+      "ca": "Quan es va encendre la llum"
+    },
+    "desc": {
+      "en": "Since 2000, the number of people without electricity has halved. Did schooling and health follow? A night map where land glows with access and every dot is a million people without it, 2000 to 2024, plus a country-by-country explorer. UN System Data Commons data.",
+      "es": "Desde 2000, el número de personas sin electricidad se ha reducido a la mitad. ¿La escolarización y la salud siguieron el mismo camino? Un mapa nocturno donde la tierra brilla según el acceso y cada punto es un millón de personas sin él, de 2000 a 2024, más un explorador país a país. Datos de UN System Data Commons.",
+      "ca": "Des del 2000, el nombre de persones sense electricitat s'ha reduït a la meitat. L'escolarització i la salut van seguir el mateix camí? Un mapa nocturn on la terra brilla segons l'accés i cada punt és un milió de persones que no en tenen, del 2000 al 2024, més un explorador país a país. Dades d'UN System Data Commons."
+    },
+    "useFor": {
+      "en": "For development agencies tracking whether access turns into outcomes.",
+      "es": "Para agencias de desarrollo que siguen si el acceso se traduce en resultados.",
+      "ca": "Per a agències de desenvolupament que segueixen si l'accés es tradueix en resultats."
+    }
+  },
+  {
+    "id": "forest-in-the-grid",
+    "featured": true,
+    "live": true,
+    "year": "2026",
+    "url": "https://forest-in-the-grid.databites.tech/",
+    "screenshot": "/images/projects-headers/forest-in-the-grid.png",
+    "tags": [
+      "DataViz",
+      "Maps"
+    ],
+    "chips": [
+      {
+        "label": "Canvas",
+        "style": "green"
+      },
+      {
+        "label": "Open Data BCN",
+        "style": "forest"
+      },
+      {
+        "label": "EN · ES · CA",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "A forest in the grid",
+      "es": "Un bosque en la cuadrícula",
+      "ca": "Un bosc a la quadrícula"
+    },
+    "desc": {
+      "en": "Barcelona's public tree inventory, 222,065 trees, drawn one by one as a botanical atlas in five plates: the city in trees, six species, where the shade isn't, planting and felling, and climate shelters. Open data, in EN, ES and CA.",
+      "es": "El inventario público de árboles de Barcelona, 222.065 árboles, dibujados uno a uno como un atlas botánico en cinco láminas: la ciudad en árboles, seis especies, dónde no hay sombra, plantar y talar, y refugios climáticos. Datos abiertos, en EN, ES y CA.",
+      "ca": "L'inventari públic d'arbres de Barcelona, 222.065 arbres, dibuixats un a un com un atles botànic en cinc làmines: la ciutat en arbres, sis espècies, on no hi ha ombra, plantar i talar, i refugis climàtics. Dades obertes, en EN, ES i CA."
+    },
+    "useFor": {
+      "en": "For city councils planning where to plant next and where shade is missing.",
+      "es": "Para ayuntamientos que planifican dónde plantar y dónde falta sombra.",
+      "ca": "Per a ajuntaments que planifiquen on plantar i on falta ombra."
+    }
+  },
+  {
+    "id": "popgrid-explorer",
+    "featured": false,
+    "live": true,
+    "year": "2026",
+    "url": "https://popgrid.databites.tech/",
+    "screenshot": "/images/projects-headers/popgrid-explorer.png",
+    "tags": [
+      "DataViz",
+      "Maps",
+      "Interactive"
+    ],
+    "chips": [
+      {
+        "label": "24 countries",
+        "style": "green"
+      },
+      {
+        "label": "Land, people, GDP",
+        "style": "forest"
+      },
+      {
+        "label": "Canvas",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "popgrid explorer",
+      "es": "popgrid explorer",
+      "ca": "popgrid explorer"
+    },
+    "desc": {
+      "en": "Every country cut into 1,000 equal blocks. Switch between land, population and GDP and watch each region take the share it owns. Built with popgrid.",
+      "es": "Cada país dividido en 1.000 bloques iguales. Cambia entre superficie, población y PIB y mira cómo cada región ocupa la parte que le toca. Hecho con popgrid.",
+      "ca": "Cada país dividit en 1.000 blocs iguals. Canvia entre superfície, població i PIB i mira com cada regió ocupa la part que li toca. Fet amb popgrid."
+    },
+    "useFor": {
+      "en": "For showing how land, people and money split across regions in one view.",
+      "es": "Para mostrar en una sola vista cómo se reparten superficie, población y riqueza entre regiones.",
+      "ca": "Per mostrar en una sola vista com es reparteixen superfície, població i riquesa entre regions."
+    }
+  },
+  {
+    "id": "popgrid",
+    "featured": false,
+    "live": true,
+    "year": "2026",
+    "url": "https://github.com/databites-tech/popgrid",
+    "screenshot": "/images/projects-headers/popgrid.png",
+    "tags": [
+      "DataViz",
+      "Maps",
+      "Tools"
+    ],
+    "chips": [
+      {
+        "label": "Python",
+        "style": "green"
+      },
+      {
+        "label": "PyPI",
+        "style": "forest"
+      },
+      {
+        "label": "Open source",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "popgrid",
+      "es": "popgrid",
+      "ca": "popgrid"
+    },
+    "desc": {
+      "en": "Open-source Python library that turns any country or region into a block cartogram, where every block is an equal share of land, population or GDP. On PyPI: pip install popgrid.",
+      "es": "Librería de Python de código abierto que convierte cualquier país o región en un cartograma de bloques, donde cada bloque es una parte igual de superficie, población o PIB. En PyPI: pip install popgrid.",
+      "ca": "Llibreria de Python de codi obert que converteix qualsevol país o regió en un cartograma de blocs, on cada bloc és una part igual de superfície, població o PIB. A PyPI: pip install popgrid."
+    },
+    "useFor": {
+      "en": "For teams that need fair, comparable regional maps in Python.",
+      "es": "Para equipos que necesitan mapas regionales justos y comparables en Python.",
+      "ca": "Per a equips que necessiten mapes regionals justos i comparables en Python."
+    }
+  },
+  {
+    "id": "catalonia-atlas",
+    "featured": true,
+    "live": true,
+    "year": "2025",
+    "url": "https://catalonia-atlas.databites.tech/",
+    "screenshot": "/images/projects-headers/catalonia-atlas.png",
+    "tags": [
+      "DataViz",
+      "Maps"
+    ],
+    "chips": [
+      {
+        "label": "MapLibre GL",
+        "style": "green"
+      },
+      {
+        "label": "Python",
+        "style": "forest"
+      },
+      {
+        "label": "GeoJSON",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "Catalonia Income Atlas",
+      "es": "Atlas de Renta de Cataluña",
+      "ca": "Atles de Renda de Catalunya"
+    },
+    "desc": {
+      "en": "Interactive choropleth map of income inequality across 5,108 census tracts, 947 municipalities, and 4 provinces in Catalonia. INE data, 2015–2023.",
+      "es": "Mapa coroplético interactivo de desigualdad de renta en 5.108 secciones censales, 947 municipios y 4 provincias de Cataluña. Datos INE, 2015–2023.",
+      "ca": "Mapa coroplètic interactiu de desigualtat de renda a 5.108 seccions censals, 947 municipis i 4 províncies de Catalunya. Dades INE, 2015–2023."
+    },
+    "useFor": {
+      "en": "For targeting funding and services where income is lowest.",
+      "es": "Para dirigir financiación y servicios donde la renta es más baja.",
+      "ca": "Per dirigir finançament i serveis on la renda és més baixa."
+    }
+  },
+  {
+    "id": "next-project",
+    "featured": false,
+    "live": false,
+    "year": null,
+    "url": "https://databites.tech/work-with-me",
+    "screenshot": null,
+    "tags": [
+      "DataViz"
+    ],
+    "chips": [
+      {
+        "labelKey": "projects.yourData",
+        "style": "green"
+      }
+    ],
+    "title": {
+      "en": "Your project?",
+      "es": "¿Tu proyecto?",
+      "ca": "El teu projecte?"
+    },
+    "desc": {
+      "en": "The next one could be built on your data. See how we can work together.",
+      "es": "El próximo podría estar construido con tus datos. Mira cómo podemos trabajar juntos.",
+      "ca": "El proper podria estar construït amb les teves dades. Mira com podem treballar junts."
+    },
+    "cta": true
+  }
+]
