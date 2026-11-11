@@ -13,6 +13,8 @@ Source for [databites.tech](https://databites.tech), the site of Josep Ferrer. P
 
 `/learn` and `/teach` redirect to the matching choice on `/work-with-me`.
 
+Short links for bios, each opening `/work-with-me` with a tag Umami shows under UTM: `/x` (X bio), `/in` (LinkedIn), `/nl` (newsletter), `/gh` (GitHub READMEs). Add more in `vercel.json` under `redirects`.
+
 ## Shared files
 
 - `site.css` and `site.js`: nav, phone menu, footer, copy-email button and contact form for every page.

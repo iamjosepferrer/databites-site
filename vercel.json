@@ -29,6 +29,26 @@
       "source": "/teach",
       "destination": "/work-with-me#training",
       "permanent": false
+    },
+    {
+      "source": "/x",
+      "destination": "/work-with-me?utm_source=x&utm_medium=bio",
+      "permanent": false
+    },
+    {
+      "source": "/in",
+      "destination": "/work-with-me?utm_source=linkedin&utm_medium=bio",
+      "permanent": false
+    },
+    {
+      "source": "/nl",
+      "destination": "/work-with-me?utm_source=newsletter&utm_medium=link",
+      "permanent": false
+    },
+    {
+      "source": "/gh",
+      "destination": "/work-with-me?utm_source=github&utm_medium=readme",
+      "permanent": false
     }
   ]
 }
