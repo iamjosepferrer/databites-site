@@ -26,7 +26,7 @@ Two values at the top of `site.js`:
 - `BOOKING_URL`: your booking page (for example a Cal.com event link). Empty means the booking button is hidden.
 - `FORM_KEY`: your Web3Forms access key. Empty means the form opens the visitor's mail app instead.
 
-Analytics use Umami. Replace `UMAMI_WEBSITE_ID` in the four HTML files with the website ID from your Umami dashboard.
+Analytics use Umami Cloud (website ID `04adaf17-975f-40ec-84b1-5efaadd914f6`, set in the four HTML files). Clicks are tagged with `data-umami-event` attributes and show under Events in the Umami dashboard.
 
 ## Languages
 
