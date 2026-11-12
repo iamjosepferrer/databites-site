@@ -1,0 +1,28 @@
+# Josep Ferrer (databites.tech)
+
+> Freelance data scientist based in Rotterdam, the Netherlands. Josep builds maps, analyses and GenAI tools for organisations, teaches teams data visualisation and GenAI, and writes technical content for data and AI companies. He works in English, Spanish and Catalan, online across Europe and on-site in the Netherlands, Spain and nearby countries.
+
+Contact: josep@databites.tech (replies within 2 business days). A 20 minute intro call can be booked at https://cal.com/iamjosepferrer/20min.
+Business: databites, KvK 96481331, VAT NL005212566B59.
+
+## Ways to work together
+
+- [Data projects](https://databites.tech/work-with-me#project): pilots (6 to 8 weeks), monthly retainers and data stories built on the client's own data. Stack: Python, SQL, D3.js, Power BI, Tableau, cloud and LLMs. Recent clients include NECSTouR (European tourism regions network).
+- [Workshops, webinars and talks](https://databites.tech/work-with-me#training): data visualisation and GenAI training, online or on-site. Teaches Data Visualization in the Big Data Master at Universidad de Navarra since 2023 and GenAI for Professionals (Emeritus and UNAV) since November 2025. DataCamp code-alongs and video tutorials on LLMs, RAG, GPT-5, Grok 4 and n8n.
+- [Technical writing](https://databites.tech/write): monthly packages of tutorials and articles for data and AI companies. Published in Weights & Biases, DataCamp, KDnuggets and UX Collective.
+- [Sponsorship](https://databites.tech/work-with-me#sponsorship): sponsored charts, newsletter slots and sponsored posts reaching data and AI professionals on LinkedIn, X and the databites newsletter.
+
+## Portfolio
+
+- [Data visualisation portfolio](https://databites.tech/projects): maps, atlases and data stories built on public data.
+- [Five ways to hear New York](https://five-ways-nyc.databites.tech/): 5.6 million NYC 311 noise complaints from 2015 to 2025, drawn as five different maps.
+- [Catalonia Income Atlas](https://catalonia-atlas.databites.tech/): income inequality across 5,108 census tracts and 947 municipalities in Catalonia, INE data 2015 to 2023.
+- [popgrid](https://github.com/databites-tech/popgrid): open-source Python library for land versus population block maps, with an [online explorer](https://popgrid.databites.tech/).
+
+## Elsewhere
+
+- Newsletter: https://reads.databites.tech
+- LinkedIn: https://www.linkedin.com/in/iamjosepferrer
+- X: https://x.com/iamjosepferrer
+- GitHub: https://github.com/iamjosepferrer
+- ORCID: https://orcid.org/0009-0004-5165-0350

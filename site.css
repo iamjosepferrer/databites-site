@@ -63,3 +63,11 @@ footer.site-footer { display: block; background: var(--cream); border-top: 1px s
 .door span { font-size: 0.875rem; font-weight: 600; color: var(--green); }
 @media (max-width: 1000px) { .doors { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .doors { grid-template-columns: 1fr; } }
+
+/* Language buttons: readable contrast */
+.lang-btn { color: var(--forest) !important; font-size: 0.65rem !important; }
+.lang-btn.active { color: var(--forest) !important; }
+
+/* Readable text colours: small green labels use a darker green, body grey a touch darker */
+html:root { --muted: #4E6A5A; }
+.door span, .format-meta, .need-panel a.text-link, .pc-tag.green, .card-tag.green, .pc-link, .case-tag, .trusted-title .t1, .hero-link, .case-link { color: #22774A !important; }

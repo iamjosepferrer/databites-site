@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://databites.tech/</loc></url>
-  <url><loc>https://databites.tech/work-with-me</loc></url>
-  <url><loc>https://databites.tech/projects</loc></url>
-  <url><loc>https://databites.tech/write</loc></url>
+  <url><loc>https://databites.tech/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://databites.tech/work-with-me</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://databites.tech/projects</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://databites.tech/write</loc><lastmod>2026-11-12</lastmod></url>
 </urlset>

@@ -5,7 +5,7 @@
     "live": true,
     "year": "2026",
     "url": "https://five-ways-nyc.databites.tech/",
-    "screenshot": "/images/projects-headers/five-ways-nyc.png",
+    "screenshot": "/images/projects-headers/five-ways-nyc.webp",
     "tags": [
       "DataViz",
       "Maps"
@@ -46,7 +46,7 @@
     "live": true,
     "year": "2026",
     "url": "https://after-the-lights.databites.tech/",
-    "screenshot": "/images/projects-headers/after-the-lights.png",
+    "screenshot": "/images/projects-headers/after-the-lights.webp",
     "tags": [
       "DataViz",
       "Maps"
@@ -87,7 +87,7 @@
     "live": true,
     "year": "2026",
     "url": "https://forest-in-the-grid.databites.tech/",
-    "screenshot": "/images/projects-headers/forest-in-the-grid.png",
+    "screenshot": "/images/projects-headers/forest-in-the-grid.webp",
     "tags": [
       "DataViz",
       "Maps"
@@ -128,7 +128,7 @@
     "live": true,
     "year": "2026",
     "url": "https://popgrid.databites.tech/",
-    "screenshot": "/images/projects-headers/popgrid-explorer.png",
+    "screenshot": "/images/projects-headers/popgrid-explorer.webp",
     "tags": [
       "DataViz",
       "Maps",
@@ -170,7 +170,7 @@
     "live": true,
     "year": "2026",
     "url": "https://github.com/databites-tech/popgrid",
-    "screenshot": "/images/projects-headers/popgrid.png",
+    "screenshot": "/images/projects-headers/popgrid.webp",
     "tags": [
       "DataViz",
       "Maps",
@@ -212,7 +212,7 @@
     "live": true,
     "year": "2025",
     "url": "https://catalonia-atlas.databites.tech/",
-    "screenshot": "/images/projects-headers/catalonia-atlas.png",
+    "screenshot": "/images/projects-headers/catalonia-atlas.webp",
     "tags": [
       "DataViz",
       "Maps"

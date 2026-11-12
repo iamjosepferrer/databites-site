@@ -21,6 +21,13 @@ Short links for bios, each opening `/work-with-me` with a tag Umami shows under 
 - `projects.json`: the single list of portfolio projects. Add an object here and it appears on `/projects` and on the home page (set `"featured": true` to show it on the home page; the first three featured projects are shown).
 - `images/`: logos, project headers and share images. `og-work.html` and `og-write.html` are the templates for the share images.
 
+## For search engines and AI assistants
+
+- The English text and the project cards are written into the HTML itself, so crawlers that don't run JavaScript (most AI assistants) read the same page visitors see. After editing `projects.json` or English text, regenerate this static copy (ask Claude, or copy the rendered HTML in).
+- Each page has a JSON-LD block (`application/ld+json`) describing Josep, the services, the FAQ and the portfolio. Update it when offers or profiles change.
+- `llms.txt` is a plain summary for AI tools. Keep it in line with Work with me.
+- `sitemap.xml` and `robots.txt` list the four pages and allow all crawlers. `404.html` is the not-found page.
+
 ## Settings
 
 Two values at the top of `site.js`:
