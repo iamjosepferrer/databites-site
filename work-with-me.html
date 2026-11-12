@@ -165,9 +165,9 @@ section { padding: 5rem clamp(1.25rem, 5vw, 6rem); }
 /* CLIENTS */
 #clients { background: var(--cream); padding-top: 3.5rem; padding-bottom: 3.5rem; }
 .logo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.75rem 2rem; margin-top: 2rem; align-items: center; }
-.logo-grid a { display: flex; align-items: center; justify-content: center; height: 44px; filter: grayscale(1); opacity: 0.55; transition: opacity .2s, filter .2s; }
+.logo-grid a { display: flex; align-items: center; justify-content: center; height: 48px; filter: grayscale(1); opacity: 0.55; transition: opacity .2s, filter .2s; }
 .logo-grid a:hover { opacity: 1; filter: grayscale(0); }
-.logo-grid img { max-height: 34px; max-width: 120px; width: auto; object-fit: contain; }
+.logo-grid img { max-width: 100%; object-fit: contain; }
 
 /* FAQ */
 #faq { background: var(--mint-pale); }
@@ -327,8 +327,8 @@ a.case:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41
     <div class="need-tabs" role="tablist">
       <button class="need-tab active" type="button" role="tab" data-tab="project" data-i18n="tab.project">A data project</button>
       <button class="need-tab" type="button" role="tab" data-tab="training" data-i18n="tab.training">A workshop, webinar or talk</button>
-      <button class="need-tab" type="button" role="tab" data-tab="sponsorship" data-i18n="tab.sponsorship">Sponsorship</button>
       <button class="need-tab" type="button" role="tab" data-tab="writing" data-i18n="tab.writing">Technical writing</button>
+      <button class="need-tab" type="button" role="tab" data-tab="sponsorship" data-i18n="tab.sponsorship">Sponsorship</button>
       <button class="need-tab" type="button" data-tab="other" data-i18n="tab.other">Anything else</button>
     </div>
     <div class="need-panel" id="panel-project" role="tabpanel">
@@ -371,23 +371,6 @@ a.case:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41
       <ul class="talk-list"><li><strong data-i18n="tr1.t">Data Visualization, Big Data Master, Universidad de Navarra</strong><span data-i18n="tr1.d">Since 2023, 4 cohorts</span></li><li><strong data-i18n="tr2.t">GenAI for Professionals, Emeritus and UNAV</strong><span data-i18n="tr2.d">Since November 2025, 4 editions, in Spanish</span></li><li><a href="https://www.youtube.com/watch?v=xmv_skli_ZY" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv1">n8n Tutorial for Beginners: Build Powerful Open-Source Automations</a><span data-i18n="wv1.d">DataCamp video, Sep 2025, 51 min</span></li><li><a href="https://www.youtube.com/watch?v=QTK55_Otbqs" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv2">RAG 101: Learn how to build your first pipeline!</a><span data-i18n="wv2.d">DataCamp video, Sep 2025, 57 min</span></li><li><a href="https://www.youtube.com/watch?v=jh2geed5-Vc" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv3">GPT-5 Tutorial: Hands-On Projects With OpenAI’s Newest Model</a><span data-i18n="wv3.d">DataCamp video, Aug 2025, 59 min</span></li><li><a href="https://www.youtube.com/watch?v=bcygOasrldM" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wv4">Grok 4 Full Breakdown: Deep Dive and 7 Practical Examples</a><span data-i18n="wv4.d">DataCamp video, Jul 2025, 38 min</span></li><li><a href="https://www.datacamp.com/code-along/understanding-llms-for-code-generation" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wb1">Understanding LLMs for Code Generation</a><span data-i18n="wb1.d">DataCamp code-along with Andrea Valenzuela, Oct 2024</span></li><li><a href="https://www.datacamp.com/code-along/fine-tuning-open-source-llms-with-mistral" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wb2">Fine-tuning Open Source LLMs with Mistral</a><span data-i18n="wb2.d">DataCamp code-along with Andrea Valenzuela, Jul 2024</span></li><li><a href="https://www.datacamp.com/code-along/chat-with-your-documents-using-gpt-and-lang-chain" target="_blank" rel="noopener" class="text-link" data-umami-event="talk-click" data-umami-event-talk="wb3">Chat with Your Documents Using GPT &amp; LangChain</a><span data-i18n="wb3.d">DataCamp code-along with Andrea Valenzuela, Jan 2024</span></li></ul>
       <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="training" data-umami-event="ask-click" data-umami-event-topic="training" data-i18n="panel.cta">Ask about this →</a></div>
     </div>
-    <div class="need-panel" id="panel-sponsorship" role="tabpanel">
-      <h3 class="panel-title" data-i18n="tab.sponsorship">Sponsorship</h3>
-      <p class="panel-intro" data-i18n="p3.intro">For companies that want to reach data and AI professionals.</p>
-      <h3 class="panel-h" data-i18n="panel.channels">Where it runs</h3>
-      <div class="channel-row">
-        <a href="https://www.linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="linkedin"><span class="channel-num" data-audience="linkedin">10k</span><span class="channel-name">LinkedIn</span><span class="channel-unit" data-i18n="ch.followers">followers</span></a>
-        <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="x"><span class="channel-num" data-audience="x">26k</span><span class="channel-name">X</span><span class="channel-unit" data-i18n="ch.followers">followers</span></a>
-        <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="newsletter"><span class="channel-num" data-audience="newsletter">10k</span><span class="channel-name">databites</span><span class="channel-unit" data-i18n="ch.readers">newsletter readers</span></a>
-      </div>
-      
-      <div class="panel-grid"><article class="format-card"><div class="format-meta" data-i18n="p3.a.meta">Per map</div><h4 class="format-name" data-i18n="p3.a.name">Sponsored map</h4><p class="format-desc" data-i18n="p3.a.desc">Your brand on one of my weekday maps on LinkedIn and X, clearly labelled. The maps have passed 1 million views in a week on LinkedIn.</p></article><article class="format-card"><div class="format-meta" data-i18n="p3.b.meta">Per issue</div><h4 class="format-name" data-i18n="p3.b.name">Newsletter slot</h4><p class="format-desc" data-i18n="p3.b.desc">One sponsor per issue of databites, sent to <span data-audience="newsletter">10k</span> readers.</p></article><article class="format-card"><div class="format-meta" data-i18n="p3.c.meta">Per post</div><h4 class="format-name" data-i18n="p3.c.name">Sponsored post</h4><p class="format-desc" data-i18n="p3.c.desc">A post about your book, course or tool on LinkedIn and X, with my own photos and my own take.</p></article></div>
-      <h3 class="panel-h" data-i18n="panel.how">How it works</h3>
-      <ol class="steps"><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.1.t">You tell me the product</h4><p class="step-desc" data-i18n="h.sponsorship.1.d">What you want to promote and when.</p></li><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.2.t">We agree format, date and price</h4><p class="step-desc" data-i18n="h.sponsorship.2.d">A map, a post or a newsletter slot.</p></li><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.3.t">I publish it</h4><p class="step-desc" data-i18n="h.sponsorship.3.d">Clearly labelled as sponsored. Afterwards I send you the numbers.</p></li></ol>
-      <h3 class="panel-h" data-i18n="panel.examples">Examples</h3>
-      <div class="case-grid two"><a href="https://x.com/iamjosepferrer/status/2059914536195666346" target="_blank" rel="noopener" class="case" data-umami-event="example-click" data-umami-event-example="ex1"><div class="case-img"><img src="/images/sponsor-x.jpg" alt="" loading="lazy"></div><div class="case-body"><h4 class="case-title" data-i18n="ex1.t">Packt book on multi-agent systems, on X</h4><p class="case-desc" data-i18n="ex1.d">25,400 views, 339 likes and 357 bookmarks.</p><span class="case-link" data-i18n="ex.link">See the post →</span></div></a><a href="https://www.linkedin.com/posts/iamjosepferrer_llm-ai-genai-ugcPost-7454463512346673152-7mRT/" target="_blank" rel="noopener" class="case" data-umami-event="example-click" data-umami-event-example="ex2"><div class="case-img"><img src="/images/sponsor-linkedin.jpg" alt="" loading="lazy"></div><div class="case-body"><h4 class="case-title" data-i18n="ex2.t">Packt book on GenAI applications, on LinkedIn</h4><p class="case-desc" data-i18n="ex2.d">72 reactions and 10 reposts.</p><span class="case-link" data-i18n="ex.link">See the post →</span></div></a></div>
-      <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="sponsorship" data-umami-event="ask-click" data-umami-event-topic="sponsorship" data-i18n="panel.cta">Ask about this →</a></div>
-    </div>
     <div class="need-panel" id="panel-writing" role="tabpanel">
       <h3 class="panel-title" data-i18n="tab.writing">Technical writing</h3>
       <p class="panel-intro" data-i18n="p4.intro">For data and AI companies that need tutorials and articles written by someone who uses the tools.</p>
@@ -409,7 +392,22 @@ a.case:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41
       </figure></div>
       <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="writing" data-umami-event="ask-click" data-umami-event-topic="writing" data-i18n="panel.cta">Ask about this →</a></div>
     </div>
-  </div>
+      <div class="need-panel" id="panel-sponsorship" role="tabpanel">
+      <h3 class="panel-title" data-i18n="tab.sponsorship">Sponsorship</h3>
+      <p class="panel-intro" data-i18n="p3.intro">For companies that want to reach data and AI professionals.</p>
+      <h3 class="panel-h" data-i18n="panel.channels">Where it runs</h3>
+      <div class="channel-row">
+        <a href="https://www.linkedin.com/in/iamjosepferrer" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="linkedin"><span class="channel-num" data-audience="linkedin">10k</span><span class="channel-name">LinkedIn</span><span class="channel-unit" data-i18n="ch.followers">followers</span></a>
+        <a href="https://x.com/iamjosepferrer" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="x"><span class="channel-num" data-audience="x">26k</span><span class="channel-name">X</span><span class="channel-unit" data-i18n="ch.followers">followers</span></a>
+        <a href="https://reads.databites.tech" target="_blank" rel="noopener" class="channel" data-umami-event="channel-click" data-umami-event-channel="newsletter"><span class="channel-num" data-audience="newsletter">10k</span><span class="channel-name">databites</span><span class="channel-unit" data-i18n="ch.readers">newsletter readers</span></a>
+      </div>
+      
+      <div class="panel-grid"><article class="format-card"><div class="format-meta" data-i18n="p3.a.meta">Per chart</div><h4 class="format-name" data-i18n="p3.a.name">Sponsored chart</h4><p class="format-desc" data-i18n="p3.a.desc">Your brand on one of my weekday charts or maps on LinkedIn and X, clearly labelled. My maps have passed 1 million views in a week on LinkedIn.</p></article><article class="format-card"><div class="format-meta" data-i18n="p3.b.meta">Per issue</div><h4 class="format-name" data-i18n="p3.b.name">Newsletter slot</h4><p class="format-desc" data-i18n="p3.b.desc">One sponsor per issue of databites, sent to <span data-audience="newsletter">10k</span> readers.</p></article><article class="format-card"><div class="format-meta" data-i18n="p3.c.meta">Per post</div><h4 class="format-name" data-i18n="p3.c.name">Sponsored post</h4><p class="format-desc" data-i18n="p3.c.desc">A post about your book, course or tool on LinkedIn and X, with my own photos and my own take.</p></article></div>
+      <h3 class="panel-h" data-i18n="panel.how">How it works</h3>
+      <ol class="steps"><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.1.t">You tell me the product</h4><p class="step-desc" data-i18n="h.sponsorship.1.d">What you want to promote and when.</p></li><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.2.t">We agree format, date and price</h4><p class="step-desc" data-i18n="h.sponsorship.2.d">A chart, a post or a newsletter slot.</p></li><li class="step"><h4 class="step-title" data-i18n="h.sponsorship.3.t">I publish it</h4><p class="step-desc" data-i18n="h.sponsorship.3.d">Clearly labelled as sponsored. Afterwards I send you the numbers.</p></li></ol>
+      <div class="panel-cta"><a href="#contact" class="btn-dark ask" data-topic="sponsorship" data-umami-event="ask-click" data-umami-event-topic="sponsorship" data-i18n="panel.cta">Ask about this →</a></div>
+    </div>
+</div>
 </section>
 
 <!-- CLIENTS -->
@@ -417,16 +415,16 @@ a.case:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41
   <div class="inner">
     <div class="section-label" data-i18n="clients.label">Who I've worked with</div>
     <div class="logo-grid">
-      <a href="https://www.necstour.eu" target="_blank" rel="noopener"><img src="images/logos/necstour.png" alt="NECSTouR"></a>
-      <a href="https://www.unav.edu" target="_blank" rel="noopener"><img src="images/logos/unav.png" alt="Universidad de Navarra"></a>
-      <a href="https://www.upf.edu" target="_blank" rel="noopener"><img src="images/logos/upf.png" alt="Universitat Pompeu Fabra"></a>
-      <a href="https://www.upf.edu/web/tide" target="_blank" rel="noopener"><img src="images/logos/tide.png" alt="TIDE research group"></a>
-      <a href="https://en.unav.edu/web/institute-for-data-science-and-artificial-intelligence" target="_blank" rel="noopener"><img src="images/logos/datai.png" alt="DATAI"></a>
-      <a href="https://emeritus.org" target="_blank" rel="noopener"><img src="images/logos/emeritus.png" alt="Emeritus"></a>
-      <a href="https://www.datacamp.com" target="_blank" rel="noopener"><img src="images/logos/datacamp.png" alt="DataCamp"></a>
-      <a href="https://wandb.ai" target="_blank" rel="noopener"><img src="images/logos/wandb.png" alt="Weights &amp; Biases"></a>
-      <a href="https://www.stack-ai.com" target="_blank" rel="noopener"><img src="images/logos/stackai.png" alt="Stack AI"></a>
-      <a href="https://www.clicdata.com" target="_blank" rel="noopener"><img src="images/logos/clicdata.png" alt="ClicData"></a>
+      <a href="https://www.necstour.eu" target="_blank" rel="noopener"><img src="images/logos/necstour.png" alt="NECSTouR" style="width:116px;height:32px"></a>
+      <a href="https://www.unav.edu" target="_blank" rel="noopener"><img src="images/logos/unav.png" alt="Universidad de Navarra" style="width:82px;height:37px"></a>
+      <a href="https://www.upf.edu" target="_blank" rel="noopener"><img src="images/logos/upf.png" alt="Universitat Pompeu Fabra" style="width:97px;height:34px"></a>
+      <a href="https://oei.int" target="_blank" rel="noopener"><img src="images/logos/oei.svg" alt="OEI, Organization of Ibero-American States" style="width:73px;height:29px"></a>
+      <a href="https://www.coreweave.com" target="_blank" rel="noopener"><img src="images/logos/coreweave.png" alt="CoreWeave" style="width:60px;height:35px"></a>
+      <a href="https://emeritus.org" target="_blank" rel="noopener"><img src="images/logos/emeritus.png" alt="Emeritus" style="width:97px;height:27px"></a>
+      <a href="https://www.datacamp.com" target="_blank" rel="noopener"><img src="images/logos/datacamp.png" alt="DataCamp" style="width:111px;height:23px"></a>
+      <a href="https://wandb.ai" target="_blank" rel="noopener"><img src="images/logos/wandb.png" alt="Weights &amp; Biases" style="width:92px;height:28px"></a>
+      <a href="https://www.stack-ai.com" target="_blank" rel="noopener"><img src="images/logos/stackai.png" alt="Stack AI" style="width:106px;height:25px"></a>
+      <a href="https://www.clicdata.com" target="_blank" rel="noopener"><img src="images/logos/clicdata.png" alt="ClicData" style="width:74px;height:35px"></a>
     </div>
   </div>
 </section>
@@ -457,7 +455,7 @@ a.case:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,56,41
           data-ok="Thanks, your message is on its way. I reply within 2 business days." data-ok-es="Gracias, tu mensaje está en camino. Respondo en 2 días laborables." data-ok-ca="Gràcies, el teu missatge està en camí. Responc en 2 dies feiners."
           data-err="That didn't send. Please email josep@databites.tech instead." data-err-es="No se ha podido enviar. Escríbeme a josep@databites.tech." data-err-ca="No s'ha pogut enviar. Escriu-me a josep@databites.tech.">
           <label><span data-i18n="form.topic">I'm interested in</span><select id="f-topic" name="topic">
-            <option value="project" data-i18n="opt.project">A data project</option><option value="training" data-i18n="opt.training">A workshop, webinar or talk</option><option value="sponsorship" data-i18n="opt.sponsorship">Sponsorship</option><option value="writing" data-i18n="opt.writing">Technical writing</option><option value="other" data-i18n="opt.other">Something else</option></select></label>
+            <option value="project" data-i18n="opt.project">A data project</option><option value="training" data-i18n="opt.training">A workshop, webinar or talk</option><option value="writing" data-i18n="opt.writing">Technical writing</option><option value="sponsorship" data-i18n="opt.sponsorship">Sponsorship</option><option value="other" data-i18n="opt.other">Something else</option></select></label>
           <div class="row">
             <label><span data-i18n="form.name">Name</span><input id="f-name" name="name" type="text" autocomplete="name" required></label>
             <label><span data-i18n="form.email">Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
@@ -525,9 +523,9 @@ const translations = {
   "p2.c.desc": "Hands-on courses for universities and training providers. I teach in the Big Data Master at Universidad de Navarra and lead GenAI for Professionals at Emeritus.",
   "p2.proof": "So far: 350+ master's students, 150 professionals and 1,000+ webinar attendees.",
   "p3.intro": "For companies that want to reach data and AI professionals.",
-  "p3.a.meta": "Per map",
-  "p3.a.name": "Sponsored map",
-  "p3.a.desc": "Your brand on one of my weekday maps on LinkedIn and X, clearly labelled. The maps have passed 1 million views in a week on LinkedIn.",
+  "p3.a.meta": "Per chart",
+  "p3.a.name": "Sponsored chart",
+  "p3.a.desc": "Your brand on one of my weekday charts or maps on LinkedIn and X, clearly labelled. My maps have passed 1 million views in a week on LinkedIn.",
   "p3.b.meta": "Per issue",
   "p3.b.name": "Newsletter slot",
   "p3.b.desc": "One sponsor per issue of databites, sent to <span data-audience=\"newsletter\">10k</span> readers.",
@@ -595,12 +593,10 @@ const translations = {
   "form.send": "Send message",
   "tab.other": "Anything else",
   "panel.how": "How it works",
-  "panel.examples": "Examples",
   "panel.channels": "Where it runs",
   "ch.followers": "followers",
   "ch.readers": "newsletter readers",
   "panel.samples": "Samples",
-  "ex.link": "See the post →",
   "sm.link": "Read it →",
   "h.training.1.t": "You tell me the audience",
   "h.training.1.d": "Who it is for, the format and the date you have in mind.",
@@ -611,7 +607,7 @@ const translations = {
   "h.sponsorship.1.t": "You tell me the product",
   "h.sponsorship.1.d": "What you want to promote and when.",
   "h.sponsorship.2.t": "We agree format, date and price",
-  "h.sponsorship.2.d": "A map, a post or a newsletter slot.",
+  "h.sponsorship.2.d": "A chart, a post or a newsletter slot.",
   "h.sponsorship.3.t": "I publish it",
   "h.sponsorship.3.d": "Clearly labelled as sponsored. Afterwards I send you the numbers.",
   "h.writing.1.t": "You tell me what you need",
@@ -623,10 +619,6 @@ const translations = {
   "p3.c.meta": "Per post",
   "p3.c.name": "Sponsored post",
   "p3.c.desc": "A post about your book, course or tool on LinkedIn and X, with my own photos and my own take.",
-  "ex1.t": "Packt book on multi-agent systems, on X",
-  "ex1.d": "25,400 views, 339 likes and 357 bookmarks.",
-  "ex2.t": "Packt book on GenAI applications, on LinkedIn",
-  "ex2.d": "72 reactions and 10 reposts.",
   "p1.a.ex": "Example: Catalonia Income Atlas →",
   "p1.b.ex": "Example: NECSTouR, since 2024",
   "p1.c.ex": "Example: Five ways to hear New York →",
@@ -678,9 +670,9 @@ const translations = {
   "p2.c.desc": "Cursos prácticos para universidades y escuelas de formación. Doy clase en el Máster en Big Data de la Universidad de Navarra y dirijo IA Generativa para Profesionales en Emeritus.",
   "p2.proof": "Hasta ahora: más de 350 estudiantes de máster, 150 profesionales y más de 1.000 asistentes a webinars.",
   "p3.intro": "Para empresas que quieren llegar a profesionales de datos e IA.",
-  "p3.a.meta": "Por mapa",
-  "p3.a.name": "Mapa patrocinado",
-  "p3.a.desc": "Tu marca en uno de mis mapas diarios en LinkedIn y X, claramente identificado. Los mapas han superado el millón de visualizaciones en una semana en LinkedIn.",
+  "p3.a.meta": "Por gráfico",
+  "p3.a.name": "Gráfico patrocinado",
+  "p3.a.desc": "Tu marca en uno de mis gráficos o mapas diarios en LinkedIn y X, claramente identificado. Mis mapas han superado el millón de visualizaciones en una semana en LinkedIn.",
   "p3.b.meta": "Por edición",
   "p3.b.name": "Espacio en la newsletter",
   "p3.b.desc": "Un patrocinador por edición de databites, para <span data-audience=\"newsletter\">10k</span> lectores.",
@@ -748,12 +740,10 @@ const translations = {
   "form.send": "Enviar mensaje",
   "tab.other": "Otra cosa",
   "panel.how": "Cómo funciona",
-  "panel.examples": "Ejemplos",
   "panel.channels": "Dónde se publica",
   "ch.followers": "seguidores",
   "ch.readers": "lectores de la newsletter",
   "panel.samples": "Muestras",
-  "ex.link": "Ver la publicación →",
   "sm.link": "Leer →",
   "h.training.1.t": "Me cuentas la audiencia",
   "h.training.1.d": "Para quién es, el formato y la fecha que tienes en mente.",
@@ -764,7 +754,7 @@ const translations = {
   "h.sponsorship.1.t": "Me cuentas el producto",
   "h.sponsorship.1.d": "Qué quieres promocionar y cuándo.",
   "h.sponsorship.2.t": "Acordamos formato, fecha y precio",
-  "h.sponsorship.2.d": "Un mapa, una publicación o un espacio en la newsletter.",
+  "h.sponsorship.2.d": "Un gráfico, una publicación o un espacio en la newsletter.",
   "h.sponsorship.3.t": "Lo publico",
   "h.sponsorship.3.d": "Claramente identificado como patrocinado. Después te envío los números.",
   "h.writing.1.t": "Me cuentas qué necesitas",
@@ -776,10 +766,6 @@ const translations = {
   "p3.c.meta": "Por publicación",
   "p3.c.name": "Publicación patrocinada",
   "p3.c.desc": "Una publicación sobre tu libro, curso o herramienta en LinkedIn y X, con mis fotos y mi opinión.",
-  "ex1.t": "Libro de Packt sobre sistemas multiagente, en X",
-  "ex1.d": "25.400 visualizaciones, 339 me gusta y 357 guardados.",
-  "ex2.t": "Libro de Packt sobre aplicaciones de IA generativa, en LinkedIn",
-  "ex2.d": "72 reacciones y 10 republicaciones.",
   "p1.a.ex": "Ejemplo: Atlas de Renta de Cataluña →",
   "p1.b.ex": "Ejemplo: NECSTouR, desde 2024",
   "p1.c.ex": "Ejemplo: Cinco formas de escuchar Nueva York →",
@@ -831,9 +817,9 @@ const translations = {
   "p2.c.desc": "Cursos pràctics per a universitats i escoles de formació. Faig classe al Màster en Big Data de la Universidad de Navarra i dirigeixo IA Generativa per a Professionals a Emeritus.",
   "p2.proof": "Fins ara: més de 350 estudiants de màster, 150 professionals i més de 1.000 assistents a webinars.",
   "p3.intro": "Per a empreses que volen arribar a professionals de dades i IA.",
-  "p3.a.meta": "Per mapa",
-  "p3.a.name": "Mapa patrocinat",
-  "p3.a.desc": "La teva marca en un dels meus mapes diaris a LinkedIn i X, clarament identificat. Els mapes han superat el milió de visualitzacions en una setmana a LinkedIn.",
+  "p3.a.meta": "Per gràfic",
+  "p3.a.name": "Gràfic patrocinat",
+  "p3.a.desc": "La teva marca en un dels meus gràfics o mapes diaris a LinkedIn i X, clarament identificada. Els meus mapes han superat el milió de visualitzacions en una setmana a LinkedIn.",
   "p3.b.meta": "Per edició",
   "p3.b.name": "Espai a la newsletter",
   "p3.b.desc": "Un patrocinador per edició de databites, per a <span data-audience=\"newsletter\">10k</span> lectors.",
@@ -901,12 +887,10 @@ const translations = {
   "form.send": "Enviar missatge",
   "tab.other": "Una altra cosa",
   "panel.how": "Com funciona",
-  "panel.examples": "Exemples",
   "panel.channels": "On es publica",
   "ch.followers": "seguidors",
   "ch.readers": "lectors de la newsletter",
   "panel.samples": "Mostres",
-  "ex.link": "Veure la publicació →",
   "sm.link": "Llegir →",
   "h.training.1.t": "M'expliques l'audiència",
   "h.training.1.d": "Per a qui és, el format i la data que tens al cap.",
@@ -917,7 +901,7 @@ const translations = {
   "h.sponsorship.1.t": "M'expliques el producte",
   "h.sponsorship.1.d": "Què vols promocionar i quan.",
   "h.sponsorship.2.t": "Acordem format, data i preu",
-  "h.sponsorship.2.d": "Un mapa, una publicació o un espai a la newsletter.",
+  "h.sponsorship.2.d": "Un gràfic, una publicació o un espai a la newsletter.",
   "h.sponsorship.3.t": "Ho publico",
   "h.sponsorship.3.d": "Clarament identificat com a patrocinat. Després t'envio els números.",
   "h.writing.1.t": "M'expliques què necessites",
@@ -929,10 +913,6 @@ const translations = {
   "p3.c.meta": "Per publicació",
   "p3.c.name": "Publicació patrocinada",
   "p3.c.desc": "Una publicació sobre el teu llibre, curs o eina a LinkedIn i X, amb les meves fotos i la meva opinió.",
-  "ex1.t": "Llibre de Packt sobre sistemes multiagent, a X",
-  "ex1.d": "25.400 visualitzacions, 339 m'agrada i 357 desats.",
-  "ex2.t": "Llibre de Packt sobre aplicacions d'IA generativa, a LinkedIn",
-  "ex2.d": "72 reaccions i 10 republicacions.",
   "p1.a.ex": "Exemple: Atles de Renda de Catalunya →",
   "p1.b.ex": "Exemple: NECSTouR, des del 2024",
   "p1.c.ex": "Exemple: Cinc maneres d'escoltar Nova York →",
