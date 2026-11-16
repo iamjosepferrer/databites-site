@@ -1,5 +1,47 @@
 [
   {
+    "id": "all-roads-lead-to",
+    "featured": true,
+    "live": true,
+    "year": "2026",
+    "url": "https://all-roads-lead-to.databites.tech/",
+    "screenshot": "/images/projects-headers/all-roads-lead-to.webp",
+    "tags": [
+      "DataViz",
+      "Maps",
+      "Interactive"
+    ],
+    "chips": [
+      {
+        "label": "deck.gl",
+        "style": "green"
+      },
+      {
+        "label": "OpenStreetMap",
+        "style": "forest"
+      },
+      {
+        "label": "538M people",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "All roads lead to…",
+      "es": "Todos los caminos llevan a…",
+      "ca": "Tots els camins porten a…"
+    },
+    "desc": {
+      "en": "Pick any city and every main road from Lisbon to Helsinki routes to it. One million road links and 538 million people, routed live in your browser, with each line as wide as the crowd that takes it. Switch to road basins to see which city every junction drains to. OpenStreetMap and GHSL data.",
+      "es": "Elige cualquier ciudad y todas las carreteras principales de Lisboa a Helsinki llevan hasta ella. Un millón de tramos y 538 millones de personas, calculados en directo en tu navegador, con cada línea tan gruesa como la gente que pasa por ella. Cambia a cuencas viarias para ver hacia qué ciudad drena cada cruce. Datos de OpenStreetMap y GHSL.",
+      "ca": "Tria qualsevol ciutat i totes les carreteres principals de Lisboa a Hèlsinki hi porten. Un milió de trams i 538 milions de persones, calculats en directe al teu navegador, amb cada línia tan gruixuda com la gent que hi passa. Canvia a conques viàries per veure cap a quina ciutat drena cada cruïlla. Dades d'OpenStreetMap i GHSL."
+    },
+    "useFor": {
+      "en": "For tourism boards and logistics teams deciding which places a city really serves.",
+      "es": "Para oficinas de turismo y equipos de logística que deciden a qué territorio sirve de verdad una ciudad.",
+      "ca": "Per a oficines de turisme i equips de logística que decideixen a quin territori serveix realment una ciutat."
+    }
+  },
+  {
     "id": "five-ways-nyc",
     "featured": true,
     "live": true,
