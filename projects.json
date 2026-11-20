@@ -1,5 +1,47 @@
 [
   {
+    "id": "eu-in-hexagons",
+    "featured": true,
+    "live": true,
+    "year": "2026",
+    "url": "https://eu-in-hexagons.databites.tech/",
+    "screenshot": "/images/projects-headers/eu-in-hexagons.webp",
+    "tags": [
+      "DataViz",
+      "Maps",
+      "Interactive"
+    ],
+    "chips": [
+      {
+        "label": "H3 hexagons",
+        "style": "green"
+      },
+      {
+        "label": "Eurostat census",
+        "style": "forest"
+      },
+      {
+        "label": "439M people",
+        "style": "forest"
+      }
+    ],
+    "title": {
+      "en": "The EU in hexagons",
+      "es": "La UE en hexágonos",
+      "ca": "La UE en hexàgons"
+    },
+    "desc": {
+      "en": "Where 439 million people live, drawn three ways with H3, the hexagon grid built at Uber. Split every crowded hexagon until none passes a cap, map density at any hexagon size, or keep only the fullest hexagons until they hold the share of people you pick. Eurostat 2021 census grid.",
+      "es": "Dónde viven 439 millones de personas, dibujado de tres formas con H3, la malla hexagonal creada en Uber. Divide cada hexágono lleno hasta que ninguno supera un tope, mira la densidad con el tamaño de hexágono que quieras, o quédate solo con los más llenos hasta cubrir la parte de población que elijas. Malla censal de Eurostat 2021.",
+      "ca": "On viuen 439 milions de persones, dibuixat de tres maneres amb H3, la malla hexagonal creada a Uber. Divideix cada hexàgon ple fins que cap no supera un límit, mira la densitat amb la mida d'hexàgon que vulguis, o queda't només amb els més plens fins a cobrir la part de població que triïs. Malla censal d'Eurostat 2021."
+    },
+    "useFor": {
+      "en": "For planners and retail teams drawing catchments by where people actually are, not by borders.",
+      "es": "Para urbanistas y equipos de retail que trazan áreas de influencia por dónde está la gente, no por las fronteras.",
+      "ca": "Per a urbanistes i equips de retail que tracen àrees d'influència per on és la gent, no per les fronteres."
+    }
+  },
+  {
     "id": "all-roads-lead-to",
     "featured": true,
     "live": true,
